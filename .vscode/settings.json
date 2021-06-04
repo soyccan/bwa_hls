@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "kstring.h": "c",
+        "xtree": "cpp",
+        "xstring": "cpp"
+    },
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true
+}

@@ -1,0 +1,35 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "upload & make remote",
+            "type": "shell",
+            "command": "wsl bash ./scripts/upload.sh",
+            "problemMatcher": [],
+            "group": "build"
+        },
+        {
+            "label": "make local",
+            "type": "shell",
+            "command": "wsl make -j4",
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation": [
+                    "relative",
+                    // "${workspaceFolder}/fm_index_ocfnash"
+                    "${workspaceFolder}/bwa_hls"
+                ]
+            },
+            "options": {
+                // "cwd": "fm_index_ocfnash"
+                "cwd": "bwa_hls"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ],
+}

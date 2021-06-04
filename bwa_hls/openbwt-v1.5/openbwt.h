@@ -47,7 +47,7 @@ extern "C" {
   @return The primary index if no error occurred, -1 or -2 otherwise.
 */
 
-int BWT(const unsigned char* T, unsigned char* U, int n);
+int BWT(const unsigned char* T, unsigned char* U, int* SA, int n);
 
 /*
   Inverse Burrows-Wheeler Transform

@@ -1,0 +1,4 @@
+*.d
+*.o
+bwa_hls/index
+bwa_hls/align

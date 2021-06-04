@@ -1,18 +1,17 @@
-EXES        := index
-OBJS        := \
-				index.o \
-				../fm_index_ocfnash/openbwt-v1.5/BWT.o
-INCS        := \
-				-I../fm_index_ocfnash/openbwt-v1.5
-deps        := $(OBJS:%.o=%.d)
+EXES         := index align
+OBJS         := bwa.o \
+				openbwt-v1.5/BWT.o
+INCS         := \
+				-Iopenbwt-v1.5
+deps         := $(OBJS:%.o=%.d)
 
-CFLAGS      := -Wall -Wextra -MMD $(INCS) -std=c17
-CXXFLAGS    := -Wall -Wextra -MMD $(INCS) -std=c++17
+CFLAGS       := -Wall -Wextra -MMD $(INCS) -std=c17
+CXXFLAGS     := -Wall -Wextra -MMD $(INCS) -std=c++17
 
 debug: CFLAGS += -g
 debug: CXXFLAGS += -g
-release: CFLAGS += -O3
-release: CXXFLAGS += -O3
+release: CFLAGS += -O3 -DNDEBUG
+release: CXXFLAGS += -O3 -DNDEBUG
 
 
 .PHONY: all debug release
@@ -22,8 +21,11 @@ debug release: $(EXES)
 index: index.o $(OBJS)
 	$(CXX) $(LDFLAGS) $^ $(LDLIBS) -o $@
 
+align: align.o $(OBJS)
+	$(CXX) $(LDFLAGS) $^ $(LDLIBS) -o $@
+
 .PHONY: clean
 clean:
-	$(RM) $(EXES) *.d *.o
+	$(RM) $(EXES) *.d *.o */*.d */*.o
 
 -include $(deps)

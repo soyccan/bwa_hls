@@ -298,7 +298,7 @@ static int suffixsort(const unsigned char* T, int* SA, int fs, int n, int k,
 #undef maxthreads
 }
 
-int BWT(const unsigned char* T, unsigned char* U, int n)
+int BWT(const unsigned char* T, unsigned char* U, int* SA, int n)
 {
   int i, pidx;
   if ((T == NULL) || (U == NULL) || (n < 0)) {
@@ -316,6 +316,10 @@ int BWT(const unsigned char* T, unsigned char* U, int n)
     return -1;
   }
 
+  // calculate suffix array
+  suffixsort(T, SA, 0, n, 256, sizeof(unsigned char), 0);
+
+  // calculate BWT
   pidx = suffixsort(T, A, 0, n, 256, sizeof(unsigned char), 1);
   if (pidx < 0) {
     free(A);
