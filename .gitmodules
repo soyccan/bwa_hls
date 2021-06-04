@@ -4,3 +4,6 @@
 [submodule "bwa"]
 	path = bwa
 	url = https://github.com/lh3/bwa
+[submodule "fm_index_ocfnash"]
+	path = fm_index_ocfnash
+	url = https://github.com/ocfnash/FM-index
