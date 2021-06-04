@@ -1,0 +1,29 @@
+BasedOnStyle: Google
+Language: Cpp
+MaxEmptyLinesToKeep: 3
+
+IndentCaseLabels: false
+
+AllowShortIfStatementsOnASingleLine: false
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+AllowShortBlocksOnASingleLine: Empty
+AllowShortFunctionsOnASingleLine: Empty
+
+AlwaysBreakAfterReturnType: None
+AlwaysBreakTemplateDeclarations: Yes
+BreakBeforeBraces: Stroustrup
+
+BreakBeforeTernaryOperators: false
+
+DerivePointerAlignment: false
+PointerAlignment: Left
+SpaceAfterCStyleCast: true
+
+TabWidth: 2
+UseTab: Never
+IndentWidth: 2
+AccessModifierOffset: -2
+
+ForEachMacros:
+- 'FOR'
