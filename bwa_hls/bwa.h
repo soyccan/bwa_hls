@@ -17,7 +17,7 @@
 // occ stores a checkpoint every 2 rows
 #define OCC_CHKPT_GAP 0
 
-typedef std::vector<std::string> Reads;
+// typedef std::vector<std::string> Reads;
 
 template <typename T>
 void deserialize_var(std::istream& istrm, T& var)
@@ -54,22 +54,26 @@ struct BWA {
   std::vector<std::array<int, 4>> occ;
   std::vector<int> sa;
 
+  std::vector<std::string> reads;
+
   std::array<int, 256> symbol_map;
 
   BWA()
   {
     symbol_map['A'] = symbol_map['a'] = 0;
-    symbol_map['T'] = symbol_map['t'] = 1;
-    symbol_map['C'] = symbol_map['c'] = 2;
-    symbol_map['G'] = symbol_map['g'] = 3;
+    symbol_map['C'] = symbol_map['c'] = 1;
+    symbol_map['G'] = symbol_map['g'] = 2;
+    symbol_map['T'] = symbol_map['t'] = 3;
   }
 
   void store_index_file(const std::string& filename);
   void load_index_file(const std::string& filename);
 
   void load_ref_genome(const std::string& filename);
-  Reads load_reads(const std::string& filename);
-  void bwt_ref_genome();
+  void load_reads(const std::string& filename);
+  void bw_transform();
+  void read_align();
+  void calc_occ();
 };
 
 #endif

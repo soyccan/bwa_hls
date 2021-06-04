@@ -1,5 +1,6 @@
 EXES         := index align
 OBJS         := bwa.o \
+				kernel.o \
 				openbwt-v1.5/BWT.o
 INCS         := \
 				-Iopenbwt-v1.5

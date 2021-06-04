@@ -14,6 +14,11 @@
 
 int main(int argc, char** argv)
 {
+  if (argc < 3) {
+    std::cerr << "Usage: " << argv[0] << " <index.fasta.fmi> <reads.fastq>\n";
+    return 1;
+  }
+
   auto index_filename = std::string(argv[1]);
   auto reads_filename = std::string(argv[2]);
 
@@ -33,6 +38,8 @@ int main(int argc, char** argv)
   }
 
   bwa.load_reads(reads_filename);
+
+  bwa.read_align();
 
   //   std::fstream ref_genome_file(argv[1]);
   //   std::fstream reads_file(argv[2]);

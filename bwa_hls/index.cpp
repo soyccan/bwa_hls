@@ -19,19 +19,9 @@ int main(int argc, char** argv)
 
   bwa.load_ref_genome(ref_filename);
 
-  bwa.bwt_ref_genome();
+  bwa.bw_transform();
 
-  int cum[4] = {0};
-  bwa.occ.resize((bwa.ref_genome.size() + (1 << OCC_CHKPT_GAP) - 1) /
-                 (1 << OCC_CHKPT_GAP));
-  FOR (i, 0, bwa.bwt.size()) {
-    int sym = bwa.symbol_map[bwa.bwt[i]];
-    cum[sym]++;
-
-    FOR (j, 0, 4) {
-      bwa.occ[i][j] = cum[j];
-    }
-  }
+  bwa.calc_occ();
 
   bwa.store_index_file(ref_filename + ".fmi");
 }
