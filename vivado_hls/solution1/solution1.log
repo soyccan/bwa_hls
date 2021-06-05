@@ -1,0 +1,1945 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+WARNING: [HLS 200-40] Cannot find library 'C:/Xilinx/Vivado/2019.2/common/technology/xilinx/Kintex-7/Kintex-7.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/Kintex-7/Kintex-7'.
+INFO: [HLS 200-10] Setting target device to 'xc7k70t-fbv676-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+WARNING: [HLS 200-40] Cannot find library 'C:/Xilinx/Vivado/2019.2/common/technology/xilinx/Kintex-7/Kintex-7.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/Kintex-7/Kintex-7'.
+INFO: [HLS 200-10] Setting target device to 'xc7k70t-fbv676-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+WARNING: [HLS 200-40] Cannot find library 'C:/Xilinx/Vivado/2019.2/common/technology/xilinx/Kintex-7/Kintex-7.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/Kintex-7/Kintex-7'.
+INFO: [HLS 200-10] Setting target device to 'xc7k70t-fbv676-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -optimization_level' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -optimization_level' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -optimization_level' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -optimization_level' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -optimization_level' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -optimization_level' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -optimization_level' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -optimization_level' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -optimization_level' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+WARNING: [HLS 200-483] The 'config_sdx -optimization_level' command is deprecated and will be removed in a future release. Use 'config_export -vivado_optimization_level' as its replacement.
+INFO: [HLS 200-435] Setting 'config_sdx -optimization_level' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+WARNING: [HLS 200-484] The 'config_sdx -optimization_level' command is deprecated and will be removed in a future release.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'bwa_hls/src/kernel.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:02 ; elapsed = 00:00:20 . Memory (MB): peak = 172.465 ; gain = 80.086
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:02 ; elapsed = 00:00:20 . Memory (MB): peak = 172.465 ; gain = 80.086
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:02 ; elapsed = 00:00:25 . Memory (MB): peak = 172.465 ; gain = 80.086
+INFO: [HLS 200-10] Checking synthesizability ...
+ERROR: [SYNCHK 200-61] bwa_hls/src/kernel.cpp:33: unsupported memory access on variable 'buf' which is (or contains) an array with unknown size at compile time.
+ERROR: [SYNCHK 200-71] bwa_hls/src/kernel.cpp:51: function '__iob_func' has no function body.
+INFO: [SYNCHK 200-10] 2 error(s), 0 warning(s).
+ERROR: [HLS 200-70] Synthesizability check failed.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -optimization_level' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -optimization_level' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -optimization_level' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+WARNING: [HLS 200-483] The 'config_sdx -optimization_level' command is deprecated and will be removed in a future release. Use 'config_export -vivado_optimization_level' as its replacement.
+INFO: [HLS 200-435] Setting 'config_sdx -optimization_level' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+WARNING: [HLS 200-484] The 'config_sdx -optimization_level' command is deprecated and will be removed in a future release.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'bwa_hls/src/kernel.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 171.473 ; gain = 81.547
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 171.473 ; gain = 81.547
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 171.473 ; gain = 81.547
+INFO: [HLS 200-10] Checking synthesizability ...
+ERROR: [SYNCHK 200-61] bwa_hls/src/kernel.cpp:33: unsupported memory access on variable 'buf' which is (or contains) an array with unknown size at compile time.
+INFO: [SYNCHK 200-10] 1 error(s), 0 warning(s).
+ERROR: [HLS 200-70] Synthesizability check failed.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -optimization_level' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+WARNING: [HLS 200-483] The 'config_sdx -optimization_level' command is deprecated and will be removed in a future release. Use 'config_export -vivado_optimization_level' as its replacement.
+INFO: [HLS 200-435] Setting 'config_sdx -optimization_level' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+WARNING: [HLS 200-484] The 'config_sdx -optimization_level' command is deprecated and will be removed in a future release.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'bwa_hls/src/kernel.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 171.949 ; gain = 82.027
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 171.949 ; gain = 82.027
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 171.949 ; gain = 82.027
+INFO: [HLS 200-10] Checking synthesizability ...
+ERROR: [SYNCHK 200-61] bwa_hls/src/kernel.cpp:81: unsupported memory access on variable 'read' which is (or contains) an array with unknown size at compile time.
+INFO: [SYNCHK 200-10] 1 error(s), 0 warning(s).
+ERROR: [HLS 200-70] Synthesizability check failed.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -optimization_level' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+WARNING: [HLS 200-483] The 'config_sdx -optimization_level' command is deprecated and will be removed in a future release. Use 'config_export -vivado_optimization_level' as its replacement.
+INFO: [HLS 200-435] Setting 'config_sdx -optimization_level' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+WARNING: [HLS 200-484] The 'config_sdx -optimization_level' command is deprecated and will be removed in a future release.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'bwa_hls/src/kernel.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 171.418 ; gain = 79.078
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 171.418 ; gain = 79.078
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 171.418 ; gain = 79.078
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 171.418 ; gain = 79.078
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (bwa_hls/src/kernel.cpp:66:9) to (bwa_hls/src/kernel.cpp:71:7) in function 'bwa_align'... converting 3 basic blocks.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 171.418 ; gain = 79.078
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 171.418 ; gain = 79.078
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'bwa_align' ...
+WARNING: [SYN 201-107] Renaming port name 'bwa_align/buf' to 'bwa_align/buf_r' to avoid the conflict with HDL keywords or other object names.
+WARNING: [SYN 201-107] Renaming port name 'bwa_align/read' to 'bwa_align/read_r' to avoid the conflict with HDL keywords or other object names.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'bwa_align' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 10.837 seconds; current allocated memory: 91.172 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.186 seconds; current allocated memory: 91.671 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'bwa_align' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/res_sa_itv' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/buf_r' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/occ' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/cum' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/refn' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_r' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/readn' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'bwa_align' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'bwa_align'.
+INFO: [HLS 200-111]  Elapsed time: 0.296 seconds; current allocated memory: 92.525 MB.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 131.15 MHz
+INFO: [RTMG 210-279] Implementing memory 'bwa_align_alpha_rom' using distributed ROMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:04 ; elapsed = 00:00:15 . Memory (MB): peak = 171.418 ; gain = 79.078
+INFO: [VHDL 208-304] Generating VHDL RTL for bwa_align.
+INFO: [VLOG 209-307] Generating Verilog RTL for bwa_align.
+INFO: [HLS 200-112] Total elapsed time: 14.627 seconds; peak allocated memory: 92.525 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -optimization_level' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+ERROR: [COSIM 212-317] C++ compile error.
+ERROR: [COSIM 212-321] EXE file generate failed.
+ERROR: [COSIM 212-321] EXE file generate failed.
+ERROR: [COSIM 212-331] Aborting co-simulation: C simulation failed, compilation errors.
+ERROR: [COSIM 212-5] *** C/RTL co-simulation file generation failed. ***
+ERROR: [COSIM 212-4] *** C/RTL co-simulation finished: FAIL ***
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -optimization_level' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -optimization_level' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+WARNING: [HLS 200-483] The 'config_sdx -optimization_level' command is deprecated and will be removed in a future release. Use 'config_export -vivado_optimization_level' as its replacement.
+INFO: [HLS 200-435] Setting 'config_sdx -optimization_level' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+WARNING: [HLS 200-484] The 'config_sdx -optimization_level' command is deprecated and will be removed in a future release.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'bwa_hls/src/kernel.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 171.957 ; gain = 85.434
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 171.957 ; gain = 85.434
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 171.957 ; gain = 85.434
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 171.957 ; gain = 85.434
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (bwa_hls/src/kernel.cpp:63:9) to (bwa_hls/src/kernel.cpp:68:7) in function 'bwa_align'... converting 3 basic blocks.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 171.957 ; gain = 85.434
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 171.957 ; gain = 85.434
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'bwa_align' ...
+WARNING: [SYN 201-107] Renaming port name 'bwa_align/buf' to 'bwa_align/buf_r' to avoid the conflict with HDL keywords or other object names.
+WARNING: [SYN 201-107] Renaming port name 'bwa_align/read' to 'bwa_align/read_r' to avoid the conflict with HDL keywords or other object names.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'bwa_align' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 10.624 seconds; current allocated memory: 91.109 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.154 seconds; current allocated memory: 91.624 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'bwa_align' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/res_sa_itv' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/buf_r' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/occ' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/cum' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/refn' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_r' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/readn' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'bwa_align' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'bwa_align'.
+INFO: [HLS 200-111]  Elapsed time: 0.301 seconds; current allocated memory: 92.494 MB.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 131.15 MHz
+INFO: [RTMG 210-279] Implementing memory 'bwa_align_alpha_rom' using distributed ROMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:04 ; elapsed = 00:00:14 . Memory (MB): peak = 171.957 ; gain = 85.434
+INFO: [VHDL 208-304] Generating VHDL RTL for bwa_align.
+INFO: [VLOG 209-307] Generating Verilog RTL for bwa_align.
+INFO: [HLS 200-112] Total elapsed time: 13.871 seconds; peak allocated memory: 92.494 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -optimization_level' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+ERROR: [COSIM 212-317] C++ compile error.
+ERROR: [COSIM 212-321] EXE file generate failed.
+ERROR: [COSIM 212-321] EXE file generate failed.
+ERROR: [COSIM 212-331] Aborting co-simulation: C simulation failed, compilation errors.
+ERROR: [COSIM 212-5] *** C/RTL co-simulation file generation failed. ***
+ERROR: [COSIM 212-4] *** C/RTL co-simulation finished: FAIL ***
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'bwa_hls/src/kernel.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 171.477 ; gain = 82.188
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 171.477 ; gain = 82.188
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 171.477 ; gain = 82.188
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 171.477 ; gain = 82.188
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (bwa_hls/src/kernel.cpp:63:9) to (bwa_hls/src/kernel.cpp:68:7) in function 'bwa_align'... converting 3 basic blocks.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 171.477 ; gain = 82.188
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 171.477 ; gain = 82.188
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'bwa_align' ...
+WARNING: [SYN 201-107] Renaming port name 'bwa_align/buf' to 'bwa_align/buf_r' to avoid the conflict with HDL keywords or other object names.
+WARNING: [SYN 201-107] Renaming port name 'bwa_align/read' to 'bwa_align/read_r' to avoid the conflict with HDL keywords or other object names.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'bwa_align' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 10.341 seconds; current allocated memory: 91.109 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.148 seconds; current allocated memory: 91.608 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'bwa_align' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/res_sa_itv' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/buf_r' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/occ' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/cum' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/refn' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_r' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/readn' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'bwa_align' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'bwa_align'.
+INFO: [HLS 200-111]  Elapsed time: 0.23 seconds; current allocated memory: 92.493 MB.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 131.15 MHz
+INFO: [RTMG 210-279] Implementing memory 'bwa_align_alpha_rom' using distributed ROMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:03 ; elapsed = 00:00:13 . Memory (MB): peak = 171.477 ; gain = 82.188
+INFO: [VHDL 208-304] Generating VHDL RTL for bwa_align.
+INFO: [VLOG 209-307] Generating Verilog RTL for bwa_align.
+INFO: [HLS 200-112] Total elapsed time: 13.164 seconds; peak allocated memory: 92.493 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+ERROR: [COSIM 212-317] C++ compile error.
+ERROR: [COSIM 212-321] EXE file generate failed.
+ERROR: [COSIM 212-321] EXE file generate failed.
+ERROR: [COSIM 212-331] Aborting co-simulation: C simulation failed, compilation errors.
+ERROR: [COSIM 212-5] *** C/RTL co-simulation file generation failed. ***
+ERROR: [COSIM 212-4] *** C/RTL co-simulation finished: FAIL ***
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'bwa_hls/src/kernel.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 171.758 ; gain = 81.723
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 171.758 ; gain = 81.723
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 171.758 ; gain = 81.723
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 171.758 ; gain = 81.723
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (bwa_hls/src/kernel.cpp:63:9) to (bwa_hls/src/kernel.cpp:68:7) in function 'bwa_align'... converting 3 basic blocks.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 171.758 ; gain = 81.723
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 171.758 ; gain = 81.723
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'bwa_align' ...
+WARNING: [SYN 201-107] Renaming port name 'bwa_align/buf' to 'bwa_align/buf_r' to avoid the conflict with HDL keywords or other object names.
+WARNING: [SYN 201-107] Renaming port name 'bwa_align/read' to 'bwa_align/read_r' to avoid the conflict with HDL keywords or other object names.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'bwa_align' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 10.588 seconds; current allocated memory: 91.109 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.146 seconds; current allocated memory: 91.608 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'bwa_align' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/res_sa_itv' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/buf_r' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/occ' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/cum' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/refn' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_r' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/readn' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'bwa_align' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'bwa_align'.
+INFO: [HLS 200-111]  Elapsed time: 0.233 seconds; current allocated memory: 92.494 MB.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 131.15 MHz
+INFO: [RTMG 210-279] Implementing memory 'bwa_align_alpha_rom' using distributed ROMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:04 ; elapsed = 00:00:14 . Memory (MB): peak = 171.758 ; gain = 81.723
+INFO: [VHDL 208-304] Generating VHDL RTL for bwa_align.
+INFO: [VLOG 209-307] Generating Verilog RTL for bwa_align.
+INFO: [HLS 200-112] Total elapsed time: 13.607 seconds; peak allocated memory: 92.494 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+ERROR: [COSIM 212-360] Aborting co-simulation: C TB simulation failed.
+ERROR: [COSIM 212-320] C TB testing failed, stop generating test vectors. Please check C TB or re-run cosim.
+ERROR: [COSIM 212-5] *** C/RTL co-simulation file generation failed. ***
+ERROR: [COSIM 212-4] *** C/RTL co-simulation finished: FAIL ***
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+ERROR: [COSIM 212-359] Aborting co-simulation: C TB simulation failed, nonzero return value '3'.
+ERROR: [COSIM 212-320] C TB testing failed, stop generating test vectors. Please check C TB or re-run cosim.
+ERROR: [COSIM 212-5] *** C/RTL co-simulation file generation failed. ***
+ERROR: [COSIM 212-4] *** C/RTL co-simulation finished: FAIL ***
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+ERROR: [COSIM 212-359] Aborting co-simulation: C TB simulation failed, nonzero return value '3'.
+ERROR: [COSIM 212-320] C TB testing failed, stop generating test vectors. Please check C TB or re-run cosim.
+ERROR: [COSIM 212-5] *** C/RTL co-simulation file generation failed. ***
+ERROR: [COSIM 212-4] *** C/RTL co-simulation finished: FAIL ***
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'src/kernel.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 172.043 ; gain = 79.676
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 172.043 ; gain = 79.676
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 172.043 ; gain = 79.676
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 172.043 ; gain = 79.676
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/kernel.cpp:63:9) to (src/kernel.cpp:68:7) in function 'bwa_align'... converting 3 basic blocks.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 172.043 ; gain = 79.676
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 172.043 ; gain = 79.676
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'bwa_align' ...
+WARNING: [SYN 201-107] Renaming port name 'bwa_align/buf' to 'bwa_align/buf_r' to avoid the conflict with HDL keywords or other object names.
+WARNING: [SYN 201-107] Renaming port name 'bwa_align/read' to 'bwa_align/read_r' to avoid the conflict with HDL keywords or other object names.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'bwa_align' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 10.787 seconds; current allocated memory: 91.098 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.181 seconds; current allocated memory: 91.597 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'bwa_align' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/res_sa_itv' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/buf_r' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/occ' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/cum' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/refn' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_r' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/readn' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'bwa_align' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'bwa_align'.
+INFO: [HLS 200-111]  Elapsed time: 0.273 seconds; current allocated memory: 92.483 MB.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 131.15 MHz
+INFO: [RTMG 210-279] Implementing memory 'bwa_align_alpha_rom' using distributed ROMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:04 ; elapsed = 00:00:14 . Memory (MB): peak = 172.043 ; gain = 79.676
+INFO: [VHDL 208-304] Generating VHDL RTL for bwa_align.
+INFO: [VLOG 209-307] Generating Verilog RTL for bwa_align.
+INFO: [HLS 200-112] Total elapsed time: 13.84 seconds; peak allocated memory: 92.483 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+ERROR: [COSIM 212-359] Aborting co-simulation: C TB simulation failed, nonzero return value '3'.
+ERROR: [COSIM 212-320] C TB testing failed, stop generating test vectors. Please check C TB or re-run cosim.
+ERROR: [COSIM 212-5] *** C/RTL co-simulation file generation failed. ***
+ERROR: [COSIM 212-4] *** C/RTL co-simulation finished: FAIL ***
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+ERROR: [COSIM 212-360] Aborting co-simulation: C TB simulation failed.
+ERROR: [COSIM 212-320] C TB testing failed, stop generating test vectors. Please check C TB or re-run cosim.
+ERROR: [COSIM 212-5] *** C/RTL co-simulation file generation failed. ***
+ERROR: [COSIM 212-4] *** C/RTL co-simulation finished: FAIL ***
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+ERROR: [COSIM 212-360] Aborting co-simulation: C TB simulation failed.
+ERROR: [COSIM 212-320] C TB testing failed, stop generating test vectors. Please check C TB or re-run cosim.
+ERROR: [COSIM 212-5] *** C/RTL co-simulation file generation failed. ***
+ERROR: [COSIM 212-4] *** C/RTL co-simulation finished: FAIL ***
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'src/kernel.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 171.617 ; gain = 79.211
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 171.617 ; gain = 79.211
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 171.617 ; gain = 79.211
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 171.617 ; gain = 79.211
+WARNING: [XFORM 203-104] Completely partitioning array 'read' (src/kernel.cpp:10) accessed through non-constant indices on dimension 1 (src/kernel.cpp:85:9), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
+INFO: [XFORM 203-101] Partitioning array 'read' (src/kernel.cpp:10) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'cum' (src/kernel.cpp:10) in dimension 1 completely.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/kernel.cpp:66:34) to (src/kernel.cpp:75:7) in function 'bwa_align'... converting 3 basic blocks.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 171.617 ; gain = 79.211
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:06 ; elapsed = 00:00:15 . Memory (MB): peak = 171.617 ; gain = 79.211
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'bwa_align' ...
+WARNING: [SYN 201-107] Renaming port name 'bwa_align/buf' to 'bwa_align/buf_r' to avoid the conflict with HDL keywords or other object names.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'bwa_align' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 15.921 seconds; current allocated memory: 97.260 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.781 seconds; current allocated memory: 98.991 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'bwa_align' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/res_sa_itv' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/buf_r' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/occ' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/cum_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/cum_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/cum_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/cum_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/refn' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_10' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_12' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_13' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_14' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_15' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_16' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_17' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_18' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_19' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_20' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_21' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_22' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_23' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_24' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_25' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_26' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_27' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_28' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_29' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_30' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_31' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_32' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_33' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_34' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_35' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_36' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_37' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_38' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_39' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_40' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_41' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_42' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_43' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_44' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_45' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_46' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_47' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_48' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_49' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_50' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_51' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_52' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_53' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_54' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_55' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_56' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_57' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_58' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_59' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_60' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_61' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_62' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_63' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_64' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_65' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_66' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_67' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_68' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_69' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_70' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_71' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_72' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_73' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_74' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_75' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_76' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_77' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_78' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_79' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_80' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_81' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_82' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_83' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_84' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_85' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_86' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_87' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_88' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_89' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_90' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_91' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_92' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_93' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_94' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_95' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_96' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_97' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_98' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_99' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_100' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_101' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_102' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_103' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_104' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_105' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_106' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_107' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_108' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_109' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_110' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_111' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_112' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_113' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_114' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_115' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_116' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_117' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_118' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_119' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_120' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_121' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_122' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_123' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_124' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_125' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_126' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_127' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_128' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_129' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_130' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_131' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_132' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_133' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_134' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_135' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_136' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_137' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_138' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_139' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_140' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_141' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_142' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_143' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_144' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_145' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_146' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_147' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_148' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_149' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_150' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_151' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_152' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_153' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_154' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_155' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_156' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_157' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_158' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_159' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_160' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_161' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_162' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_163' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_164' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_165' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_166' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_167' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_168' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_169' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_170' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_171' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_172' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_173' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_174' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_175' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_176' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_177' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_178' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_179' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_180' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_181' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_182' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_183' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_184' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_185' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_186' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_187' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_188' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_189' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_190' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_191' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_192' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_193' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_194' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_195' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_196' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_197' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_198' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_199' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_200' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_201' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_202' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_203' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_204' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_205' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_206' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_207' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_208' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_209' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_210' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_211' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_212' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_213' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_214' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_215' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_216' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_217' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_218' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_219' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_220' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_221' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_222' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_223' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_224' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_225' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_226' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_227' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_228' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_229' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_230' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_231' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_232' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_233' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_234' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_235' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_236' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_237' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_238' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_239' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_240' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_241' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_242' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_243' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_244' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_245' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_246' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_247' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_248' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_249' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_250' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_251' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_252' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_253' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_254' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_255' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/readn' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'bwa_align' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'bwa_align_mux_42_32_1_1' to 'bwa_align_mux_42_bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'bwa_align_mux_2568_8_1_1' to 'bwa_align_mux_256cud' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'bwa_align_mux_256cud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'bwa_align_mux_42_bkb': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'bwa_align'.
+INFO: [HLS 200-111]  Elapsed time: 2.152 seconds; current allocated memory: 101.656 MB.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 131.15 MHz
+INFO: [RTMG 210-279] Implementing memory 'bwa_align_alpha_rom' using distributed ROMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:20 ; elapsed = 00:00:32 . Memory (MB): peak = 183.320 ; gain = 90.914
+INFO: [VHDL 208-304] Generating VHDL RTL for bwa_align.
+INFO: [VLOG 209-307] Generating Verilog RTL for bwa_align.
+INFO: [HLS 200-112] Total elapsed time: 32.048 seconds; peak allocated memory: 101.656 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'src/kernel.cpp' ... 
+WARNING: [HLS 200-40] In file included from src/kernel.cpp:1:
+src/kernel.cpp:7:19: warning: '&&' within '||' [-Wlogical-op-parentheses]
+  return (i == 0) && (c == 'A') || (i == 1) && (c == 'C') ||
+         ~~~~~~~~~^~~~~~~~~~~~~ ~~
+src/kernel.cpp:7:19: note: place parentheses around the '&&' expression to silence this warning
+  return (i == 0) && (c == 'A') || (i == 1) && (c == 'C') ||
+                  ^
+         (                     )
+src/kernel.cpp:7:45: warning: '&&' within '||' [-Wlogical-op-parentheses]
+  return (i == 0) && (c == 'A') || (i == 1) && (c == 'C') ||
+                                ~~ ~~~~~~~~~^~~~~~~~~~~~~
+src/kernel.cpp:7:45: note: place parentheses around the '&&' expression to silence this warning
+  return (i == 0) && (c == 'A') || (i == 1) && (c == 'C') ||
+                                            ^
+                                   (                     )
+src/kernel.cpp:8:19: warning: '&&' within '||' [-Wlogical-op-parentheses]
+         (i == 2) && (c == 'G') || (i == 3) && (c == 'T');
+         ~~~~~~~~~^~~~~~~~~~~~~
+src/kernel.cpp:8:19: note: place parentheses around the '&&' expression to silence this warning
+         (i == 2) && (c == 'G') || (i == 3) && (c == 'T');
+                  ^
+         (                     )
+src/kernel.cpp:8:45: warning: '&&' within '||' [-Wlogical-op-parentheses]
+         (i == 2) && (c == 'G') || (i == 3) && (c == 'T');
+                                ~~ ~~~~~~~~~^~~~~~~~~~~~~
+src/kernel.cpp:8:45: note: place parentheses around the '&&' expression to silence this warning
+         (i == 2) && (c == 'G') || (i == 3) && (c == 'T');
+                                            ^
+                                   (                     )
+4 warnings generated.
+ERROR: [HLS 214-124] use of undeclared identifier 'alpha': G:\Repo\hls_project\src\kernel.cpp:21
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'src/kernel.cpp' ... 
+WARNING: [HLS 200-40] In file included from src/kernel.cpp:1:
+src/kernel.cpp:7:19: warning: '&&' within '||' [-Wlogical-op-parentheses]
+  return (i == 0) && (c == 'A') || (i == 1) && (c == 'C') ||
+         ~~~~~~~~~^~~~~~~~~~~~~ ~~
+src/kernel.cpp:7:19: note: place parentheses around the '&&' expression to silence this warning
+  return (i == 0) && (c == 'A') || (i == 1) && (c == 'C') ||
+                  ^
+         (                     )
+src/kernel.cpp:7:45: warning: '&&' within '||' [-Wlogical-op-parentheses]
+  return (i == 0) && (c == 'A') || (i == 1) && (c == 'C') ||
+                                ~~ ~~~~~~~~~^~~~~~~~~~~~~
+src/kernel.cpp:7:45: note: place parentheses around the '&&' expression to silence this warning
+  return (i == 0) && (c == 'A') || (i == 1) && (c == 'C') ||
+                                            ^
+                                   (                     )
+src/kernel.cpp:8:19: warning: '&&' within '||' [-Wlogical-op-parentheses]
+         (i == 2) && (c == 'G') || (i == 3) && (c == 'T');
+         ~~~~~~~~~^~~~~~~~~~~~~
+src/kernel.cpp:8:19: note: place parentheses around the '&&' expression to silence this warning
+         (i == 2) && (c == 'G') || (i == 3) && (c == 'T');
+                  ^
+         (                     )
+src/kernel.cpp:8:45: warning: '&&' within '||' [-Wlogical-op-parentheses]
+         (i == 2) && (c == 'G') || (i == 3) && (c == 'T');
+                                ~~ ~~~~~~~~~^~~~~~~~~~~~~
+src/kernel.cpp:8:45: note: place parentheses around the '&&' expression to silence this warning
+         (i == 2) && (c == 'G') || (i == 3) && (c == 'T');
+                                            ^
+                                   (                     )
+4 warnings generated.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 171.383 ; gain = 82.215
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 171.383 ; gain = 82.215
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 171.383 ; gain = 82.215
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'match_symbol' into 'bwa_align' (src/kernel.cpp:90) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 171.383 ; gain = 82.215
+WARNING: [XFORM 203-104] Completely partitioning array 'read' (src/kernel.cpp:16) accessed through non-constant indices on dimension 1 (src/kernel.cpp:90:13), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
+INFO: [XFORM 203-101] Partitioning array 'read' (src/kernel.cpp:16) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'cum' (src/kernel.cpp:16) in dimension 1 completely.
+INFO: [XFORM 203-602] Inlining function 'match_symbol' into 'bwa_align' (src/kernel.cpp:90) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/kernel.cpp:71:34) to (src/kernel.cpp:80:7) in function 'bwa_align'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/kernel.cpp:82:9) to (src/kernel.cpp:90:13) in function 'bwa_align'... converting 5 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'bwa_align' (src/kernel.cpp:12)...3 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:04 ; elapsed = 00:00:12 . Memory (MB): peak = 171.383 ; gain = 82.215
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:06 ; elapsed = 00:00:14 . Memory (MB): peak = 171.383 ; gain = 82.215
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'bwa_align' ...
+WARNING: [SYN 201-107] Renaming port name 'bwa_align/buf' to 'bwa_align/buf_r' to avoid the conflict with HDL keywords or other object names.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'bwa_align' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 15.283 seconds; current allocated memory: 97.500 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.591 seconds; current allocated memory: 99.311 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'bwa_align' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/res_sa_itv' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/buf_r' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/occ' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/cum_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/cum_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/cum_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/cum_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/refn' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_10' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_12' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_13' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_14' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_15' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_16' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_17' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_18' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_19' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_20' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_21' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_22' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_23' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_24' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_25' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_26' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_27' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_28' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_29' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_30' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_31' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_32' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_33' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_34' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_35' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_36' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_37' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_38' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_39' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_40' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_41' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_42' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_43' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_44' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_45' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_46' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_47' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_48' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_49' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_50' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_51' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_52' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_53' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_54' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_55' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_56' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_57' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_58' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_59' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_60' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_61' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_62' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_63' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_64' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_65' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_66' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_67' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_68' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_69' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_70' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_71' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_72' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_73' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_74' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_75' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_76' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_77' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_78' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_79' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_80' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_81' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_82' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_83' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_84' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_85' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_86' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_87' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_88' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_89' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_90' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_91' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_92' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_93' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_94' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_95' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_96' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_97' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_98' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_99' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_100' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_101' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_102' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_103' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_104' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_105' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_106' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_107' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_108' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_109' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_110' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_111' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_112' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_113' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_114' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_115' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_116' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_117' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_118' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_119' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_120' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_121' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_122' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_123' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_124' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_125' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_126' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_127' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_128' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_129' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_130' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_131' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_132' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_133' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_134' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_135' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_136' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_137' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_138' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_139' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_140' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_141' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_142' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_143' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_144' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_145' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_146' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_147' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_148' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_149' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_150' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_151' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_152' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_153' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_154' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_155' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_156' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_157' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_158' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_159' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_160' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_161' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_162' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_163' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_164' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_165' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_166' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_167' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_168' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_169' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_170' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_171' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_172' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_173' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_174' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_175' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_176' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_177' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_178' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_179' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_180' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_181' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_182' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_183' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_184' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_185' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_186' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_187' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_188' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_189' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_190' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_191' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_192' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_193' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_194' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_195' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_196' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_197' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_198' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_199' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_200' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_201' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_202' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_203' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_204' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_205' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_206' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_207' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_208' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_209' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_210' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_211' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_212' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_213' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_214' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_215' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_216' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_217' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_218' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_219' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_220' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_221' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_222' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_223' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_224' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_225' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_226' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_227' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_228' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_229' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_230' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_231' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_232' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_233' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_234' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_235' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_236' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_237' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_238' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_239' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_240' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_241' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_242' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_243' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_244' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_245' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_246' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_247' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_248' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_249' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_250' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_251' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_252' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_253' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_254' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_255' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/readn' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'bwa_align' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'bwa_align_mux_42_32_1_1' to 'bwa_align_mux_42_bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'bwa_align_mux_2568_8_1_1' to 'bwa_align_mux_256cud' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'bwa_align_mux_256cud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'bwa_align_mux_42_bkb': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'bwa_align'.
+INFO: [HLS 200-111]  Elapsed time: 2.22 seconds; current allocated memory: 102.059 MB.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 131.15 MHz
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:20 ; elapsed = 00:00:31 . Memory (MB): peak = 183.316 ; gain = 94.148
+INFO: [VHDL 208-304] Generating VHDL RTL for bwa_align.
+INFO: [VLOG 209-307] Generating Verilog RTL for bwa_align.
+INFO: [HLS 200-112] Total elapsed time: 31.069 seconds; peak allocated memory: 102.059 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'src/kernel.cpp' ... 
+WARNING: [HLS 200-40] In file included from src/kernel.cpp:1:
+src/kernel.cpp:35:19: warning: '&&' within '||' [-Wlogical-op-parentheses]
+  return (i == 0) && (c == 'A') || (i == 1) && (c == 'C') ||
+         ~~~~~~~~~^~~~~~~~~~~~~ ~~
+src/kernel.cpp:35:19: note: place parentheses around the '&&' expression to silence this warning
+  return (i == 0) && (c == 'A') || (i == 1) && (c == 'C') ||
+                  ^
+         (                     )
+src/kernel.cpp:35:45: warning: '&&' within '||' [-Wlogical-op-parentheses]
+  return (i == 0) && (c == 'A') || (i == 1) && (c == 'C') ||
+                                ~~ ~~~~~~~~~^~~~~~~~~~~~~
+src/kernel.cpp:35:45: note: place parentheses around the '&&' expression to silence this warning
+  return (i == 0) && (c == 'A') || (i == 1) && (c == 'C') ||
+                                            ^
+                                   (                     )
+src/kernel.cpp:36:19: warning: '&&' within '||' [-Wlogical-op-parentheses]
+         (i == 2) && (c == 'G') || (i == 3) && (c == 'T');
+         ~~~~~~~~~^~~~~~~~~~~~~
+src/kernel.cpp:36:19: note: place parentheses around the '&&' expression to silence this warning
+         (i == 2) && (c == 'G') || (i == 3) && (c == 'T');
+                  ^
+         (                     )
+src/kernel.cpp:36:45: warning: '&&' within '||' [-Wlogical-op-parentheses]
+         (i == 2) && (c == 'G') || (i == 3) && (c == 'T');
+                                ~~ ~~~~~~~~~^~~~~~~~~~~~~
+src/kernel.cpp:36:45: note: place parentheses around the '&&' expression to silence this warning
+         (i == 2) && (c == 'G') || (i == 3) && (c == 'T');
+                                            ^
+                                   (                     )
+4 warnings generated.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 171.914 ; gain = 79.492
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 171.914 ; gain = 79.492
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 171.914 ; gain = 79.492
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'match_symbol' into 'bwa_align' (src/kernel.cpp:120) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 171.914 ; gain = 79.492
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'LOOP_OUTER' (src/kernel.cpp:69) in function 'bwa_align' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'LOOP_INNER' (src/kernel.cpp:100) in function 'bwa_align' completely with a factor of 4.
+WARNING: [XFORM 203-104] Completely partitioning array 'read' (src/kernel.cpp:44) accessed through non-constant indices on dimension 1 (src/kernel.cpp:120:13), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
+INFO: [XFORM 203-101] Partitioning array 'read' (src/kernel.cpp:44) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'cum' (src/kernel.cpp:44) in dimension 1 completely.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (src/kernel.cpp:37:1) in function 'match_symbol'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/kernel.cpp:91:5) to (src/kernel.cpp:110:7) in function 'bwa_align'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/kernel.cpp:105:9) to (src/kernel.cpp:110:7) in function 'bwa_align'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/kernel.cpp:105:9) to (src/kernel.cpp:110:7) in function 'bwa_align'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/kernel.cpp:105:9) to (src/kernel.cpp:110:7) in function 'bwa_align'... converting 3 basic blocks.
+INFO: [XFORM 203-602] Inlining function 'match_symbol' into 'bwa_align' (src/kernel.cpp:120) automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 171.914 ; gain = 79.492
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:06 ; elapsed = 00:00:15 . Memory (MB): peak = 171.914 ; gain = 79.492
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'bwa_align' ...
+WARNING: [SYN 201-107] Renaming port name 'bwa_align/buf' to 'bwa_align/buf_r' to avoid the conflict with HDL keywords or other object names.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'bwa_align' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'LOOP_OUTER'.
+WARNING: [SCHED 204-68] The II Violation in module 'bwa_align' (Loop: LOOP_OUTER): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'store' operation ('buf_addr_8_write_ln91', src/kernel.cpp:91) of variable 'add_ln91', src/kernel.cpp:91 on array 'buf_r' and 'load' operation ('i', src/kernel.cpp:71) on array 'buf_r'.
+WARNING: [SCHED 204-68] The II Violation in module 'bwa_align' (Loop: LOOP_OUTER): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between 'store' operation ('buf_addr_12_write_ln112', src/kernel.cpp:112) of variable 'i', src/kernel.cpp:71 on array 'buf_r' and 'load' operation ('i', src/kernel.cpp:71) on array 'buf_r'.
+WARNING: [SCHED 204-68] The II Violation in module 'bwa_align' (Loop: LOOP_OUTER): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between 'store' operation ('buf_addr_18_write_ln134', src/kernel.cpp:134) of variable 'select_ln104', src/kernel.cpp:104 on array 'buf_r' and 'load' operation ('i', src/kernel.cpp:71) on array 'buf_r'.
+WARNING: [SCHED 204-68] The II Violation in module 'bwa_align' (Loop: LOOP_OUTER): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between 'store' operation ('buf_addr_24_write_ln134', src/kernel.cpp:134) of variable 'select_ln104_1', src/kernel.cpp:104 on array 'buf_r' and 'load' operation ('i', src/kernel.cpp:71) on array 'buf_r'.
+WARNING: [SCHED 204-69] Unable to schedule 'store' operation ('buf_addr_40_write_ln134', src/kernel.cpp:134) of variable 'select_ln104_3', src/kernel.cpp:104 on array 'buf_r' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'buf_r'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 20, Depth = 20.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 19.229 seconds; current allocated memory: 100.143 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.011 seconds; current allocated memory: 103.021 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'bwa_align' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/res_sa_itv' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/buf_r' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/occ' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/cum_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/cum_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/cum_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/cum_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/refn' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_10' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_12' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_13' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_14' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_15' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_16' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_17' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_18' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_19' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_20' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_21' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_22' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_23' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_24' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_25' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_26' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_27' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_28' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_29' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_30' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_31' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_32' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_33' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_34' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_35' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_36' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_37' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_38' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_39' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_40' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_41' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_42' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_43' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_44' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_45' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_46' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_47' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_48' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_49' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_50' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_51' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_52' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_53' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_54' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_55' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_56' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_57' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_58' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_59' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_60' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_61' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_62' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_63' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_64' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_65' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_66' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_67' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_68' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_69' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_70' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_71' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_72' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_73' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_74' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_75' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_76' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_77' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_78' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_79' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_80' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_81' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_82' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_83' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_84' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_85' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_86' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_87' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_88' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_89' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_90' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_91' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_92' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_93' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_94' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_95' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_96' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_97' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_98' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_99' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_100' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_101' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_102' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_103' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_104' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_105' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_106' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_107' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_108' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_109' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_110' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_111' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_112' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_113' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_114' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_115' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_116' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_117' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_118' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_119' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_120' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_121' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_122' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_123' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_124' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_125' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_126' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_127' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_128' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_129' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_130' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_131' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_132' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_133' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_134' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_135' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_136' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_137' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_138' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_139' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_140' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_141' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_142' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_143' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_144' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_145' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_146' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_147' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_148' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_149' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_150' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_151' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_152' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_153' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_154' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_155' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_156' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_157' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_158' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_159' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_160' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_161' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_162' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_163' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_164' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_165' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_166' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_167' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_168' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_169' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_170' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_171' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_172' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_173' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_174' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_175' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_176' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_177' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_178' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_179' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_180' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_181' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_182' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_183' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_184' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_185' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_186' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_187' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_188' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_189' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_190' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_191' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_192' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_193' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_194' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_195' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_196' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_197' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_198' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_199' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_200' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_201' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_202' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_203' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_204' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_205' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_206' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_207' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_208' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_209' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_210' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_211' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_212' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_213' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_214' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_215' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_216' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_217' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_218' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_219' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_220' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_221' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_222' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_223' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_224' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_225' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_226' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_227' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_228' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_229' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_230' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_231' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_232' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_233' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_234' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_235' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_236' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_237' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_238' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_239' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_240' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_241' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_242' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_243' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_244' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_245' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_246' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_247' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_248' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_249' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_250' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_251' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_252' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_253' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_254' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/read_255' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bwa_align/readn' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'bwa_align' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'bwa_align_mux_2568_8_1_1' to 'bwa_align_mux_256bkb' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'bwa_align_mux_256bkb': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'bwa_align'.
+INFO: [HLS 200-111]  Elapsed time: 2.717 seconds; current allocated memory: 106.809 MB.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 116.10 MHz
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:26 ; elapsed = 00:00:37 . Memory (MB): peak = 195.207 ; gain = 102.785
+INFO: [VHDL 208-304] Generating VHDL RTL for bwa_align.
+INFO: [VLOG 209-307] Generating Verilog RTL for bwa_align.
+INFO: [HLS 200-112] Total elapsed time: 37.506 seconds; peak allocated memory: 106.809 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] CSim failed with errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_export -vivado_optimization_level=2
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] CSim failed with errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************

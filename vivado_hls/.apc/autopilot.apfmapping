@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="kernel.cpp" path="G:\Repo\hls_project\src\kernel.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="align.cpp" path="G:\Repo\hls_project\src\align.cpp"/>
+    <originFiles name="bwa.cpp" path="G:\Repo\hls_project\src\bwa.cpp"/>
+    <originFiles name="BWT.cpp" path="G:\Repo\hls_project\src\BWT.cpp"/>
+    <originFiles name="1.fastq" path="G:\Repo\hls_project\data\reads\1.fastq"/>
+    <originFiles name="1.fasta.fmi" path="G:\Repo\hls_project\data\ref\1.fasta.fmi"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

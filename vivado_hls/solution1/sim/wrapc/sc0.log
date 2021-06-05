@@ -1,0 +1,7 @@
+   Build using "C:/Xilinx/Vivado/2019.2/tps/win64/msys64/mingw64/bin/g++"
+   Compiling kernel.cpp_pre.cpp.tb.cpp
+   Compiling bwa.cpp_pre.cpp.tb.cpp
+   Compiling BWT.cpp_pre.cpp.tb.cpp
+   Compiling align.cpp_pre.cpp.tb.cpp
+   Compiling apatb_bwa_align.cpp
+   Generating cosim.tv.exe

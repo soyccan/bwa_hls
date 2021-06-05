@@ -19,12 +19,12 @@
                 "fileLocation": [
                     "relative",
                     // "${workspaceFolder}/fm_index_ocfnash"
-                    "${workspaceFolder}/bwa_hls"
+                    "${workspaceFolder}/bwa_hls/src"
                 ]
             },
             "options": {
                 // "cwd": "fm_index_ocfnash"
-                "cwd": "bwa_hls"
+                "cwd": "bwa_hls/src"
             },
             "group": {
                 "kind": "build",
