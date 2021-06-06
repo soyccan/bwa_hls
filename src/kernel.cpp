@@ -40,6 +40,7 @@ static inline bool match_symbol(int i, char c)
 //   static char arr[READ_BUF_SIZE];
 // }
 
+extern "C" {
 int bwa_align(
     int res_sa_itv[BUF_SIZE][2],  // output SA intervals
     int buf[BUF_SIZE][4],  // host should guarantee a sufficiently large buffer
@@ -145,4 +146,5 @@ LOOP_OUTER:
     }
   }
   return res_sz;
+}
 }
