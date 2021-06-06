@@ -127,9 +127,10 @@ void BWA::read_align()
     // TODO: initilize with sufficient size
     static int buf[BUF_SIZE][4];
 
-    int sa_len =
-        bwa_align(sa_itv, buf, reinterpret_cast<const int(*)[4]>(&occ[0][0]),
-                  cum, ref_size, read.c_str(), read.size());
+    int sa_len;
+
+    bwa_align(sa_itv, buf, reinterpret_cast<const int(*)[4]>(&occ[0][0]),
+              cum, ref_size, read.c_str(), read.size(), &sa_len);
 
     FOR (i, 0, sa_len) {
       debug("found SA interval [%d, %d]", sa_itv[i][0], sa_itv[i][1]);

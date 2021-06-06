@@ -41,14 +41,31 @@ static inline bool match_symbol(int i, char c)
 // }
 
 extern "C" {
-int bwa_align(
+void bwa_align(
     int res_sa_itv[BUF_SIZE][2],  // output SA intervals
     int buf[BUF_SIZE][4],  // host should guarantee a sufficiently large buffer
                            // for a queue recording states (i,z,k,l)
     const int occ[BUF_SIZE][4],  // size: (refn+1) * 4
-    const int cum[4], int refn, const char read[READ_BUF_SIZE], int readn)
+    const int cum[4], int refn, const char read[READ_BUF_SIZE], int readn, int *res_sa_len)
 {
   // clang-format off
+#pragma HLS INTERFACE s_axilite port=res_sa_len bundle=control
+#pragma HLS INTERFACE s_axilite port=res_sa_itv bundle=control
+#pragma HLS INTERFACE s_axilite port=buf bundle=control
+#pragma HLS INTERFACE s_axilite port=occ bundle=control
+#pragma HLS INTERFACE s_axilite port=cum bundle=control
+#pragma HLS INTERFACE s_axilite port=refn bundle=control
+#pragma HLS INTERFACE s_axilite port=read bundle=control
+#pragma HLS INTERFACE s_axilite port=readn bundle=control
+#pragma HLS INTERFACE s_axilite port=return bundle=control
+
+#pragma HLS INTERFACE m_axi port=res_sa_itv offset=slave bundle=gmem
+#pragma HLS INTERFACE m_axi port=buf offset=slave bundle=gmem
+#pragma HLS INTERFACE m_axi port=occ offset=slave bundle=gmem
+#pragma HLS INTERFACE m_axi port=cum offset=slave bundle=gmem
+#pragma HLS INTERFACE m_axi port=read offset=slave bundle=gmem
+#pragma HLS INTERFACE m_axi port=res_sa_len offset=slave bundle=gmem
+
 #pragma HLS ARRAY_PARTITION variable=read complete dim=1
 #pragma HLS ARRAY_PARTITION variable=cum complete dim=1
   // clang-format on
@@ -145,6 +162,6 @@ LOOP_OUTER:
       }
     }
   }
-  return res_sz;
+  *res_sa_len = res_sz;
 }
 }
