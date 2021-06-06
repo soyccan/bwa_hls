@@ -450,6 +450,7 @@ int main(int argc, char* argv[])
   //             o) GlobMem_BUF_occ      - (R)
   //             o) GlobMem_BUF_cum      - (R)
   //             o) GlobMem_BUF_read     - (R)
+  //             o) GlobMem_BUF_res_sa_len (W)
   // ------------------------------------------------------------------
   // int bwa_align(
   //     int res_sa_itv[BUF_SIZE][2],  // output SA intervals
