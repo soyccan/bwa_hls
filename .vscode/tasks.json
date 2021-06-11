@@ -8,7 +8,10 @@
             "type": "shell",
             "command": "wsl bash ./scripts/upload.sh",
             "problemMatcher": [],
-            "group": "build"
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         },
         {
             "label": "make local",
@@ -18,18 +21,13 @@
                 "base": "$gcc",
                 "fileLocation": [
                     "relative",
-                    // "${workspaceFolder}/fm_index_ocfnash"
                     "${workspaceFolder}/bwa_hls/src"
                 ]
             },
             "options": {
-                // "cwd": "fm_index_ocfnash"
                 "cwd": "bwa_hls/src"
             },
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
+            "group": "build"
         }
     ],
 }

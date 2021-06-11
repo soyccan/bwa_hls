@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LOCAL_DIRS=(./bwa ./bwa_hls)
+LOCAL_DIRS=(src Emulation-SW Emulation-HW Hardware)
 REMOTE_DIR='~/hls_project'
 
 SOCKET=/tmp/ssh.sock

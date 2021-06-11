@@ -36,17 +36,14 @@ static inline bool match_symbol(int i, char c)
          (i == 3 && c == 'T');
 }
 
-// static void short_read_buffer() {
-//   static char arr[READ_BUF_SIZE];
-// }
-
 extern "C" {
 void bwa_align(
     int res_sa_itv[BUF_SIZE][2],  // output SA intervals
     int buf[BUF_SIZE][4],  // host should guarantee a sufficiently large buffer
                            // for a queue recording states (i,z,k,l)
     const int occ[BUF_SIZE][4],  // size: (refn+1) * 4
-    const int cum[4], int refn, const char read[READ_BUF_SIZE], int readn, int *res_sa_len)
+    const int cum[4], int refn, const char read[READ_BUF_SIZE], int readn,
+    int* res_sa_len)
 {
   // clang-format off
 #pragma HLS INTERFACE s_axilite port=res_sa_len bundle=control
@@ -70,9 +67,21 @@ void bwa_align(
 #pragma HLS ARRAY_PARTITION variable=cum complete dim=1
   // clang-format on
 
-  int head = 0;
-  int tail = 1;
-  int res_sz = 0;
+  int head;
+  int tail;
+  int res_sz;
+
+  static char read_buf[READ_BUF_SIZE];
+  static int cum_buf[4];
+
+  FOR (i, 0, array_size(read_buf)) {
+#pragma HLS UNROLL
+    read_buf[i] = read[i];
+  }
+  FOR (i, 0, array_size(cum_buf)) {
+#pragma HLS UNROLL
+    cum_buf[i] = cum[i];
+  }
 
   // buf[i][0]: j
   // buf[i][1]: z (#allowed mismatches left)
@@ -83,20 +92,19 @@ void bwa_align(
   buf[0][2] = 0;
   buf[0][3] = refn;
 
-  int i = readn - 1;
-  int z;
-  int k;
-  int l;
+  int i, z, k, l;
+  res_sz = 0;
 LOOP_OUTER:
-  while (head < tail) {
+  for (head = 0, tail = 1; head < tail; head++) {
     // clang-format off
-#pragma HLS PIPELINE II=1
+#pragma HLS PIPELINE
+#pragma HLS DEPENDENCE variable=buf intra WAR false
+#pragma HLS DEPENDENCE variable=buf inter WAW false
     // clang-format on
     i = buf[head][0];
     z = buf[head][1];
     k = buf[head][2];
     l = buf[head][3];
-    head++;
 
     if (i < 0) {
       res_sa_itv[res_sz][0] = k;
@@ -109,16 +117,15 @@ LOOP_OUTER:
       continue;
     }
 
-    // debug("head=%d tail=%d i=%d z=%d k=%d l=%d", head, tail, i, z, k, l);
+    debug("head=%d tail=%d i=%d z=%d k=%d l=%d", head, tail, i, z, k, l);
 
     // insert
     buf[tail][0] = i - 1;
     buf[tail][1] = z - 1;
     buf[tail][2] = k;
     buf[tail][3] = l;
-    tail++;
-    // debug("tail=%d i=%d z=%d k=%d l=%d", tail, buf[tail - 1][0],
-    //       buf[tail - 1][1], buf[tail - 1][2], buf[tail - 1][3]);
+    debug("tail=%d i=%d z=%d k=%d l=%d", tail, buf[tail][0], buf[tail][1],
+          buf[tail][2], buf[tail][3]);
 
   LOOP_INNER:
     for (int s = 0; s < 4; s++) {
@@ -126,41 +133,51 @@ LOOP_OUTER:
       int o = 0;
       if (k > 0)
         o = occ[k - 1][s];
-      int k_nxt = cum[s] + o;
-      int l_nxt = cum[s] + occ[l][s] - 1;
+      int k_nxt = cum_buf[s] + o;
+      int l_nxt = cum_buf[s] + occ[l][s] - 1;
 
       if (k_nxt <= l_nxt) {
         // SNP (substitute) alpha[s]
-        buf[tail][0] = i;
-        buf[tail][1] = z - 1;
-        buf[tail][2] = k_nxt;
-        buf[tail][3] = l_nxt;
-        tail++;
-        // debug("tail=%d i=%d z=%d k=%d l=%d", tail, buf[tail - 1][0],
-        //       buf[tail - 1][1], buf[tail - 1][2], buf[tail - 1][3]);
+        buf[tail + 2 * s + 1][0] = i;
+        buf[tail + 2 * s + 1][1] = z - 1;
+        buf[tail + 2 * s + 1][2] = k_nxt;
+        buf[tail + 2 * s + 1][3] = l_nxt;
 
-        if (match_symbol(s, read[i])) {
+        if (match_symbol(s, read_buf[i])) {
           // match alpha[s]
-          buf[tail][0] = i - 1;
-          buf[tail][1] = z;
-          buf[tail][2] = k_nxt;
-          buf[tail][3] = l_nxt;
-          tail++;
-          // debug("tail=%d i=%d z=%d k=%d l=%d", tail, buf[tail - 1][0],
-          //       buf[tail - 1][1], buf[tail - 1][2], buf[tail - 1][3]);
+          buf[tail + 2 * s + 2][0] = i - 1;
+          buf[tail + 2 * s + 2][1] = z;
+          buf[tail + 2 * s + 2][2] = k_nxt;
+          buf[tail + 2 * s + 2][3] = l_nxt;
         }
         else {
           // delete alpha[s]
-          buf[tail][0] = i - 1;
-          buf[tail][1] = z - 1;
-          buf[tail][2] = k_nxt;
-          buf[tail][3] = l_nxt;
-          tail++;
-          // debug("tail=%d i=%d z=%d k=%d l=%d", tail, buf[tail - 1][0],
-          //       buf[tail - 1][1], buf[tail - 1][2], buf[tail - 1][3]);
+          buf[tail + 2 * s + 2][0] = i - 1;
+          buf[tail + 2 * s + 2][1] = z - 1;
+          buf[tail + 2 * s + 2][2] = k_nxt;
+          buf[tail + 2 * s + 2][3] = l_nxt;
         }
       }
+      else {
+        // nop (bubble)
+        buf[tail + 2 * s + 1][0] = 0;
+        buf[tail + 2 * s + 1][1] = -1;
+        buf[tail + 2 * s + 1][2] = 0;
+        buf[tail + 2 * s + 1][3] = 0;
+
+        buf[tail + 2 * s + 2][0] = 0;
+        buf[tail + 2 * s + 2][1] = -1;
+        buf[tail + 2 * s + 2][2] = 0;
+        buf[tail + 2 * s + 2][3] = 0;
+      }
+      debug("tail=%d i=%d z=%d k=%d l=%d", tail + 2 * s + 1,
+            buf[tail + 2 * s + 1][0], buf[tail + 2 * s + 1][1],
+            buf[tail + 2 * s + 1][2], buf[tail + 2 * s + 1][3]);
+      debug("tail=%d i=%d z=%d k=%d l=%d", tail + 2 * s + 2,
+            buf[tail + 2 * s + 2][0], buf[tail + 2 * s + 2][1],
+            buf[tail + 2 * s + 2][2], buf[tail + 2 * s + 2][3]);
     }
+    tail += 9;
   }
   *res_sa_len = res_sz;
 }
