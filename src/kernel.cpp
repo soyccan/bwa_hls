@@ -157,14 +157,14 @@ void bwa_align(
     int res_sa_len[NUM_PE], const int read_len[READ_QUEUE_LEN])
 {
   // clang-format off
-#pragma HLS INTERFACE s_axilite port=res_sa_len bundle=control
 #pragma HLS INTERFACE s_axilite port=res_sa_itv bundle=control
 #pragma HLS INTERFACE s_axilite port=buf bundle=control
 #pragma HLS INTERFACE s_axilite port=occ bundle=control
 #pragma HLS INTERFACE s_axilite port=cum bundle=control
-#pragma HLS INTERFACE s_axilite port=refn bundle=control
+#pragma HLS INTERFACE s_axilite port=ref_len bundle=control
 #pragma HLS INTERFACE s_axilite port=reads bundle=control
 #pragma HLS INTERFACE s_axilite port=readn bundle=control
+#pragma HLS INTERFACE s_axilite port=res_sa_len bundle=control
 #pragma HLS INTERFACE s_axilite port=read_len bundle=control
 #pragma HLS INTERFACE s_axilite port=return bundle=control
 
@@ -174,6 +174,7 @@ void bwa_align(
 #pragma HLS INTERFACE m_axi port=cum offset=slave bundle=gmem
 #pragma HLS INTERFACE m_axi port=reads offset=slave bundle=gmem
 #pragma HLS INTERFACE m_axi port=res_sa_len offset=slave bundle=gmem
+#pragma HLS INTERFACE m_axi port=read_len offset=slave bundle=gmem
 
 #pragma HLS ARRAY_PARTITION variable=reads complete dim=1
 #pragma HLS ARRAY_PARTITION variable=cum complete dim=1

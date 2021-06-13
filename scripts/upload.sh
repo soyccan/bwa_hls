@@ -12,7 +12,8 @@ PORT=1600
 # trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
 
 # Create connection if not exist
-if [[ ! -f "$SOCKET" ]]; then
+if [[ ! -e "$SOCKET" ]]; then
+    echo "Creating connection..."
     (
         ssh -N \
             -o 'ControlMaster=yes' \
@@ -20,6 +21,7 @@ if [[ ! -f "$SOCKET" ]]; then
             -p "$PORT" \
             "$HOST" &
     )
+    sleep 5
 fi
 
 # Upload only updated files
