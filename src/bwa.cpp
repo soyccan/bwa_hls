@@ -117,34 +117,34 @@ void BWA::read_align()
     cum[j] = cum[j - 1] + occ[ref_size][j - 1];
   }
 
-  for (const auto& read : reads) {
-    // call kernel function
-    // TODO: initilize host memory
+  // call kernel function
+  // TODO: initilize host memory
 
-    // result of alignment
-    // TODO: initilize with sufficient size
-    static int sa_itv[2][BUF_SIZE][2];
+  // result of alignment
+  // TODO: initilize with sufficient size
+  static int sa_itv[2][BUF_SIZE][2];
 
-    // TODO: initilize with sufficient size
-    static int buf[2][BUF_SIZE][4];
+  // TODO: initilize with sufficient size
+  static int buf[2][BUF_SIZE][4];
 
-    int sa_len[2];
+  int sa_len[2];
 
-    char reads[2][READ_MAX_LEN];
-    memcpy(reads[0], read.c_str(), read.size());
-    memcpy(reads[1], read.c_str(), read.size());
+  char reads_buf[2][READ_MAX_LEN];
+  memcpy(reads_buf[0], reads[0].c_str(), reads[0].size());
+  memcpy(reads_buf[1], reads[1].c_str(), reads[1].size());
 
-    int read_len[2];
-    read_len[0] = read.size();
-    read_len[1] = read.size();
+  int read_len[2];
+  read_len[0] = reads[0].size();
+  read_len[1] = reads[1].size();
 
-    bwa_align(sa_itv, sa_len, buf,
-              reinterpret_cast<const int(*)[4]>(&occ[0][0]), cum, ref_size,
-              reads, 1, read_len);
+  bwa_align(sa_itv, buf, reinterpret_cast<const int(*)[4]>(&occ[0][0]), cum,
+            ref_size, reads_buf, 1, sa_len, read_len);
 
-    debug("sa_len = %d", sa_len[0]);
-    FOR (i, 0, sa_len[0]) {
-      debug("found SA interval [%d, %d]", sa_itv[0][i][0], sa_itv[0][i][1]);
+  FOR (j, 0, 2) {
+    debug("read %d", j);
+    debug("sa_len = %d", sa_len[j]);
+    FOR (i, 0, sa_len[j]) {
+      debug("found SA interval [%d, %d]", sa_itv[j][i][0], sa_itv[j][i][1]);
     }
   }
 }

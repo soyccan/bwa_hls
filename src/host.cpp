@@ -396,15 +396,6 @@ int main(int argc, char* argv[])
   //   o) Allocate Memory to store the results: RES array
   //   o) Create Buffers in Global Memory to store data
   // ================================================================
-  // int bwa_align(
-  //     int res_sa_itv[BUF_SIZE][2],  // output SA intervals
-  //     int buf[BUF_SIZE][4],  // host should guarantee a sufficiently large buffer
-  //                            // for a queue recording states (i,z,k,l)
-  //     const int occ[BUF_SIZE][4],  // size: (refn+1) * 4
-  //     const int cum[4],
-  //     int refn,
-  //     const char read[READ_BUF_SIZE],
-  //     int readn)
   const size_t res_sa_itv_size = BUF_SIZE*2;
   const size_t buf_size = BUF_SIZE*4;
   const size_t occ_size = BUF_SIZE*4;
@@ -431,9 +422,11 @@ int main(int argc, char* argv[])
   }
 
   cl_uint CONST_refn = bwa.ref_size;
-  cl_uint CONST_readn[NUM_PE];
+  cl_uint CONST_readn = NUM_PE;
+
+  cl_uint read_len[NUM_PE];
   FOR (i, 0, NUM_PE) {
-    CONST_readn[NUM_PE] = bwa.reads.at(i).size();
+    read_len[i] = bwa.reads.at(i).size();
   }
 
   int *res_sa_itv, *res_sa_len;
@@ -458,16 +451,8 @@ int main(int argc, char* argv[])
   //             o) GlobMem_BUF_cum      - (R)
   //             o) GlobMem_BUF_read     - (R)
   //             o) GlobMem_BUF_res_sa_len (W)
+  //             o) GlobMem_BUF_read_len - (R)
   // ------------------------------------------------------------------
-  // int bwa_align(
-  //     int res_sa_itv[BUF_SIZE][2],  // output SA intervals
-  //     int buf[BUF_SIZE][4],  // host should guarantee a sufficiently large buffer
-  //                            // for a queue recording states (i,z,k,l)
-  //     const int occ[BUF_SIZE][4],  // size: (refn+1) * 4
-  //     const int cum[4],
-  //     int refn,
-  //     const char read[READ_BUF_SIZE],
-  //     int readn)
   #ifdef ALL_MESSAGES
   cout << "HOST-Info: Allocating buffers in Global Memory to store Input and Output Data ..." << endl;
   #endif
@@ -475,12 +460,13 @@ int main(int argc, char* argv[])
 #define COMMA ,
 #define SEMICOLON ;
 #define MY_BUF(BUF_F, SEP) \
-  BUF_F(GlobMem_BUF_res_sa_itv, CL_MEM_WRITE_ONLY | CL_MEM_USE_HOST_PTR, res_sa_itv_size*NUM_PE * sizeof(int), res_sa_itv) SEP \
-  BUF_F(GlobMem_BUF_buf       , CL_MEM_READ_WRITE                      , buf_size*NUM_PE * sizeof(int)       , NULL) SEP \
-  BUF_F(GlobMem_BUF_occ       , CL_MEM_READ_ONLY | CL_MEM_USE_HOST_PTR , occ_size * sizeof(int)       , &bwa.occ[0][0]) SEP \
-  BUF_F(GlobMem_BUF_cum       , CL_MEM_READ_ONLY | CL_MEM_USE_HOST_PTR , sizeof(cum)                  , cum) SEP \
-  BUF_F(GlobMem_BUF_read      , CL_MEM_READ_ONLY | CL_MEM_USE_HOST_PTR , sizeof(reads) * sizeof(char) , reads) SEP \
-  BUF_F(GlobMem_BUF_res_sa_len, CL_MEM_WRITE_ONLY | CL_MEM_USE_HOST_PTR, sizeof(int)*NUM_PE                  , res_sa_len)
+  BUF_F(GlobMem_BUF_res_sa_itv, CL_MEM_WRITE_ONLY | CL_MEM_USE_HOST_PTR, res_sa_itv_size*NUM_PE*sizeof(int), res_sa_itv) SEP \
+  BUF_F(GlobMem_BUF_buf       , CL_MEM_READ_WRITE                      , buf_size*NUM_PE*sizeof(int)       , NULL) SEP \
+  BUF_F(GlobMem_BUF_occ       , CL_MEM_READ_ONLY  | CL_MEM_USE_HOST_PTR, occ_size*sizeof(int)              , &bwa.occ[0][0]) SEP \
+  BUF_F(GlobMem_BUF_cum       , CL_MEM_READ_ONLY  | CL_MEM_USE_HOST_PTR, sizeof(cum)                       , cum) SEP \
+  BUF_F(GlobMem_BUF_read      , CL_MEM_READ_ONLY  | CL_MEM_USE_HOST_PTR, sizeof(reads)                     , reads) SEP \
+  BUF_F(GlobMem_BUF_res_sa_len, CL_MEM_WRITE_ONLY | CL_MEM_USE_HOST_PTR, sizeof(int)*NUM_PE                , res_sa_len) SEP \
+  BUF_F(GlobMem_BUF_read_len  , CL_MEM_READ_ONLY  | CL_MEM_USE_HOST_PTR, sizeof(read_len)                  , read_len)
 
 #define BUF_NAME(NAME, FLAG, SIZE, PTR) NAME
   cl_mem MY_BUF(BUF_NAME, COMMA);
@@ -498,15 +484,6 @@ int main(int argc, char* argv[])
   MY_BUF(ALLOCATE_BUF, SEMICOLON);
 #undef ALLOCATE_BUF
 
-  // int bwa_align(
-  //     int res_sa_itv[BUF_SIZE][2],  // output SA intervals
-  //     int buf[BUF_SIZE][4],  // host should guarantee a sufficiently large buffer
-  //                            // for a queue recording states (i,z,k,l)
-  //     const int occ[BUF_SIZE][4],  // size: (refn+1) * 4
-  //     const int cum[4],
-  //     int refn,
-  //     const char read[READ_BUF_SIZE],
-  //     int readn)
   // ============================================================================
   // Step 5: Set Kernel Arguments and Run the Application
   //         o) Set Kernel Arguments
@@ -521,12 +498,13 @@ int main(int argc, char* argv[])
   //         K_bwa              5       GlobMem_BUF_read
   //         K_bwa              6       CONST_readn
   //         K_bwa              7       GlobMem_BUF_res_sa_len
+  //         K_bwa              8       GlobMem_BUF_read_len
   //        ----------------------------------------------------
   //         o) Copy Input Data from Host to Global Memory
   //         o) Submit Kernels for Execution
   //         o) Copy Results from Global Memory to Host
   // ============================================================================
-  int Nb_Of_Mem_Events = 8,
+  int Nb_Of_Mem_Events = 9,
     Nb_Of_Exe_Events = 1;
 
   cl_event Mem_op_event[Nb_Of_Mem_Events],
@@ -557,6 +535,7 @@ int main(int argc, char* argv[])
   errCode |= clSetKernelArg(K_bwa,  5, sizeof(cl_mem),  &GlobMem_BUF_read);
   errCode |= clSetKernelArg(K_bwa,  6, sizeof(cl_uint), &CONST_readn);
   errCode |= clSetKernelArg(K_bwa,  7, sizeof(cl_mem),  &GlobMem_BUF_res_sa_len);
+  errCode |= clSetKernelArg(K_bwa,  8, sizeof(cl_mem),  &GlobMem_BUF_read_len);
 
   if (errCode != CL_SUCCESS) {
     cout << endl << "Host-ERROR: Failed to set Kernel arguments" << endl << endl;
@@ -579,7 +558,8 @@ int main(int argc, char* argv[])
   BUF_F(GlobMem_BUF_occ       , 0                                      , bwa.occ); \
   BUF_F(GlobMem_BUF_cum       , 0                                      , cum); \
   BUF_F(GlobMem_BUF_read      , 0                                      , reads); \
-  BUF_F(GlobMem_BUF_res_sa_len, CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED, res_sa_len);
+  BUF_F(GlobMem_BUF_res_sa_len, CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED, res_sa_len); \
+  BUF_F(GlobMem_BUF_read_len  , 0                                      , read_len);
 #define MIGRATE_MEM(NAME, FLAG, PTR) \
   errCode = clEnqueueMigrateMemObjects(Command_Queue, 1, &NAME, FLAG, 0, NULL, &Mem_op_event[index++]); \
   if (errCode != CL_SUCCESS) { \
