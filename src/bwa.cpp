@@ -1,6 +1,7 @@
 #include "bwa.h"
 
 #include <array>
+#include <cstring>
 #include <fstream>
 #include <iostream>
 #include <list>
@@ -122,19 +123,28 @@ void BWA::read_align()
 
     // result of alignment
     // TODO: initilize with sufficient size
-    static int sa_itv[BUF_SIZE][2];
+    static int sa_itv[2][BUF_SIZE][2];
 
     // TODO: initilize with sufficient size
-    static int buf[BUF_SIZE][4];
+    static int buf[2][BUF_SIZE][4];
 
-    int sa_len;
+    int sa_len[2];
 
-    bwa_align(sa_itv, buf, reinterpret_cast<const int(*)[4]>(&occ[0][0]),
-              cum, ref_size, read.c_str(), read.size(), &sa_len);
+    char reads[2][READ_MAX_LEN];
+    memcpy(reads[0], read.c_str(), read.size());
+    memcpy(reads[1], read.c_str(), read.size());
 
-    debug("sa_len = %d", sa_len);
-    FOR (i, 0, sa_len) {
-      debug("found SA interval [%d, %d]", sa_itv[i][0], sa_itv[i][1]);
+    int read_len[2];
+    read_len[0] = read.size();
+    read_len[1] = read.size();
+
+    bwa_align(sa_itv, sa_len, buf,
+              reinterpret_cast<const int(*)[4]>(&occ[0][0]), cum, ref_size,
+              reads, 1, read_len);
+
+    debug("sa_len = %d", sa_len[0]);
+    FOR (i, 0, sa_len[0]) {
+      debug("found SA interval [%d, %d]", sa_itv[0][i][0], sa_itv[0][i][1]);
     }
   }
 }

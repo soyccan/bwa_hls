@@ -410,7 +410,10 @@ int main(int argc, char* argv[])
   const size_t occ_size = BUF_SIZE*4;
 
   // TODO: all reads
-  auto& read = bwa.reads[0];
+  char reads[NUM_PE][READ_MAX_LEN];
+  FOR (i, 0, NUM_PE) {
+    memcpy(reads[i],  bwa.reads.at(i).c_str(), bwa.reads.at(i).size());
+  }
 
   #ifdef ALL_MESSAGES
   cout << endl;
@@ -428,19 +431,22 @@ int main(int argc, char* argv[])
   }
 
   cl_uint CONST_refn = bwa.ref_size;
-  cl_uint CONST_readn = read.size();
+  cl_uint CONST_readn[NUM_PE];
+  FOR (i, 0, NUM_PE) {
+    CONST_readn[NUM_PE] = bwa.reads.at(i).size();
+  }
 
   int *res_sa_itv, *res_sa_len;
 	void *ptr=nullptr;
 
   cout << "HOST-Info: Allocating memory for res_sa_itv    ... ";
-  if (posix_memalign(&ptr,4096,res_sa_itv_size*sizeof(int))) {
+  if (posix_memalign(&ptr,4096,res_sa_itv_size*NUM_PE*sizeof(int))) {
     cout << endl << "HOST-Error: Out of Memory during memory allocation for res_sa_itv array" << endl << endl;
     return EXIT_FAILURE;
   }
   cout << "Allocated" << endl;
   res_sa_itv = reinterpret_cast<int*>(ptr);
-  res_sa_len = new int;
+  res_sa_len = new int[NUM_PE];
 
   cout << endl;
 
@@ -469,12 +475,12 @@ int main(int argc, char* argv[])
 #define COMMA ,
 #define SEMICOLON ;
 #define MY_BUF(BUF_F, SEP) \
-  BUF_F(GlobMem_BUF_res_sa_itv, CL_MEM_WRITE_ONLY | CL_MEM_USE_HOST_PTR, res_sa_itv_size * sizeof(int), res_sa_itv) SEP \
-  BUF_F(GlobMem_BUF_buf       , CL_MEM_READ_WRITE                      , buf_size * sizeof(int)       , NULL) SEP \
+  BUF_F(GlobMem_BUF_res_sa_itv, CL_MEM_WRITE_ONLY | CL_MEM_USE_HOST_PTR, res_sa_itv_size*NUM_PE * sizeof(int), res_sa_itv) SEP \
+  BUF_F(GlobMem_BUF_buf       , CL_MEM_READ_WRITE                      , buf_size*NUM_PE * sizeof(int)       , NULL) SEP \
   BUF_F(GlobMem_BUF_occ       , CL_MEM_READ_ONLY | CL_MEM_USE_HOST_PTR , occ_size * sizeof(int)       , &bwa.occ[0][0]) SEP \
   BUF_F(GlobMem_BUF_cum       , CL_MEM_READ_ONLY | CL_MEM_USE_HOST_PTR , sizeof(cum)                  , cum) SEP \
-  BUF_F(GlobMem_BUF_read      , CL_MEM_READ_ONLY | CL_MEM_USE_HOST_PTR , READ_BUF_SIZE * sizeof(char) , (void*)read.c_str()) SEP \
-  BUF_F(GlobMem_BUF_res_sa_len, CL_MEM_WRITE_ONLY | CL_MEM_USE_HOST_PTR, sizeof(int)                  , res_sa_len)
+  BUF_F(GlobMem_BUF_read      , CL_MEM_READ_ONLY | CL_MEM_USE_HOST_PTR , sizeof(reads) * sizeof(char) , reads) SEP \
+  BUF_F(GlobMem_BUF_res_sa_len, CL_MEM_WRITE_ONLY | CL_MEM_USE_HOST_PTR, sizeof(int)*NUM_PE                  , res_sa_len)
 
 #define BUF_NAME(NAME, FLAG, SIZE, PTR) NAME
   cl_mem MY_BUF(BUF_NAME, COMMA);
@@ -572,7 +578,7 @@ int main(int argc, char* argv[])
   BUF_F(GlobMem_BUF_buf       , CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED, NULL); \
   BUF_F(GlobMem_BUF_occ       , 0                                      , bwa.occ); \
   BUF_F(GlobMem_BUF_cum       , 0                                      , cum); \
-  BUF_F(GlobMem_BUF_read      , 0                                      , read.c_str()); \
+  BUF_F(GlobMem_BUF_read      , 0                                      , reads); \
   BUF_F(GlobMem_BUF_res_sa_len, CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED, res_sa_len);
 #define MIGRATE_MEM(NAME, FLAG, PTR) \
   errCode = clEnqueueMigrateMemObjects(Command_Queue, 1, &NAME, FLAG, 0, NULL, &Mem_op_event[index++]); \
