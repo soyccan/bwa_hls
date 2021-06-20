@@ -26,7 +26,7 @@ fi
 
 # Upload only updated files
 rsync \
-    -e "ssh -S '$SOCKET'" \
+    --rsh "ssh -S '$SOCKET'" \
     --archive --verbose --compress --update --progress --human-readable \
     "${LOCAL_DIRS[@]}" \
     "$HOST":"$REMOTE_DIR/"
@@ -36,3 +36,13 @@ rsync \
 #     cd '~/hls_project/bwa_hls'
 #     make -j 8
 # "
+
+# Download reports
+rsync \
+    --rsh "ssh -S '$SOCKET'" \
+    --archive --verbose --compress --update --progress --human-readable \
+    "$HOST":"$REMOTE_DIR/Emulation-HW/binary_container_1.xclbin.link_summary" \
+    :"$REMOTE_DIR/Emulation-HW/binary_container_1.xclbin.run_summary" \
+    :"$REMOTE_DIR/Emulation-HW/binary_container_1.build/bwa_align.xo.compile_summary" \
+    :"$REMOTE_DIR/Emulation-HW/xilinx_u50_gen3x16_xdma_201920_3-0-binary_container_1.wdb" \
+    ./Emulation-HW/reports/

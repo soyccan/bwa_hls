@@ -1,0 +1,257 @@
+<ENTRY>
+{
+ "session": {
+  "name": "bwa_align",
+  "pid": "0",
+  "uuid": "335d6984-0891-4627-a773-80b315a820d1",
+  "description": "",
+  "timestamp": "0",
+  "outputFiles": [
+   {
+    "type": "JSON",
+    "mode": "CLIENT_ONLY",
+    "path": "/home/b07902143/hls_project/Emulation-HW/binary_container_1.build/.tlog/bwa_align.xtl",
+    "continuous": true
+   },
+   {
+    "type": "JSON",
+    "mode": "LOCAL_IF_NO_CONNECT",
+    "path": "/home/b07902143/hls_project/Emulation-HW/binary_container_1.build/bwa_align.xo.compile_summary",
+    "continuous": true
+   },
+   {
+    "type": "BINARY_PROTOBUF",
+    "mode": "LOCAL_IF_NO_CONNECT",
+    "path": "/home/b07902143/hls_project/Emulation-HW/binary_container_1.build/bwa_align.xo.compile_summary.pb",
+    "continuous": true
+   }
+  ]
+ },
+ "thisFile": "/home/b07902143/hls_project/Emulation-HW/binary_container_1.build/bwa_align.xo.compile_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Sun Jun 20 16:37:23 2021",
+ "timestampMillis": "1624178243631",
+ "buildStep": {
+  "cmdId": "ab4dd2da-4830-4fcf-a11a-46380ac712c0",
+  "name": "v++",
+  "logFile": "/home/b07902143/hls_project/Emulation-HW/binary_container_1.build/bwa_align/bwa_align.steps.log",
+  "commandLine": "/opt/Xilinx/Vitis/2019.2/bin/unwrapped/lnx64.o/v++  --xp \"vivado_prop:run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --xp \"misc:report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --xp \"misc:report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" --target hw_emu -g --compile -I../src --config common-config.ini --config binary_container_1-bwa_align-compile.ini -obinary_container_1.build/bwa_align.xo ../src/kernel.cpp ",
+  "args": [
+   "--target",
+   "hw_emu",
+   "-g",
+   "--compile",
+   "-I../src",
+   "--config",
+   "common-config.ini",
+   "--config",
+   "binary_container_1-bwa_align-compile.ini",
+   "-obinary_container_1.build/bwa_align.xo",
+   "../src/kernel.cpp"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/b07902143/hls_project/Emulation-HW/common-config.ini",
+    "content": "platform=xilinx_u50_gen3x16_xdma_201920_3\nsave-temps=1\n"
+   },
+   {
+    "path": "/home/b07902143/hls_project/Emulation-HW/binary_container_1-bwa_align-compile.ini",
+    "content": "kernel=bwa_align\ndebug=1\nmessageDb=binary_container_1.build/bwa_align.mdb\ntemp_dir=binary_container_1.build\nreport_dir=binary_container_1.build/reports\nlog_dir=binary_container_1.build/logs\n\n[advanced]\nmisc=solution_name=bwa_align\n"
+   }
+  ]
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Jun 20 16:37:23 2021",
+ "timestampMillis": "1624178243632",
+ "status": {
+  "cmdId": "ab4dd2da-4830-4fcf-a11a-46380ac712c0",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Sun Jun 20 16:37:28 2021",
+ "timestampMillis": "1624178248036",
+ "buildSummary": {
+  "hardwarePlatform": "xilinx_u50_gen3x16_xdma_201920_3.xpfm",
+  "hardwareDsa": "hw.xsa",
+  "platformDirectory": "/opt/xilinx/platforms/xilinx_u50_gen3x16_xdma_201920_3",
+  "runtime": "OpenCL",
+  "systemConfig": "Linux",
+  "flow": "BF_COMPILE",
+  "target": "TT_HW_EMU",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "bwa_align",
+     "file": "/home/b07902143/hls_project/Emulation-HW/binary_container_1.build/bwa_align.xo",
+     "reports": []
+    },
+    "sources": [
+     "/home/b07902143/hls_project/src/kernel.cpp"
+    ],
+    "cuNames": []
+   }
+  ]
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sun Jun 20 16:37:28 2021",
+ "timestampMillis": "1624178248039",
+ "buildStep": {
+  "cmdId": "a980ebb6-e865-4750-aecd-0b6b3902da56",
+  "name": "vivado_hls",
+  "logFile": "/home/b07902143/hls_project/Emulation-HW/binary_container_1.build/bwa_align/bwa_align/vivado_hls.log",
+  "commandLine": "vivado_hls -f /home/b07902143/hls_project/Emulation-HW/binary_container_1.build/bwa_align/bwa_align/bwa_align.tcl -messageDb vivado_hls.pb",
+  "args": [
+   "vivado_hls",
+   "-f",
+   "/home/b07902143/hls_project/Emulation-HW/binary_container_1.build/bwa_align/bwa_align/bwa_align.tcl",
+   "-messageDb",
+   "vivado_hls.pb"
+  ],
+  "iniFiles": []
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Jun 20 16:37:28 2021",
+ "timestampMillis": "1624178248039",
+ "status": {
+  "cmdId": "a980ebb6-e865-4750-aecd-0b6b3902da56",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Jun 20 16:41:01 2021",
+ "timestampMillis": "1624178461956",
+ "status": {
+  "cmdId": "a980ebb6-e865-4750-aecd-0b6b3902da56",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Jun 20 16:41:01 2021",
+ "timestampMillis": "1624178461975",
+ "report": {
+  "path": "/home/b07902143/hls_project/Emulation-HW/binary_container_1.build/bwa_align/bwa_align/bwa_align/solution/.autopilot/db/bwa_align.design.xml",
+  "name": "bwa_align",
+  "fileType": "XML",
+  "reportType": "KERNEL_HLS_REPORT"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Jun 20 16:41:01 2021",
+ "timestampMillis": "1624178461976",
+ "report": {
+  "path": "/home/b07902143/hls_project/Emulation-HW/binary_container_1.build/bwa_align/bwa_align/bwa_align/solution/.autopilot/db/.message_syn.xml",
+  "name": "bwa_align",
+  "fileType": "XML",
+  "reportType": "KERNEL_HLS_DRC_SYNTHESIS"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Jun 20 16:41:01 2021",
+ "timestampMillis": "1624178461977",
+ "report": {
+  "path": "/home/b07902143/hls_project/Emulation-HW/binary_container_1.build/reports/bwa_align/hls_reports/bwa_align_csynth.rpt",
+  "name": "bwa_align",
+  "fileType": "TEXT",
+  "reportType": "KERNEL_HLS_CSYNTH"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Jun 20 16:41:01 2021",
+ "timestampMillis": "1624178461977",
+ "report": {
+  "path": "/home/b07902143/hls_project/Emulation-HW/binary_container_1.build/bwa_align/bwa_align/bwa_align/solution/syn/report/bwa_align_csynth.xml",
+  "name": "bwa_align",
+  "fileType": "XML",
+  "reportType": "KERNEL_HLS_CSYNTH"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Jun 20 16:41:01 2021",
+ "timestampMillis": "1624178461981",
+ "report": {
+  "path": "/home/b07902143/hls_project/Emulation-HW/binary_container_1.build/reports/bwa_align/system_estimate_bwa_align.xtxt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SYSTEM_ESTIMATE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Jun 20 16:41:02 2021",
+ "timestampMillis": "1624178462298",
+ "report": {
+  "path": "/home/b07902143/hls_project/Emulation-HW/binary_container_1.build/reports/bwa_align/bwa_align_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Jun 20 16:41:02 2021",
+ "timestampMillis": "1624178462299",
+ "report": {
+  "path": "/home/b07902143/hls_project/Emulation-HW/binary_container_1.build/bwa_align_guidance.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Jun 20 16:41:02 2021",
+ "timestampMillis": "1624178462299",
+ "status": {
+  "cmdId": "ab4dd2da-4830-4fcf-a11a-46380ac712c0",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>

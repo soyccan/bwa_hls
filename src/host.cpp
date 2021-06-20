@@ -404,6 +404,7 @@ int main(int argc, char* argv[])
   char reads[NUM_PE][READ_MAX_LEN];
   FOR (i, 0, NUM_PE) {
     memcpy(reads[i],  bwa.reads.at(i).c_str(), bwa.reads.at(i).size());
+    debug("reads[%d]=%s len=%d", i, reads[i], bwa.reads.at(i).size());
   }
 
   #ifdef ALL_MESSAGES
@@ -419,27 +420,33 @@ int main(int argc, char* argv[])
   int cum[4] = {1};
   FOR (j, 1, 4) {
     cum[j] = cum[j - 1] + bwa.occ[bwa.ref_size][j - 1];
+    debug("cum[%d]=%d",j,cum[j]);
   }
 
   cl_uint CONST_refn = bwa.ref_size;
-  cl_uint CONST_readn = NUM_PE;
+  debug("refn=%d", CONST_refn);
 
-  cl_uint read_len[NUM_PE];
-  FOR (i, 0, NUM_PE) {
-    read_len[i] = bwa.reads.at(i).size();
+  cl_uint CONST_read_len[2];
+  FOR (i, 0, 2) {
+    CONST_read_len[i] = bwa.reads.at(i).size();
+    debug("read_len[%d]=%d",i,CONST_read_len[i]);
   }
 
-  int *res_sa_itv, *res_sa_len;
-	void *ptr=nullptr;
+  int *res_sa_itv;
+  int res_sa_len;
 
-  cout << "HOST-Info: Allocating memory for res_sa_itv    ... ";
-  if (posix_memalign(&ptr,4096,res_sa_itv_size*NUM_PE*sizeof(int))) {
-    cout << endl << "HOST-Error: Out of Memory during memory allocation for res_sa_itv array" << endl << endl;
-    return EXIT_FAILURE;
-  }
-  cout << "Allocated" << endl;
-  res_sa_itv = reinterpret_cast<int*>(ptr);
-  res_sa_len = new int[NUM_PE];
+#define ALLOC_MEM_ALIGN(ptr, size) { \
+  void *p; \
+  cout << "HOST-Info: Allocating memory for " #ptr " ..."; \
+  if (posix_memalign(&p,4096,size)) { \
+    cout << endl << "HOST-Error: Out of Memory during memory allocation for res_sa_itv array" << endl << endl; \
+    return EXIT_FAILURE; \
+  } \
+  cout << "Allocated" << endl; \
+  ptr = reinterpret_cast<decltype(ptr)>(p); \
+}
+  
+  ALLOC_MEM_ALIGN(res_sa_itv, res_sa_itv_size*sizeof(int));
 
   cout << endl;
 
@@ -460,13 +467,12 @@ int main(int argc, char* argv[])
 #define COMMA ,
 #define SEMICOLON ;
 #define MY_BUF(BUF_F, SEP) \
-  BUF_F(GlobMem_BUF_res_sa_itv, CL_MEM_WRITE_ONLY | CL_MEM_USE_HOST_PTR, res_sa_itv_size*NUM_PE*sizeof(int), res_sa_itv) SEP \
-  BUF_F(GlobMem_BUF_buf       , CL_MEM_READ_WRITE                      , buf_size*NUM_PE*sizeof(int)       , NULL) SEP \
+  BUF_F(GlobMem_BUF_res_sa_len, CL_MEM_WRITE_ONLY | CL_MEM_USE_HOST_PTR, sizeof(int)                       , &res_sa_len) SEP \
+  BUF_F(GlobMem_BUF_res_sa_itv, CL_MEM_WRITE_ONLY | CL_MEM_USE_HOST_PTR, res_sa_itv_size       *sizeof(int), res_sa_itv) SEP \
+  BUF_F(GlobMem_BUF_buf       , CL_MEM_READ_WRITE                      , buf_size       *sizeof(int)       , NULL) SEP \
   BUF_F(GlobMem_BUF_occ       , CL_MEM_READ_ONLY  | CL_MEM_USE_HOST_PTR, occ_size*sizeof(int)              , &bwa.occ[0][0]) SEP \
-  BUF_F(GlobMem_BUF_cum       , CL_MEM_READ_ONLY  | CL_MEM_USE_HOST_PTR, sizeof(cum)                       , cum) SEP \
-  BUF_F(GlobMem_BUF_read      , CL_MEM_READ_ONLY  | CL_MEM_USE_HOST_PTR, sizeof(reads)                     , reads) SEP \
-  BUF_F(GlobMem_BUF_res_sa_len, CL_MEM_WRITE_ONLY | CL_MEM_USE_HOST_PTR, sizeof(int)*NUM_PE                , res_sa_len) SEP \
-  BUF_F(GlobMem_BUF_read_len  , CL_MEM_READ_ONLY  | CL_MEM_USE_HOST_PTR, sizeof(read_len)                  , read_len)
+  BUF_F(GlobMem_BUF_cum       , CL_MEM_READ_ONLY  | CL_MEM_USE_HOST_PTR, 4*sizeof(int)                     , cum) SEP \
+  BUF_F(GlobMem_BUF_read      , CL_MEM_READ_ONLY  | CL_MEM_USE_HOST_PTR, READ_MAX_LEN*sizeof(char)         , reads)
 
 #define BUF_NAME(NAME, FLAG, SIZE, PTR) NAME
   cl_mem MY_BUF(BUF_NAME, COMMA);
@@ -504,7 +510,7 @@ int main(int argc, char* argv[])
   //         o) Submit Kernels for Execution
   //         o) Copy Results from Global Memory to Host
   // ============================================================================
-  int Nb_Of_Mem_Events = 9,
+  int Nb_Of_Mem_Events = 8,
     Nb_Of_Exe_Events = 1;
 
   cl_event Mem_op_event[Nb_Of_Mem_Events],
@@ -527,15 +533,14 @@ int main(int argc, char* argv[])
   #endif
   errCode  = false;
 
-  errCode |= clSetKernelArg(K_bwa,  0, sizeof(cl_mem),  &GlobMem_BUF_res_sa_itv);
-  errCode |= clSetKernelArg(K_bwa,  1, sizeof(cl_mem),  &GlobMem_BUF_buf);
-  errCode |= clSetKernelArg(K_bwa,  2, sizeof(cl_mem),  &GlobMem_BUF_occ);
-  errCode |= clSetKernelArg(K_bwa,  3, sizeof(cl_mem),  &GlobMem_BUF_cum);
-  errCode |= clSetKernelArg(K_bwa,  4, sizeof(cl_uint), &CONST_refn);
-  errCode |= clSetKernelArg(K_bwa,  5, sizeof(cl_mem),  &GlobMem_BUF_read);
-  errCode |= clSetKernelArg(K_bwa,  6, sizeof(cl_uint), &CONST_readn);
-  errCode |= clSetKernelArg(K_bwa,  7, sizeof(cl_mem),  &GlobMem_BUF_res_sa_len);
-  errCode |= clSetKernelArg(K_bwa,  8, sizeof(cl_mem),  &GlobMem_BUF_read_len);
+  errCode |= clSetKernelArg(K_bwa,  0, sizeof(cl_mem),  &GlobMem_BUF_res_sa_len);
+  errCode |= clSetKernelArg(K_bwa,  1, sizeof(cl_mem),  &GlobMem_BUF_res_sa_itv);
+  errCode |= clSetKernelArg(K_bwa,  2, sizeof(cl_mem),  &GlobMem_BUF_buf);
+  errCode |= clSetKernelArg(K_bwa,  3, sizeof(cl_mem),  &GlobMem_BUF_occ);
+  errCode |= clSetKernelArg(K_bwa,  4, sizeof(cl_mem),  &GlobMem_BUF_cum);
+  errCode |= clSetKernelArg(K_bwa,  5, sizeof(cl_uint), &CONST_refn);
+  errCode |= clSetKernelArg(K_bwa,  6, sizeof(cl_mem),  &GlobMem_BUF_read);
+  errCode |= clSetKernelArg(K_bwa,  7, sizeof(cl_uint), &CONST_read_len[0]);
 
   if (errCode != CL_SUCCESS) {
     cout << endl << "Host-ERROR: Failed to set Kernel arguments" << endl << endl;
@@ -553,13 +558,12 @@ int main(int argc, char* argv[])
   int index = 0;
 
 #define MY_MEM(BUF_F) \
-  BUF_F(GlobMem_BUF_res_sa_itv, CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED, res_sa_itv); \
+  BUF_F(GlobMem_BUF_res_sa_len, 0                                      , res_sa_len); \
+  BUF_F(GlobMem_BUF_res_sa_itv, 0                                      , res_sa_itv); \
   BUF_F(GlobMem_BUF_buf       , CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED, NULL); \
   BUF_F(GlobMem_BUF_occ       , 0                                      , bwa.occ); \
   BUF_F(GlobMem_BUF_cum       , 0                                      , cum); \
-  BUF_F(GlobMem_BUF_read      , 0                                      , reads); \
-  BUF_F(GlobMem_BUF_res_sa_len, CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED, res_sa_len); \
-  BUF_F(GlobMem_BUF_read_len  , 0                                      , read_len);
+  BUF_F(GlobMem_BUF_read      , 0                                      , reads);
 #define MIGRATE_MEM(NAME, FLAG, PTR) \
   errCode = clEnqueueMigrateMemObjects(Command_Queue, 1, &NAME, FLAG, 0, NULL, &Mem_op_event[index++]); \
   if (errCode != CL_SUCCESS) { \
@@ -630,8 +634,9 @@ int main(int argc, char* argv[])
   cout << "HOST-Info: ============================================================= " << endl;
   #endif
 
-  int sa_len = *res_sa_len;
-  FOR (i, 0, sa_len) {
+  debug("sa_len(%x) = %d", &res_sa_len, res_sa_len);
+  debug("sa_itv(%x)", res_sa_itv);
+  FOR (i, 0, 50) {
     debug("found SA interval [%d, %d]", res_sa_itv[i*2 + 0], res_sa_itv[i*2 + 1]);
   }
 
@@ -702,7 +707,6 @@ int main(int argc, char* argv[])
   free(Platform_IDs);
   free(Device_IDs);
   free(res_sa_itv);
-  delete res_sa_len;
 
   cout << endl << "HOST-Info: DONE" << endl << endl;
 
