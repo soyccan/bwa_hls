@@ -66,10 +66,12 @@ void bwa_align(
   static int res_sa_itv_w[LOCAL_BUF_SIZE][2];
   static int buf_w[9][4];
 
-  static int buf_r[9][4];
+  static int buf_r[4];
   static int occ_r[LOCAL_BUF_SIZE][4];
   static int cum_r[4];
   static char read_r[READ_MAX_LEN];
+
+  //// read input ////
 
   FOR (i, 0, LOCAL_BUF_SIZE) {
 #pragma HLS UNROLL
@@ -88,51 +90,16 @@ void bwa_align(
     read_r[i] = read[i];
   }
 
-  tail = 0;
+  //// process ////
 
-  FOR (i, 0, 4)
-    res_sa_itv_w[tail + i][0] = 12340 + i;
-  tail += 4;
-
-  FOR (i, 0, 6) {
-    res_sa_itv_w[tail + 2 * i][0] = occ_r[i][0];
-    res_sa_itv_w[tail + 2 * i][1] = occ_r[i][1];
-    res_sa_itv_w[tail + 2 * i + 1][0] = occ_r[i][2];
-    res_sa_itv_w[tail + 2 * i + 1][1] = occ_r[i][3];
-  }
-  tail += 12;
-
-  FOR (i, 0, 4) {
-    res_sa_itv_w[tail + i][0] = cum_r[i];
-  }
-  tail += 4;
-
-  FOR (i, 0, read_len) {
-    res_sa_itv_w[tail + i][0] = read_r[i];
-  }
-  tail += read_len;
-
-  debug("tail=%d", tail);
-
-  // write result
-  FOR (i, 0, tail * 2) {
-    res_sa_itv[i * 2] = res_sa_itv_w[i][0];
-    res_sa_itv[i * 2 + 1] = res_sa_itv_w[i][1];
-  }
-
-  *res_sa_len = tail;
-
-
-
-#if 0
   // buf[i][0]: j
   // buf[i][1]: z (#allowed mismatches left)
   // buf[i][2]: k (left bound of SA interval)
   // buf[i][3]: l (right bound of SA interval)
-  buf[0][0] = read_len - 1;
-  buf[0][1] = MAX_MISMATCH;
-  buf[0][2] = 0;
-  buf[0][3] = ref_len;
+  buf[0] = read_len - 1;
+  buf[1] = MAX_MISMATCH;
+  buf[2] = 0;
+  buf[3] = ref_len;
 
   int i, z, k, l;
   res_sz = 0;
@@ -143,14 +110,20 @@ LOOP_OUTER:
 #pragma HLS DEPENDENCE variable=buf intra WAR false
 #pragma HLS DEPENDENCE variable=buf inter WAW false
     // clang-format on
-    i = buf[head][0];
-    z = buf[head][1];
-    k = buf[head][2];
-    l = buf[head][3];
+
+    FOR (j, 0, 4) {
+#pragma HLS UNROLL
+      buf_r[j] = buf[head * 4 + j];
+    }
+
+    i = buf_r[0];
+    z = buf_r[1];
+    k = buf_r[2];
+    l = buf_r[3];
 
     if (i < 0) {
-      res_sa_itv[res_sz][0] = k;
-      res_sa_itv[res_sz][1] = l;
+      res_sa_itv_w[res_sz][0] = k;
+      res_sa_itv_w[res_sz][1] = l;
       res_sz++;
       continue;
     }
@@ -174,9 +147,9 @@ LOOP_OUTER:
       // #pragma HLS UNROLL
       int o = 0;
       if (k > 0)
-        o = occ[k - 1][s];
-      int k_nxt = cum_buf[s] + o;
-      int l_nxt = cum_buf[s] + occ[l][s] - 1;
+        o = occ_r[k - 1][s];
+      int k_nxt = cum_r[s] + o;
+      int l_nxt = cum_r[s] + occ_r[l][s] - 1;
 
       if (k_nxt <= l_nxt) {
         // SNP (substitute) alpha[s]
@@ -185,7 +158,7 @@ LOOP_OUTER:
         buf_w[2 * s + 1][2] = k_nxt;
         buf_w[2 * s + 1][3] = l_nxt;
 
-        if (match_symbol(s, read_buf[i])) {
+        if (match_symbol(s, read_r[i])) {
           // match alpha[s]
           buf_w[2 * s + 2][0] = i - 1;
           buf_w[2 * s + 2][1] = z;
@@ -222,13 +195,23 @@ LOOP_OUTER:
 
     for (int s = 0; s < 9; s++) {
       for (int t = 0; t < 4; t++) {
-        buf[tail + s][t] = buf_w[s][t];
+#pragma HLS UNROLL
+        buf[(tail + s) * 4 + t] = buf_w[s][t];
       }
     }
 
     tail += 9;
   }
+
+  // write result
+  FOR (j, 0, LOCAL_BUF_SIZE) {
+#pragma HLS UNROLL
+    if (j < tail * 4) {
+      res_sa_itv[j * 2] = res_sa_itv_w[j][0];
+      res_sa_itv[j * 2 + 1] = res_sa_itv_w[j][1];
+    }
+  }
+
   *res_sa_len = res_sz;
-#endif
 }
 }
