@@ -651,10 +651,12 @@ int main(int argc, char* argv[])
   cout << "HOST-Info: ============================================================= " << endl;
   #endif
 
-  debug("sa_len(%x) = %d", &res_sa_len, res_sa_len);
-  debug("sa_itv(%x)", res_sa_itv);
-  FOR (i, 0, 50) {
-    debug("found SA interval [%d, %d]", res_sa_itv[i*2 + 0], res_sa_itv[i*2 + 1]);
+  FOR(j, 0, 2) {
+    debug("sa_len(%x) = %d", &res_sa_len, res_sa_len[j]);
+    debug("sa_itv(%x)", &res_sa_itv[j]);
+    FOR (i, 0, 10) {
+      debug("found SA interval [%d, %d]", res_sa_itv[j][i][0], res_sa_itv[j][i][1]);
+    }
   }
 
 #if 0
@@ -714,13 +716,14 @@ int main(int argc, char* argv[])
     for (int i=0; i<Nb_Of_Exe_Events; i++) clReleaseEvent(K_exe_event[j][i]);
   }
 
-#define RELEASE_BUF(NAME, FLAG, SIZE, PTR) clReleaseMemObject(NAME)
-  int flag;
-  flag = 0;
-  MY_BUF(RELEASE_BUF, SEMICOLON);
-  flag = 1;
-  MY_BUF(RELEASE_BUF, SEMICOLON);
-#undef RELEASE_BUF
+  FOR(i, 0, 2) {
+    clReleaseMemObject(GlobMem_BUF_res_sa_len[i]);
+    clReleaseMemObject(GlobMem_BUF_res_sa_itv[i]);
+    clReleaseMemObject(GlobMem_BUF_buf       [i]);       
+    clReleaseMemObject(GlobMem_BUF_occ       [i]);
+    clReleaseMemObject(GlobMem_BUF_cum       [i]);    
+    clReleaseMemObject(GlobMem_BUF_read      [i]);    
+  }
 
   clReleaseKernel(K_bwa);
 
