@@ -396,16 +396,18 @@ int main(int argc, char* argv[])
   //   o) Allocate Memory to store the results: RES array
   //   o) Create Buffers in Global Memory to store data
   // ================================================================
-  const size_t res_sa_itv_size = BUF_SIZE*2;
-  const size_t buf_size = BUF_SIZE*4;
-  const size_t occ_size = BUF_SIZE*4;
+#define MAX_NUM_READ 2
+
+  const size_t res_sa_itv_size = MAX_NUM_READ*BUF_SIZE*2;
+  const size_t buf_size = MAX_NUM_READ*BUF_SIZE*4;
+  const size_t occ_size = MAX_NUM_READ*BUF_SIZE*4;
 
   // TODO: all reads
-  char reads[NUM_PE][READ_MAX_LEN];
-  FOR (i, 0, NUM_PE) {
-    memcpy(reads[i],  bwa.reads.at(i).c_str(), bwa.reads.at(i).size());
-    debug("reads[%d]=%s len=%d", i, reads[i], bwa.reads.at(i).size());
-  }
+  // char reads[MAX_NUM_READ][READ_MAX_LEN];
+  // FOR (i, 0, bwa.reads.size()) {
+  //   memcpy(reads[i],  bwa.reads.at(i).c_str(), bwa.reads.at(i).size());
+  //   debug("reads[%d]=%s len=%d", i, reads[i], bwa.reads.at(i).size());
+  // }
 
   #ifdef ALL_MESSAGES
   cout << endl;
@@ -426,14 +428,14 @@ int main(int argc, char* argv[])
   cl_uint CONST_refn = bwa.ref_size;
   debug("refn=%d", CONST_refn);
 
-  cl_uint CONST_read_len[2];
-  FOR (i, 0, 2) {
+  vector<cl_uint> CONST_read_len(bwa.reads.size());
+  FOR (i, 0, bwa.reads.size()) {
     CONST_read_len[i] = bwa.reads.at(i).size();
     debug("read_len[%d]=%d",i,CONST_read_len[i]);
   }
 
-  int *res_sa_itv;
-  int res_sa_len;
+  int res_sa_itv[MAX_NUM_READ][BUF_SIZE][2];
+  int res_sa_len[MAX_NUM_READ];
 
 #define ALLOC_MEM_ALIGN(ptr, size) { \
   void *p; \
@@ -445,41 +447,66 @@ int main(int argc, char* argv[])
   cout << "Allocated" << endl; \
   ptr = reinterpret_cast<decltype(ptr)>(p); \
 }
-  
-  ALLOC_MEM_ALIGN(res_sa_itv, res_sa_itv_size*sizeof(int));
 
   cout << endl;
 
   // ------------------------------------------------------------------
-  // Step 4.2: Create Buffers in Global Memory to store data
-  //             o) GlobMem_BUF_res_sa_itv (W)
-  //             o) GlobMem_BUF_buf      - (R/W)
-  //             o) GlobMem_BUF_occ      - (R)
-  //             o) GlobMem_BUF_cum      - (R)
-  //             o) GlobMem_BUF_read     - (R)
-  //             o) GlobMem_BUF_res_sa_len (W)
-  //             o) GlobMem_BUF_read_len - (R)
+  // Iterate each input
   // ------------------------------------------------------------------
-  #ifdef ALL_MESSAGES
-  cout << "HOST-Info: Allocating buffers in Global Memory to store Input and Output Data ..." << endl;
-  #endif
+
+  // ping-pong buffer
+  cl_mem GlobMem_BUF_res_sa_len[2];
+  cl_mem GlobMem_BUF_res_sa_itv[2];
+  cl_mem GlobMem_BUF_buf       [2];       
+  cl_mem GlobMem_BUF_occ       [2];
+  cl_mem GlobMem_BUF_cum       [2];    
+  cl_mem GlobMem_BUF_read      [2];    
+
+  const size_t Nb_Of_Mem_r_Events = 2;
+  const size_t Nb_Of_Mem_w_Events = 6;
+  const size_t Nb_Of_Exe_Events = 1;
+  cl_event Mem_r_event[2][Nb_Of_Mem_r_Events];
+  cl_event Mem_w_event[Nb_Of_Mem_w_Events];
+  cl_event K_exe_event[2][Nb_Of_Exe_Events];
+
+  // Iterate each read
+  FOR (read_id, 0, bwa.reads.size()) {
+    int flag = read_id % 2;
+
+    if (read_id >= 2) {
+      errCode = clWaitForEvents(1, Mem_r_event[flag]);
+      if (errCode != CL_SUCCESS) {
+        cout << endl << "Host-Error: Failed to wait for read events" << endl << endl;
+        return EXIT_FAILURE;
+      }
+    }
+
+    // ------------------------------------------------------------------
+    // Step 4.2: Create Buffers in Global Memory to store data
+    //             o) GlobMem_BUF_res_sa_itv (W)
+    //             o) GlobMem_BUF_buf      - (R/W)
+    //             o) GlobMem_BUF_occ      - (R)
+    //             o) GlobMem_BUF_cum      - (R)
+    //             o) GlobMem_BUF_read     - (R)
+    //             o) GlobMem_BUF_res_sa_len (W)
+    //             o) GlobMem_BUF_read_len - (R)
+    // ------------------------------------------------------------------
+    #ifdef ALL_MESSAGES
+    cout << "HOST-Info: Allocating buffers in Global Memory to store Input and Output Data ..." << endl;
+    #endif
 
 #define COMMA ,
 #define SEMICOLON ;
 #define MY_BUF(BUF_F, SEP) \
-  BUF_F(GlobMem_BUF_res_sa_len, CL_MEM_WRITE_ONLY | CL_MEM_USE_HOST_PTR, sizeof(int)                       , &res_sa_len) SEP \
-  BUF_F(GlobMem_BUF_res_sa_itv, CL_MEM_WRITE_ONLY | CL_MEM_USE_HOST_PTR, res_sa_itv_size       *sizeof(int), res_sa_itv) SEP \
-  BUF_F(GlobMem_BUF_buf       , CL_MEM_READ_WRITE                      , buf_size       *sizeof(int)       , NULL) SEP \
-  BUF_F(GlobMem_BUF_occ       , CL_MEM_READ_ONLY  | CL_MEM_USE_HOST_PTR, occ_size*sizeof(int)              , &bwa.occ[0][0]) SEP \
-  BUF_F(GlobMem_BUF_cum       , CL_MEM_READ_ONLY  | CL_MEM_USE_HOST_PTR, 4*sizeof(int)                     , cum) SEP \
-  BUF_F(GlobMem_BUF_read      , CL_MEM_READ_ONLY  | CL_MEM_USE_HOST_PTR, READ_MAX_LEN*sizeof(char)         , reads)
+  BUF_F(GlobMem_BUF_res_sa_len[flag], CL_MEM_WRITE_ONLY | CL_MEM_USE_HOST_PTR, sizeof(int)                       , &res_sa_len[read_id]) SEP \
+  BUF_F(GlobMem_BUF_res_sa_itv[flag], CL_MEM_WRITE_ONLY | CL_MEM_USE_HOST_PTR, sizeof(res_sa_itv[0])             , &res_sa_itv[read_id]) SEP \
+  BUF_F(GlobMem_BUF_buf       [flag], CL_MEM_READ_WRITE                      , buf_size*sizeof(int)              , NULL                ) SEP \
+  BUF_F(GlobMem_BUF_occ       [flag], CL_MEM_READ_ONLY  | CL_MEM_USE_HOST_PTR, bwa.occ.size()*sizeof(bwa.occ[0]) , &bwa.occ[0][0]      ) SEP \
+  BUF_F(GlobMem_BUF_cum       [flag], CL_MEM_READ_ONLY  | CL_MEM_USE_HOST_PTR, sizeof(cum)                       , cum                 ) SEP \
+  BUF_F(GlobMem_BUF_read      [flag], CL_MEM_READ_ONLY  | CL_MEM_USE_HOST_PTR, bwa.reads[read_id].size()         , (void*)bwa.reads[read_id].c_str())
 
-#define BUF_NAME(NAME, FLAG, SIZE, PTR) NAME
-  cl_mem MY_BUF(BUF_NAME, COMMA);
-#undef BUF_NAME
-
-  // Allocate Global Memory for GlobMem_BUF
-  // .......................................................
+    // Allocate Global Memory for GlobMem_BUF
+    // .......................................................
 #define ALLOCATE_BUF(NAME, FLAG, SIZE, PTR) \
   NAME = clCreateBuffer(Context, FLAG, SIZE, PTR, &errCode); \
   if (errCode != CL_SUCCESS) { \
@@ -487,134 +514,124 @@ int main(int argc, char* argv[])
     return EXIT_FAILURE; \
   }
 
-  MY_BUF(ALLOCATE_BUF, SEMICOLON);
+    MY_BUF(ALLOCATE_BUF, SEMICOLON);
 #undef ALLOCATE_BUF
 
-  // ============================================================================
-  // Step 5: Set Kernel Arguments and Run the Application
-  //         o) Set Kernel Arguments
-  //        ----------------------------------------------------
-  //         Kernel       Argument Nb   Description
-  //        ----------------------------------------------------
-  //         K_bwa              0       GlobMem_BUF_res_sa_itv
-  //         K_bwa              1       GlobMem_BUF_buf
-  //         K_bwa              2       GlobMem_BUF_occ
-  //         K_bwa              3       GlobMem_BUF_cum
-  //         K_bwa              4       CONST_refn
-  //         K_bwa              5       GlobMem_BUF_read
-  //         K_bwa              6       CONST_readn
-  //         K_bwa              7       GlobMem_BUF_res_sa_len
-  //         K_bwa              8       GlobMem_BUF_read_len
-  //        ----------------------------------------------------
-  //         o) Copy Input Data from Host to Global Memory
-  //         o) Submit Kernels for Execution
-  //         o) Copy Results from Global Memory to Host
-  // ============================================================================
-  int Nb_Of_Mem_Events = 8,
-    Nb_Of_Exe_Events = 1;
-
-  cl_event Mem_op_event[Nb_Of_Mem_Events],
-            K_exe_event[Nb_Of_Exe_Events];
+    // ============================================================================
+    // Step 5: Set Kernel Arguments and Run the Application
+    //         o) Set Kernel Arguments
+    //        ----------------------------------------------------
+    //         Kernel       Argument Nb   Description
+    //        ----------------------------------------------------
+    //         K_bwa              0       GlobMem_BUF_res_sa_itv
+    //         K_bwa              1       GlobMem_BUF_buf
+    //         K_bwa              2       GlobMem_BUF_occ
+    //         K_bwa              3       GlobMem_BUF_cum
+    //         K_bwa              4       CONST_refn
+    //         K_bwa              5       GlobMem_BUF_read
+    //         K_bwa              6       CONST_readn
+    //         K_bwa              7       GlobMem_BUF_res_sa_len
+    //         K_bwa              8       GlobMem_BUF_read_len
+    //        ----------------------------------------------------
+    //         o) Copy Input Data from Host to Global Memory
+    //         o) Submit Kernels for Execution
+    //         o) Copy Results from Global Memory to Host
+    // ============================================================================
 
 
-  #ifdef ALL_MESSAGES
-  cout << endl;
-  cout << "HOST-Info: ============================================================= " << endl;
-  cout << "HOST-Info: (Step 5) Run Application                                      " << endl;
-  cout << "HOST-Info: ============================================================= " << endl;
-  #endif
+    #ifdef ALL_MESSAGES
+    cout << endl;
+    cout << "HOST-Info: ============================================================= " << endl;
+    cout << "HOST-Info: (Step 5) Run Application                                      " << endl;
+    cout << "HOST-Info: ============================================================= " << endl;
+    #endif
 
 
-  // ----------------------------------------
-  // Step 5.1: Set Kernel Arguments
-  // ----------------------------------------
-  #ifdef ALL_MESSAGES
-  cout << "HOST-Info: Setting Kernel arguments ..." << endl;
-  #endif
-  errCode  = false;
+    // ----------------------------------------
+    // Step 5.1: Set Kernel Arguments
+    // ----------------------------------------
+    #ifdef ALL_MESSAGES
+    cout << "HOST-Info: Setting Kernel arguments ..." << endl;
+    #endif
+    errCode  = false;
 
-  errCode |= clSetKernelArg(K_bwa,  0, sizeof(cl_mem),  &GlobMem_BUF_res_sa_len);
-  errCode |= clSetKernelArg(K_bwa,  1, sizeof(cl_mem),  &GlobMem_BUF_res_sa_itv);
-  errCode |= clSetKernelArg(K_bwa,  2, sizeof(cl_mem),  &GlobMem_BUF_buf);
-  errCode |= clSetKernelArg(K_bwa,  3, sizeof(cl_mem),  &GlobMem_BUF_occ);
-  errCode |= clSetKernelArg(K_bwa,  4, sizeof(cl_mem),  &GlobMem_BUF_cum);
-  errCode |= clSetKernelArg(K_bwa,  5, sizeof(cl_uint), &CONST_refn);
-  errCode |= clSetKernelArg(K_bwa,  6, sizeof(cl_mem),  &GlobMem_BUF_read);
-  errCode |= clSetKernelArg(K_bwa,  7, sizeof(cl_uint), &CONST_read_len[0]);
+    errCode |= clSetKernelArg(K_bwa,  0, sizeof(cl_mem),  &GlobMem_BUF_res_sa_len);
+    errCode |= clSetKernelArg(K_bwa,  1, sizeof(cl_mem),  &GlobMem_BUF_res_sa_itv);
+    errCode |= clSetKernelArg(K_bwa,  2, sizeof(cl_mem),  &GlobMem_BUF_buf);
+    errCode |= clSetKernelArg(K_bwa,  3, sizeof(cl_mem),  &GlobMem_BUF_occ);
+    errCode |= clSetKernelArg(K_bwa,  4, sizeof(cl_mem),  &GlobMem_BUF_cum);
+    errCode |= clSetKernelArg(K_bwa,  5, sizeof(cl_uint), &CONST_refn);
+    errCode |= clSetKernelArg(K_bwa,  6, sizeof(cl_mem),  &GlobMem_BUF_read);
+    errCode |= clSetKernelArg(K_bwa,  7, sizeof(cl_uint), &CONST_read_len[read_id]);
 
-  if (errCode != CL_SUCCESS) {
-    cout << endl << "Host-ERROR: Failed to set Kernel arguments" << endl << endl;
-    return EXIT_FAILURE;
-  }
+    if (errCode != CL_SUCCESS) {
+      cout << endl << "Host-ERROR: Failed to set Kernel arguments" << endl << endl;
+      return EXIT_FAILURE;
+    }
 
 
-  // ------------------------------------------------------
-  // Step 5.2: Copy Input data from Host to Global Memory
-  // ------------------------------------------------------
-  #ifdef ALL_MESSAGES
-  cout << "HOST_Info: Copy Input data to Global Memory ..." << endl;
-  #endif
+    // ------------------------------------------------------
+    // Step 5.2: Copy Input data from Host to Global Memory
+    // ------------------------------------------------------
+#ifdef ALL_MESSAGES
+    cout << "HOST_Info: Copy Input data to Global Memory ..." << endl;
+#endif
 
-  int index = 0;
+    int index = 0;
 
 #define MY_MEM(BUF_F) \
-  BUF_F(GlobMem_BUF_res_sa_len, 0                                      , res_sa_len); \
-  BUF_F(GlobMem_BUF_res_sa_itv, 0                                      , res_sa_itv); \
-  BUF_F(GlobMem_BUF_buf       , CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED, NULL); \
-  BUF_F(GlobMem_BUF_occ       , 0                                      , bwa.occ); \
-  BUF_F(GlobMem_BUF_cum       , 0                                      , cum); \
-  BUF_F(GlobMem_BUF_read      , 0                                      , reads);
-#define MIGRATE_MEM(NAME, FLAG, PTR) \
-  errCode = clEnqueueMigrateMemObjects(Command_Queue, 1, &NAME, FLAG, 0, NULL, &Mem_op_event[index++]); \
+  BUF_F(GlobMem_BUF_res_sa_len[flag], 0                                      ); \
+  BUF_F(GlobMem_BUF_res_sa_itv[flag], 0                                      ); \
+  BUF_F(GlobMem_BUF_buf       [flag], CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED); \
+  BUF_F(GlobMem_BUF_occ       [flag], 0                                      ); \
+  BUF_F(GlobMem_BUF_cum       [flag], 0                                      ); \
+  BUF_F(GlobMem_BUF_read      [flag], 0                                      );
+
+#define MIGRATE_MEM(NAME, FLAG) \
+  errCode = clEnqueueMigrateMemObjects(Command_Queue, 1, &NAME, FLAG, 0, NULL, &Mem_w_event[index++]); \
   if (errCode != CL_SUCCESS) { \
-    cout << endl << "Host-Error: Failed to migrate " #PTR " to " #NAME << endl << endl; \
+    cout << endl << "Host-Error: Failed to migrate to " #NAME << endl << endl; \
     return EXIT_FAILURE; \
   }
 
   MY_MEM(MIGRATE_MEM);
 #undef MY_MEM
 
-  assert(index == Nb_Of_Mem_Events - 2);
+    assert(index == Nb_Of_Mem_w_Events);
 
-  // --------------------------------------------------------
+    // ----------------------------------------
+    // Step 5.3: Submit Kernels for Execution
+    // ----------------------------------------
 
-  errCode = clEnqueueBarrierWithWaitList (Command_Queue, 0, NULL, NULL);
-  if (errCode != CL_SUCCESS) {
-    cout << endl << "HOST-Error: Failed to Submit BarrierWithWaitList" << endl << endl;
-    return EXIT_FAILURE;
-  }
+    cout << "HOST-Info: Submitting Kernel K_bwa..." << endl;
 
-
-  // ----------------------------------------
-  // Step 5.3: Submit Kernels for Execution
-  // ----------------------------------------
-
-  cout << "HOST-Info: Submitting Kernel K_bwa..." << endl;
-
-  errCode = clEnqueueTask(Command_Queue, K_bwa, 0, NULL, &K_exe_event[0]);
-  if (errCode != CL_SUCCESS) {
-    cout << endl << "HOST-Error: Failed to submit K_bwa" << endl << endl;
-    return EXIT_FAILURE;
-  }
+    errCode = clEnqueueTask(Command_Queue, K_bwa, Nb_Of_Mem_w_Events, Mem_w_event, &K_exe_event[flag][0]);
+    if (errCode != CL_SUCCESS) {
+      cout << endl << "HOST-Error: Failed to submit K_bwa" << endl << endl;
+      return EXIT_FAILURE;
+    }
 
 
-  // ---------------------------------------------------------
-  // Step 5.4: Submit Copy Results from Global Memory to Host
-  // ---------------------------------------------------------
-  #ifdef ALL_MESSAGES
-  cout << "HOST_Info: Submitting Copy Results data from Global Memory to Host ..." << endl;
-  #endif
+    // ---------------------------------------------------------
+    // Step 5.4: Submit Copy Results from Global Memory to Host
+    // ---------------------------------------------------------
+    #ifdef ALL_MESSAGES
+    cout << "HOST_Info: Submitting Copy Results data from Global Memory to Host ..." << endl;
+    #endif
 
-  errCode = clEnqueueMigrateMemObjects(Command_Queue, 1, &GlobMem_BUF_res_sa_itv, CL_MIGRATE_MEM_OBJECT_HOST, 1, &K_exe_event[0], &Mem_op_event[index++]);
-  if (errCode != CL_SUCCESS) {
-    cout << endl << "Host-Error: Failed to submit Copy Results from GlobMem_BUF_res_sa_itv to res_sa_itv" << endl << endl;
-    return EXIT_FAILURE;
-  }
+    errCode = clEnqueueMigrateMemObjects(Command_Queue, 1, &GlobMem_BUF_res_sa_itv[flag], CL_MIGRATE_MEM_OBJECT_HOST, 1, 
+                                         &K_exe_event[flag][0], &Mem_r_event[flag][0]);
+    if (errCode != CL_SUCCESS) {
+      cout << endl << "Host-Error: Failed to submit Copy Results from GlobMem_BUF_res_sa_itv to res_sa_itv" << endl << endl;
+      return EXIT_FAILURE;
+    }
 
-  errCode = clEnqueueMigrateMemObjects(Command_Queue, 1, &GlobMem_BUF_res_sa_len, CL_MIGRATE_MEM_OBJECT_HOST, 1, &K_exe_event[0], &Mem_op_event[index++]);
-  if (errCode != CL_SUCCESS) {
-    cout << endl << "Host-Error: Failed to submit Copy Results from GlobMem_BUF_res_sa_len to res_sa_len" << endl << endl;
-    return EXIT_FAILURE;
+    errCode = clEnqueueMigrateMemObjects(Command_Queue, 1, &GlobMem_BUF_res_sa_len[flag], CL_MIGRATE_MEM_OBJECT_HOST, 1, 
+                                         &K_exe_event[flag][0], &Mem_r_event[flag][1]);
+    if (errCode != CL_SUCCESS) {
+      cout << endl << "Host-Error: Failed to submit Copy Results from GlobMem_BUF_res_sa_len to res_sa_len" << endl << endl;
+      return EXIT_FAILURE;
+    }
   }
 
   cout << endl << "HOST_Info: Waiting for application to be completed ..." << endl;
@@ -691,10 +708,17 @@ int main(int argc, char* argv[])
   // ============================================================================
   clReleaseDevice(Target_Device_ID); // Only available in OpenCL >= 1.2
 
-  for (int i=0; i<Nb_Of_Mem_Events; i++) clReleaseEvent(Mem_op_event[i]);
-  for (int i=0; i<Nb_Of_Exe_Events; i++) clReleaseEvent(K_exe_event[i]);
+  for (int i=0; i<Nb_Of_Mem_w_Events; i++) clReleaseEvent(Mem_w_event[i]);
+  FOR(j, 0, 2) {
+    for (int i=0; i<Nb_Of_Mem_r_Events; i++) clReleaseEvent(Mem_r_event[j][i]);
+    for (int i=0; i<Nb_Of_Exe_Events; i++) clReleaseEvent(K_exe_event[j][i]);
+  }
 
 #define RELEASE_BUF(NAME, FLAG, SIZE, PTR) clReleaseMemObject(NAME)
+  int flag;
+  flag = 0;
+  MY_BUF(RELEASE_BUF, SEMICOLON);
+  flag = 1;
   MY_BUF(RELEASE_BUF, SEMICOLON);
 #undef RELEASE_BUF
 
@@ -706,7 +730,6 @@ int main(int argc, char* argv[])
 
   free(Platform_IDs);
   free(Device_IDs);
-  free(res_sa_itv);
 
   cout << endl << "HOST-Info: DONE" << endl << endl;
 
