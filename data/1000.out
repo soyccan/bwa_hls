@@ -1,0 +1,52 @@
+read 0
+sa_len = 10
+found SA interval 0 [843, 843]
+found SA interval 1 [461, 461]
+found SA interval 2 [314, 314]
+found SA interval 3 [843, 843]
+found SA interval 4 [843, 843]
+found SA interval 5 [461, 461]
+found SA interval 6 [843, 843]
+found SA interval 7 [461, 461]
+found SA interval 8 [461, 461]
+found SA interval 9 [874, 874]
+read 1
+sa_len = 0
+read 2
+sa_len = 2
+found SA interval 0 [585, 585]
+found SA interval 1 [393, 393]
+read 3
+sa_len = 2
+found SA interval 0 [171, 171]
+found SA interval 1 [35, 35]
+read 4
+sa_len = 0
+read 5
+sa_len = 0
+read 6
+sa_len = 0
+read 7
+sa_len = 16
+found SA interval 0 [961, 961]
+found SA interval 1 [991, 991]
+found SA interval 2 [961, 961]
+found SA interval 3 [991, 991]
+found SA interval 4 [811, 811]
+found SA interval 5 [961, 961]
+found SA interval 6 [811, 811]
+found SA interval 7 [961, 961]
+found SA interval 8 [961, 961]
+found SA interval 9 [991, 991]
+found SA interval 10 [991, 991]
+found SA interval 11 [747, 747]
+found SA interval 12 [991, 991]
+found SA interval 13 [747, 747]
+found SA interval 14 [991, 991]
+found SA interval 15 [747, 747]
+read 8
+sa_len = 0
+read 9
+sa_len = 2
+found SA interval 0 [705, 705]
+found SA interval 1 [178, 178]

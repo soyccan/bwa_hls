@@ -11,6 +11,16 @@ PORT=1600
 # negative pid specifies process group
 # trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
 
+while [[ "$1" ]]; do
+    case $1 in
+        -dl)
+            opt_dl=1
+            ;;
+    esac
+
+    shift
+done
+
 # Create connection if not exist
 if [[ ! -e "$SOCKET" ]]; then
     echo "Creating connection..."
@@ -28,6 +38,8 @@ fi
 rsync \
     --rsh "ssh -S '$SOCKET'" \
     --archive --verbose --compress --update --progress --human-readable \
+    --exclude '**/reports' \
+    --exclude '**/build*' \
     "${LOCAL_DIRS[@]}" \
     "$HOST":"$REMOTE_DIR/"
 
@@ -38,11 +50,14 @@ rsync \
 # "
 
 # Download reports
-rsync \
-    --rsh "ssh -S '$SOCKET'" \
-    --archive --verbose --compress --update --progress --human-readable \
-    "$HOST":"$REMOTE_DIR/Emulation-HW/binary_container_1.xclbin.link_summary" \
-    :"$REMOTE_DIR/Emulation-HW/binary_container_1.xclbin.run_summary" \
-    :"$REMOTE_DIR/Emulation-HW/binary_container_1.build/bwa_align.xo.compile_summary" \
-    :"$REMOTE_DIR/Emulation-HW/xilinx_u50_gen3x16_xdma_201920_3-0-binary_container_1.wdb" \
-    ./Emulation-HW/reports/
+if (( opt_dl )); then
+    rsync \
+        --rsh "ssh -S '$SOCKET'" \
+        --archive --verbose --compress --update --progress --human-readable \
+        --exclude '**/binary_container_1.xclbin' \
+        --exclude '**/binary_container_1.build/link' \
+        --exclude '**/binary_container_1.build/bwa_align/bwa_align/bwa_align/solution' \
+        --exclude '**/.run' \
+        "$HOST":"$REMOTE_DIR/Emulation-HW/" \
+        ./Emulation-HW/build
+fi
