@@ -399,13 +399,13 @@ int main(int argc, char* argv[])
 #define MAX_NUM_READ 2
 
   const size_t res_sa_itv_size = MAX_NUM_READ*BUF_SIZE*2;
-  const size_t buf_size = MAX_NUM_READ*BUF_SIZE*4;
-  const size_t occ_size = MAX_NUM_READ*BUF_SIZE*4;
+  const size_t buf_size = BUF_SIZE*4;
+  const size_t occ_size = BUF_SIZE*4;
 
   // TODO: all reads
   // char reads[MAX_NUM_READ][READ_MAX_LEN];
   // FOR (i, 0, bwa.reads.size()) {
-  //   memcpy(reads[i],  bwa.reads.at(i).c_str(), bwa.reads.at(i).size());
+  //   memcpy(reads[i],  bwa.reads.at(i).c_str(), bwa.reads.at(i).size()+1);
   //   debug("reads[%d]=%s len=%d", i, reads[i], bwa.reads.at(i).size());
   // }
 
@@ -483,13 +483,12 @@ int main(int argc, char* argv[])
 
     // ------------------------------------------------------------------
     // Step 4.2: Create Buffers in Global Memory to store data
+    //             o) GlobMem_BUF_res_sa_len (W)
     //             o) GlobMem_BUF_res_sa_itv (W)
     //             o) GlobMem_BUF_buf      - (R/W)
     //             o) GlobMem_BUF_occ      - (R)
     //             o) GlobMem_BUF_cum      - (R)
     //             o) GlobMem_BUF_read     - (R)
-    //             o) GlobMem_BUF_res_sa_len (W)
-    //             o) GlobMem_BUF_read_len - (R)
     // ------------------------------------------------------------------
     #ifdef ALL_MESSAGES
     cout << "HOST-Info: Allocating buffers in Global Memory to store Input and Output Data ..." << endl;
@@ -501,13 +500,16 @@ int main(int argc, char* argv[])
   BUF_F(GlobMem_BUF_res_sa_len[flag], CL_MEM_WRITE_ONLY | CL_MEM_USE_HOST_PTR, sizeof(int)                       , &res_sa_len[read_id]) SEP \
   BUF_F(GlobMem_BUF_res_sa_itv[flag], CL_MEM_WRITE_ONLY | CL_MEM_USE_HOST_PTR, sizeof(res_sa_itv[0])             , &res_sa_itv[read_id]) SEP \
   BUF_F(GlobMem_BUF_buf       [flag], CL_MEM_READ_WRITE                      , buf_size*sizeof(int)              , NULL                ) SEP \
-  BUF_F(GlobMem_BUF_occ       [flag], CL_MEM_READ_ONLY  | CL_MEM_USE_HOST_PTR, bwa.occ.size()*sizeof(bwa.occ[0]) , &bwa.occ[0][0]      ) SEP \
+  BUF_F(GlobMem_BUF_occ       [flag], CL_MEM_READ_ONLY  | CL_MEM_USE_HOST_PTR, occ_size*sizeof(int)              , &bwa.occ[0][0]      ) SEP \
   BUF_F(GlobMem_BUF_cum       [flag], CL_MEM_READ_ONLY  | CL_MEM_USE_HOST_PTR, sizeof(cum)                       , cum                 ) SEP \
-  BUF_F(GlobMem_BUF_read      [flag], CL_MEM_READ_ONLY  | CL_MEM_USE_HOST_PTR, bwa.reads[read_id].size()         , (void*)bwa.reads[read_id].c_str())
+  BUF_F(GlobMem_BUF_read      [flag], CL_MEM_READ_ONLY  | CL_MEM_USE_HOST_PTR, READ_MAX_LEN*sizeof(char)         , (void*)bwa.reads[read_id].c_str())
+
+  //BUF_F(GlobMem_BUF_read      [flag], CL_MEM_READ_ONLY  | CL_MEM_USE_HOST_PTR, READ_MAX_LEN*sizeof(char)         , (void*)reads[read_id])
 
     // Allocate Global Memory for GlobMem_BUF
     // .......................................................
 #define ALLOCATE_BUF(NAME, FLAG, SIZE, PTR) \
+  cout << endl << "Host-Info: Allocate Global Memory for " #NAME ", size=" << SIZE << endl; \
   NAME = clCreateBuffer(Context, FLAG, SIZE, PTR, &errCode); \
   if (errCode != CL_SUCCESS) { \
     cout << endl << "Host-Error: Failed to allocate Global Memory for " #NAME << endl << endl; \
@@ -652,7 +654,7 @@ int main(int argc, char* argv[])
   #endif
 
   FOR(j, 0, 2) {
-    debug("sa_len(%x) = %d", &res_sa_len, res_sa_len[j]);
+    debug("sa_len(%x) = %d", &res_sa_len[j], res_sa_len[j]);
     debug("sa_itv(%x)", &res_sa_itv[j]);
     FOR (i, 0, 10) {
       debug("found SA interval [%d, %d]", res_sa_itv[j][i][0], res_sa_itv[j][i][1]);
