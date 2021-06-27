@@ -403,9 +403,9 @@ int main(int argc, char* argv[])
   // ================================================================
 #define MAX_NUM_READ 100
 
-  const size_t res_sa_itv_size = MAX_NUM_READ*BUF_SIZE*2;
+  const size_t res_sa_itv_size = BUF_SIZE*2;
   const size_t buf_size = BUF_SIZE*4;
-  const size_t occ_size = MAX_NUM_READ*BUF_SIZE*4;
+  const size_t occ_size = BUF_SIZE*4;
 
   // TODO: all reads
   // char reads[MAX_NUM_READ][READ_MAX_LEN];
@@ -509,11 +509,11 @@ int main(int argc, char* argv[])
 #define SEMICOLON ;
 #define MY_BUF(BUF_F, SEP) \
   BUF_F(GlobMem_BUF_res_sa_len[flag], CL_MEM_WRITE_ONLY | CL_MEM_USE_HOST_PTR, sizeof(int)                       , &res_sa_len[read_id]) SEP \
-  BUF_F(GlobMem_BUF_res_sa_itv[flag], CL_MEM_WRITE_ONLY | CL_MEM_USE_HOST_PTR, sizeof(res_sa_itv[0])             , &res_sa_itv[read_id]) SEP \
+  BUF_F(GlobMem_BUF_res_sa_itv[flag], CL_MEM_WRITE_ONLY | CL_MEM_USE_HOST_PTR, res_sa_itv_size*sizeof(int)       , &res_sa_itv[read_id]) SEP \
   BUF_F(GlobMem_BUF_buf       [flag], CL_MEM_READ_WRITE                      , buf_size*sizeof(int)              , NULL                ) SEP \
-  BUF_F(GlobMem_BUF_occ       [flag], CL_MEM_READ_ONLY  | CL_MEM_USE_HOST_PTR, bwa.occ.size()*sizeof(bwa.occ[0]) , &bwa.occ[0][0]      ) SEP \
+  BUF_F(GlobMem_BUF_occ       [flag], CL_MEM_READ_ONLY  | CL_MEM_USE_HOST_PTR, occ_size*sizeof(int)              , &bwa.occ[0][0]      ) SEP \
   BUF_F(GlobMem_BUF_cum       [flag], CL_MEM_READ_ONLY  | CL_MEM_USE_HOST_PTR, sizeof(cum)                       , cum                 ) SEP \
-  BUF_F(GlobMem_BUF_read      [flag], CL_MEM_READ_ONLY  | CL_MEM_USE_HOST_PTR, bwa.reads[read_id].size()         , (void*)bwa.reads[read_id].c_str())
+  BUF_F(GlobMem_BUF_read      [flag], CL_MEM_READ_ONLY  | CL_MEM_USE_HOST_PTR, READ_MAX_LEN                      , (void*)bwa.reads[read_id].c_str())
 
     // Allocate Global Memory for GlobMem_BUF
     // .......................................................
@@ -619,7 +619,7 @@ int main(int argc, char* argv[])
 
     cout << "HOST-Info: Submitting Kernel K_bwa..." << endl;
 
-    errCode = clEnqueueTask(Command_Queue, K_bwa, Nb_Of_Mem_w_Events, Mem_w_event, &K_exe_event[flag][0]);
+    errCode = clEnqueueTask(Command_Queue, K_bwa, 0, NULL, &K_exe_event[flag][0]);
     if (errCode != CL_SUCCESS) {
       cout << endl << "HOST-Error: Failed to submit K_bwa" << endl << endl;
       return EXIT_FAILURE;
