@@ -39,12 +39,12 @@ void bwa_align(
 #pragma HLS INTERFACE s_axilite port=read_len bundle=control
 #pragma HLS INTERFACE s_axilite port=return bundle=control
 
-#pragma HLS INTERFACE m_axi port=res_sa_len offset=slave
-#pragma HLS INTERFACE m_axi port=res_sa_itv offset=slave
-#pragma HLS INTERFACE m_axi port=buf offset=slave
-#pragma HLS INTERFACE m_axi port=occ offset=slave
-#pragma HLS INTERFACE m_axi port=cum offset=slave
-#pragma HLS INTERFACE m_axi port=read offset=slave
+#pragma HLS INTERFACE m_axi port=res_sa_len offset=slave bundle=gmem0
+#pragma HLS INTERFACE m_axi port=res_sa_itv offset=slave bundle=gmem0
+#pragma HLS INTERFACE m_axi port=buf offset=slave bundle=gmem1
+#pragma HLS INTERFACE m_axi port=occ offset=slave bundle=gmem2
+#pragma HLS INTERFACE m_axi port=cum offset=slave bundle=gmem3
+#pragma HLS INTERFACE m_axi port=read offset=slave bundle=gmem3
 
 #pragma HLS ARRAY_RESHAPE variable=res_sa_itv cyclic factor=2
 #pragma HLS ARRAY_RESHAPE variable=buf cyclic factor=4
@@ -71,6 +71,8 @@ void bwa_align(
   static int cum_r[4];
   static char read_r[READ_MAX_LEN];
 
+  int occ_off = 0;
+
   //// read input ////
 
   FOR (i, 0, LOCAL_BUF_SIZE) {
@@ -89,6 +91,8 @@ void bwa_align(
 #pragma HLS UNROLL
     read_r[i] = read[i];
   }
+
+  debug("read(%d) = %s", read_len, read);
 
   //// process ////
 
@@ -147,9 +151,19 @@ LOOP_OUTER:
       // #pragma HLS UNROLL
       int o = 0;
       if (k > 0)
-        o = occ_r[k - 1][s];
+        o = occ_r[(k - 1) % LOCAL_BUF_SIZE][s];
       int k_nxt = cum_r[s] + o;
-      int l_nxt = cum_r[s] + occ_r[l][s] - 1;
+      int l_nxt = cum_r[s] + occ_r[l % LOCAL_BUF_SIZE][s] - 1;
+
+      if (k_nxt >= (occ_off + 1) * LOCAL_BUF_SIZE) {
+        occ_off++;
+        FOR (i, 0, LOCAL_BUF_SIZE) {
+#pragma HLS UNROLL
+          FOR (j, 0, 4) {
+            occ_r[i][j] = occ[(occ_off * LOCAL_BUF_SIZE + i) * 4 + j];
+          }
+        }
+      }
 
       if (k_nxt <= l_nxt) {
         // SNP (substitute) alpha[s]
