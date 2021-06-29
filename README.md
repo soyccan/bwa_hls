@@ -1,8 +1,36 @@
 # Introduction
+
+This is HLS (High-Level Synthesis) Final Project for NTU CSIE 2021 ACA course
+
+Our topic is "DNA Sequence Analysis Acceleration".
+We implement BWA (Burrows-Wheeler Aligner) algorithm using HLS, and try to optimize this kernel on U50 FPGA.
+
+We use OpenBWT doing BWT (Burrow-Wheeler’s Transform) to offline generate reference genome FM-index and load the FM-index at runtime.
+
+The BWA algorithm use recursion. But since the HLS is not support recursive function, we modify the algorithm from DFS search to BFS search. We use a buffer for queuing the recording states, and successfully synthesis our kernel code to hardware.
+
 # Major Optimizations
+
 ## Highlight area of optimization
+
+### Multiple Kernel Instances
+
+### Optimize Data Transfer
+
 ## Result as compare with the original
+
+## Other Optimizations
+
+### PLRAM may provide lower latency: PLRAM_USAGE
+
+![](https://i.imgur.com/Qvro2Yi.png)
+
+Since PLRAM is not supported on u50, we have not doing this optimization:
+
+![](https://i.imgur.com/JlrWxVm.png)
+
 # Folder structure
+
 ```
 .
 ├── build                   # Makefile and Compiled files
@@ -21,6 +49,9 @@
 
 # Documentation
 
+- Slides
+  - [Proposal](https://docs.google.com/presentation/d/1PVWVsknsaioNPbYWh62bN30pQL_089gKeKPHn81Inqg/edit?usp=sharing)
+  - [Final Report](https://docs.google.com/presentation/d/1CI_IRIDlEs1lFRY2dtP2rDVo_mjuy3RFSBR_ktLUV2k/edit?usp=sharing)
 - [Reference Resources](docs/References.md)
 
 # Build Setup
@@ -75,5 +106,8 @@ The bitstream will generated as `binary_container_1.xclbin`.
 Just use `make run` can load the bitstream to FPGA and run.
 
 # Run test
+
 ## Unit test
+
 ## Integration test
+

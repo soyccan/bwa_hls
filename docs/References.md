@@ -1,4 +1,5 @@
 # Research Paper
+- M. F. Chang, Y. Chen, J. Cong, P. Huang, C. Kuo and C. H. Yu, "The SMEM Seeding Acceleration for DNA Sequence Alignment," 2016 IEEE 24th Annual International Symposium on Field-Programmable Custom Computing Machines (FCCM), 2016, pp. 32-39, doi: 10.1109/FCCM.2016.21.
 - H. M. Waidyasooriya, M. Hariyama and M. Kameyama, "Implementation of a custom hardware-accelerator for short-read mapping using Burrows-Wheeler alignment," 2013 35th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC), 2013, pp. 651-654, doi: 10.1109/EMBC.2013.6609584.
 - H. M. Waidyasooriya and M. Hariyama, "Hardware-Acceleration of Short-Read Alignment Based on the Burrows-Wheeler Transform," in IEEE Transactions on Parallel and Distributed Systems, vol. 27, no. 5, pp. 1358-1372, 1 May 2016, doi: 10.1109/TPDS.2015.2444376.
 - D. Fujiki et al., "GenAx: A Genome Sequencing Accelerator," 2018 ACM/IEEE 45th Annual International Symposium on Computer Architecture (ISCA), 2018, pp. 69-82, doi: 10.1109/ISCA.2018.00017.
