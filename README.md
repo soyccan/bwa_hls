@@ -39,10 +39,9 @@ Since PLRAM is not supported on u50, we have not doing this optimization:
 │   └── Hardware/           # Hardware makefiles
 ├── data                    # Genome and Reads files
 ├── docs                    # Documentation files
-├── scripts                 # Helper scripts
+├── impl_result             # Collection of implementation result files
 ├── src                     # Source files
 ├── test                    # Automated tests
-├── vivado_hls              # Vivado HLS project files (experimental)
 ├── LICENSE
 └── README.md
 ```
