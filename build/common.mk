@@ -1,8 +1,10 @@
-#
-# this file was created by a computer. trust it.
-#
+# Before include this makefile, you must define these variable:
+# HOST_OPTS = -O0 -g
+# VPP_OPTS = --target sw_emu -g
 
-INDEX_AND_READS = ../data/ref/1.fasta.fmi ../data/reads/1.fastq
+SRC_DIR = $(abspath ../../src)
+DATA_DIR = $(abspath ../../data)
+INDEX_AND_READS = $(DATA_DIR)/ref/1.fasta.fmi $(DATA_DIR)/reads/1.fastq
 
 # compiler tools
 XILINX_VITIS ?= /home/xilinx/tools/Xilinx/Vitis/2019.2
@@ -20,11 +22,8 @@ VITIS_PLATFORM = xilinx_u50_gen3x16_xdma_201920_3
 VITIS_PLATFORM_PATH = $(VITIS_PLATFORM)
 
 # host compiler global settings
-CXXFLAGS += -std=c++0x -DVITIS_PLATFORM=$(VITIS_PLATFORM) -D__USE_XOPEN2K8 -I$(XILINX_XRT)/include/ -I$(XILINX_VIVADO)/include/ -O0 -g -Wall -fmessage-length=0
+CXXFLAGS += -std=c++0x -DVITIS_PLATFORM=$(VITIS_PLATFORM) -D__USE_XOPEN2K8 -I$(XILINX_XRT)/include/ -I$(XILINX_VIVADO)/include/ $(HOST_OPTS) -Wall -fmessage-length=0
 LDFLAGS += -lxilinxopencl -lpthread -lrt -lstdc++ -lmpfr -lgmp -lhlsmc++-GCC46 -lIp_floating_point_v7_0_bitacc_cmodel -lIp_xfft_v9_1_bitacc_cmodel -lIp_fir_compiler_v7_2_bitacc_cmodel -lIp_dds_compiler_v6_0_bitacc_cmodel -L$(XILINX_XRT)/lib/ -L$(XILINX_VIVADO)/lnx64/tools/fpo_v7_0 -L$(XILINX_VIVADO)/lnx64/lib/csim -L$(XILINX_VIVADO)/lnx64/tools/dds_v6_0 -L$(XILINX_VIVADO)/lnx64/tools/fir_v7_0 -L$(XILINX_VIVADO)/lnx64/tools/fft_v9_1 -Wl,-rpath-link,$(XILINX_XRT)/lib -Wl,-rpath,$(XILINX_VIVADO)/lnx64/lib/csim -Wl,-rpath,$(XILINX_VIVADO)/lnx64/tools/fpo_v7_0 -Wl,-rpath,$(XILINX_VIVADO)/lnx64/tools/fft_v9_1 -Wl,-rpath,$(XILINX_VIVADO)/lnx64/tools/fir_v7_0 -Wl,-rpath,$(XILINX_VIVADO)/lnx64/tools/dds_v6_0
-
-# hardware compiler shared settings
-VPP_OPTS = --target sw_emu
 
 #
 # OpenCL kernel files
@@ -42,14 +41,12 @@ ALL_MESSAGE_FILES = $(subst .xo,.mdb,$(ALL_KERNEL_OBJS)) $(subst .xclbin,.mdb,$(
 # host files
 #
 
-HOST_CPPS += ../src/BWT.cpp
-HOST_CPPS += ../src/bwa.cpp
-HOST_CPPS += ../src/host.cpp
-HOST_CPPS += ../src/kernel.cpp
+HOST_CPPS += $(SRC_DIR)/BWT.cpp
+HOST_CPPS += $(SRC_DIR)/bwa.cpp
+HOST_CPPS += $(SRC_DIR)/host.cpp
+HOST_CPPS += $(SRC_DIR)/kernel.cpp
 
 HOST_EXE = vts_Opt1Baseline
-
-BUILD_SUBDIRS += src/
 
 EMCONFIG_FILE = emconfig.json
 
@@ -58,7 +55,7 @@ EMCONFIG_FILE = emconfig.json
 #
 
 .PHONY: all clean
-all: $(BINARY_CONTAINERS) $(HOST_EXE) $(EMCONFIG_FILE)
+all: $(BINARY_CONTAINERS) $(HOST_EXE)
 
 .NOTPARALLEL: clean
 
@@ -68,7 +65,6 @@ clean-host:
 clean-accelerators:
 	-$(RM) $(BINARY_CONTAINERS) $(ALL_KERNEL_OBJS) $(ALL_MESSAGE_FILES)  $(EMCONFIG_FILE)
 	-$(RM) *.xclbin.sh *.xclbin.info *.xclbin.link_summary*
-	-$(RMDIR) $(BUILD_SUBDIRS)
 	-$(RMDIR) .Xil
 
 clean: clean-host clean-accelerators
@@ -84,7 +80,7 @@ nothing:
 # binary container: binary_container_1.xclbin
 #
 
-binary_container_1.build/bwa_align.xo: ../src/kernel.cpp ../src/kernel.h binary_container_1-bwa_align-compile.ini common-config.ini
+binary_container_1.build/bwa_align.xo: $(SRC_DIR)/kernel.cpp $(SRC_DIR)/kernel.h binary_container_1-bwa_align-compile.ini common-config.ini
 	-@mkdir -p $(@D)
 	-@$(RM) $@
 	$(VPP) $(VPP_OPTS) --compile -I"$(<D)" --config common-config.ini --config binary_container_1-bwa_align-compile.ini -o"$@" "$<"
@@ -108,10 +104,3 @@ $(EMCONFIG_FILE): makeemconfig.mk
 	$(EMCONFIGUTIL) --nd $(NUMBER_OF_DEVICES)  --platform $(VITIS_PLATFORM_PATH)
 	-@$(RMDIR) TempConfig .Xil/configutil*
 
-run: $(BINARY_CONTAINERS) $(HOST_EXE) $(EMCONFIG_FILE)
-	XCL_EMULATION_MODE=sw_emu ./$(HOST_EXE) Xilinx $(VITIS_PLATFORM) ./binary_container_1.xclbin $(INDEX_AND_READS)
-
-analyzer: $(BINARY_CONTAINERS) $(HOST_EXE) $(EMCONFIG_FILE)
-	XCL_EMULATION_MODE=sw_emu ./$(HOST_EXE) Xilinx $(VITIS_PLATFORM) ./binary_container_1.xclbin $(INDEX_AND_READS)
-	vitis_analyzer ./xclbin.run_summary
- 
