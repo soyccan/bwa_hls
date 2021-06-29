@@ -1,5 +1,5 @@
 HOST_OPTS = -O2
-VPP_OPTS = --target hw
+VPP_OPTS = --target hw -j 1
 
 include ../common.mk
 
