@@ -26,11 +26,6 @@ using namespace std;
 
 #define ALL_MESSAGES
 
-void event_callback(cl_event event, cl_int cmd_status, void* ptr) {
-  debug("Host-Info: (callback) %s", ((string*)ptr)->c_str());
-  delete ptr;
-}
-
 // =========================================
 // Helper Function: Loads program to memory
 // =========================================
@@ -401,9 +396,9 @@ int main(int argc, char* argv[])
   //   o) Allocate Memory to store the results: RES array
   //   o) Create Buffers in Global Memory to store data
   // ================================================================
-#define MAX_NUM_READ 100
+#define MAX_NUM_READ 2
 
-  const size_t res_sa_itv_size = BUF_SIZE*2;
+  const size_t res_sa_itv_size = MAX_NUM_READ*BUF_SIZE*2;
   const size_t buf_size = BUF_SIZE*4;
   const size_t occ_size = BUF_SIZE*4;
 
@@ -479,16 +474,11 @@ int main(int argc, char* argv[])
     int flag = read_id % 2;
 
     if (read_id >= 2) {
-      cout << "Host-Info: Waiting for last run result finish read" << endl;
-      errCode = clWaitForEvents(Nb_Of_Mem_r_Events, Mem_r_event[flag]);
+      errCode = clWaitForEvents(1, Mem_r_event[flag]);
       if (errCode != CL_SUCCESS) {
         cout << endl << "Host-Error: Failed to wait for read events" << endl << endl;
         return EXIT_FAILURE;
       }
-      // FOR(i, 0, Nb_Of_Mem_r_Events)
-      //   clReleaseEvent(Mem_r_event[flag][i]);
-      // FOR(i, 0, Nb_Of_Exe_Events)
-      //   clReleaseEvent(K_exe_event[flag][i]);
     }
 
     // ------------------------------------------------------------------
@@ -508,11 +498,13 @@ int main(int argc, char* argv[])
 #define SEMICOLON ;
 #define MY_BUF(BUF_F, SEP) \
   BUF_F(GlobMem_BUF_res_sa_len[flag], CL_MEM_WRITE_ONLY | CL_MEM_USE_HOST_PTR, sizeof(int)                       , &res_sa_len[read_id]) SEP \
-  BUF_F(GlobMem_BUF_res_sa_itv[flag], CL_MEM_WRITE_ONLY | CL_MEM_USE_HOST_PTR, res_sa_itv_size*sizeof(int)       , &res_sa_itv[read_id]) SEP \
+  BUF_F(GlobMem_BUF_res_sa_itv[flag], CL_MEM_WRITE_ONLY | CL_MEM_USE_HOST_PTR, sizeof(res_sa_itv[0])             , &res_sa_itv[read_id]) SEP \
   BUF_F(GlobMem_BUF_buf       [flag], CL_MEM_READ_WRITE                      , buf_size*sizeof(int)              , NULL                ) SEP \
   BUF_F(GlobMem_BUF_occ       [flag], CL_MEM_READ_ONLY  | CL_MEM_USE_HOST_PTR, occ_size*sizeof(int)              , &bwa.occ[0][0]      ) SEP \
   BUF_F(GlobMem_BUF_cum       [flag], CL_MEM_READ_ONLY  | CL_MEM_USE_HOST_PTR, sizeof(cum)                       , cum                 ) SEP \
-  BUF_F(GlobMem_BUF_read      [flag], CL_MEM_READ_ONLY  | CL_MEM_USE_HOST_PTR, READ_MAX_LEN                      , (void*)bwa.reads[read_id].c_str())
+  BUF_F(GlobMem_BUF_read      [flag], CL_MEM_READ_ONLY  | CL_MEM_USE_HOST_PTR, READ_MAX_LEN*sizeof(char)         , (void*)bwa.reads[read_id].c_str())
+
+  //BUF_F(GlobMem_BUF_read      [flag], CL_MEM_READ_ONLY  | CL_MEM_USE_HOST_PTR, READ_MAX_LEN*sizeof(char)         , (void*)reads[read_id])
 
     // Allocate Global Memory for GlobMem_BUF
     // .......................................................
@@ -533,14 +525,15 @@ int main(int argc, char* argv[])
     //        ----------------------------------------------------
     //         Kernel       Argument Nb   Description
     //        ----------------------------------------------------
-    //         K_bwa              0       GlobMem_BUF_res_sa_len
-    //         K_bwa              1       GlobMem_BUF_res_sa_itv
-    //         K_bwa              2       GlobMem_BUF_buf
-    //         K_bwa              3       GlobMem_BUF_occ
-    //         K_bwa              4       GlobMem_BUF_cum
-    //         K_bwa              5       CONST_refn
-    //         K_bwa              6       GlobMem_BUF_read
-    //         K_bwa              7       CONST_read_len
+    //         K_bwa              0       GlobMem_BUF_res_sa_itv
+    //         K_bwa              1       GlobMem_BUF_buf
+    //         K_bwa              2       GlobMem_BUF_occ
+    //         K_bwa              3       GlobMem_BUF_cum
+    //         K_bwa              4       CONST_refn
+    //         K_bwa              5       GlobMem_BUF_read
+    //         K_bwa              6       CONST_readn
+    //         K_bwa              7       GlobMem_BUF_res_sa_len
+    //         K_bwa              8       GlobMem_BUF_read_len
     //        ----------------------------------------------------
     //         o) Copy Input Data from Host to Global Memory
     //         o) Submit Kernels for Execution
@@ -564,13 +557,13 @@ int main(int argc, char* argv[])
     #endif
     errCode  = false;
 
-    errCode |= clSetKernelArg(K_bwa,  0, sizeof(cl_mem),  &GlobMem_BUF_res_sa_len[flag]);
-    errCode |= clSetKernelArg(K_bwa,  1, sizeof(cl_mem),  &GlobMem_BUF_res_sa_itv[flag]);
-    errCode |= clSetKernelArg(K_bwa,  2, sizeof(cl_mem),  &GlobMem_BUF_buf[flag]);
-    errCode |= clSetKernelArg(K_bwa,  3, sizeof(cl_mem),  &GlobMem_BUF_occ[flag]);
-    errCode |= clSetKernelArg(K_bwa,  4, sizeof(cl_mem),  &GlobMem_BUF_cum[flag]);
+    errCode |= clSetKernelArg(K_bwa,  0, sizeof(cl_mem),  &GlobMem_BUF_res_sa_len);
+    errCode |= clSetKernelArg(K_bwa,  1, sizeof(cl_mem),  &GlobMem_BUF_res_sa_itv);
+    errCode |= clSetKernelArg(K_bwa,  2, sizeof(cl_mem),  &GlobMem_BUF_buf);
+    errCode |= clSetKernelArg(K_bwa,  3, sizeof(cl_mem),  &GlobMem_BUF_occ);
+    errCode |= clSetKernelArg(K_bwa,  4, sizeof(cl_mem),  &GlobMem_BUF_cum);
     errCode |= clSetKernelArg(K_bwa,  5, sizeof(cl_uint), &CONST_refn);
-    errCode |= clSetKernelArg(K_bwa,  6, sizeof(cl_mem),  &GlobMem_BUF_read[flag]);
+    errCode |= clSetKernelArg(K_bwa,  6, sizeof(cl_mem),  &GlobMem_BUF_read);
     errCode |= clSetKernelArg(K_bwa,  7, sizeof(cl_uint), &CONST_read_len[read_id]);
 
     if (errCode != CL_SUCCESS) {
@@ -589,8 +582,8 @@ int main(int argc, char* argv[])
     int index = 0;
 
 #define MY_MEM(BUF_F) \
-  BUF_F(GlobMem_BUF_res_sa_len[flag], CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED); \
-  BUF_F(GlobMem_BUF_res_sa_itv[flag], CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED); \
+  BUF_F(GlobMem_BUF_res_sa_len[flag], 0                                      ); \
+  BUF_F(GlobMem_BUF_res_sa_itv[flag], 0                                      ); \
   BUF_F(GlobMem_BUF_buf       [flag], CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED); \
   BUF_F(GlobMem_BUF_occ       [flag], 0                                      ); \
   BUF_F(GlobMem_BUF_cum       [flag], 0                                      ); \
@@ -601,10 +594,6 @@ int main(int argc, char* argv[])
   if (errCode != CL_SUCCESS) { \
     cout << endl << "Host-Error: Failed to migrate to " #NAME << endl << endl; \
     return EXIT_FAILURE; \
-  } \
-  else { \
-    clSetEventCallback(Mem_w_event[index-1], CL_COMPLETE, event_callback, new string( \
-      "Write argument " #NAME " finish " + to_string(read_id))); \
   }
 
   MY_MEM(MIGRATE_MEM);
@@ -618,15 +607,12 @@ int main(int argc, char* argv[])
 
     cout << "HOST-Info: Submitting Kernel K_bwa..." << endl;
 
-    errCode = clEnqueueTask(Command_Queue, K_bwa, 0, NULL, &K_exe_event[flag][0]);
+    errCode = clEnqueueTask(Command_Queue, K_bwa, Nb_Of_Mem_w_Events, Mem_w_event, &K_exe_event[flag][0]);
     if (errCode != CL_SUCCESS) {
       cout << endl << "HOST-Error: Failed to submit K_bwa" << endl << endl;
       return EXIT_FAILURE;
     }
-    else {
-      clSetEventCallback(K_exe_event[flag][0], CL_COMPLETE, event_callback, new string("Kernel finish " + to_string(read_id)));
-      clSetEventCallback(K_exe_event[flag][0], CL_RUNNING, event_callback, new string("Kernel running " + to_string(read_id)));
-    }
+
 
     // ---------------------------------------------------------
     // Step 5.4: Submit Copy Results from Global Memory to Host
@@ -641,10 +627,6 @@ int main(int argc, char* argv[])
       cout << endl << "Host-Error: Failed to submit Copy Results from GlobMem_BUF_res_sa_itv to res_sa_itv" << endl << endl;
       return EXIT_FAILURE;
     }
-    else {
-      clSetEventCallback(Mem_r_event[flag][0], CL_COMPLETE, event_callback, new string(
-        "Read result sa_itv finish " + to_string(read_id)));
-    }
 
     errCode = clEnqueueMigrateMemObjects(Command_Queue, 1, &GlobMem_BUF_res_sa_len[flag], CL_MIGRATE_MEM_OBJECT_HOST, 1, 
                                          &K_exe_event[flag][0], &Mem_r_event[flag][1]);
@@ -652,22 +634,9 @@ int main(int argc, char* argv[])
       cout << endl << "Host-Error: Failed to submit Copy Results from GlobMem_BUF_res_sa_len to res_sa_len" << endl << endl;
       return EXIT_FAILURE;
     }
-    else {
-      clSetEventCallback(Mem_r_event[flag][0], CL_COMPLETE, event_callback, new string(
-        "Read result sa_len finish " + to_string(read_id)));
-    }
-
-    // for (int i=0; i<Nb_Of_Mem_w_Events; i++) clReleaseEvent(Mem_w_event[i]);
-    // clReleaseMemObject(GlobMem_BUF_res_sa_len[flag]);
-    // clReleaseMemObject(GlobMem_BUF_res_sa_itv[flag]);
-    // clReleaseMemObject(GlobMem_BUF_buf       [flag]);       
-    // clReleaseMemObject(GlobMem_BUF_occ       [flag]);
-    // clReleaseMemObject(GlobMem_BUF_cum       [flag]);    
-    // clReleaseMemObject(GlobMem_BUF_read      [flag]);    
   }
 
   cout << endl << "HOST_Info: Waiting for application to be completed ..." << endl;
-  clFlush(Command_Queue);
   clFinish(Command_Queue);
 
 
@@ -684,12 +653,11 @@ int main(int argc, char* argv[])
   cout << "HOST-Info: ============================================================= " << endl;
   #endif
 
-  FOR(j, 0, bwa.reads.size()) {
-    printf("read %d\n", j);
-    printf("sa_len(%x) = %d\n", &res_sa_len[j], res_sa_len[j]);
-    printf("sa_itv(%x)\n", &res_sa_itv[j]);
-    FOR (i, 0, res_sa_len[j]) {
-      printf("found SA interval [%d, %d]\n", res_sa_itv[j][i][0], res_sa_itv[j][i][1]);
+  FOR(j, 0, 2) {
+    debug("sa_len(%x) = %d", &res_sa_len[j], res_sa_len[j]);
+    debug("sa_itv(%x)", &res_sa_itv[j]);
+    FOR (i, 0, 10) {
+      debug("found SA interval [%d, %d]", res_sa_itv[j][i][0], res_sa_itv[j][i][1]);
     }
   }
 

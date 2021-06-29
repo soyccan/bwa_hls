@@ -1,2 +1,0 @@
-bwa_align_mux_256bkb
-bwa_align
