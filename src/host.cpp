@@ -533,15 +533,14 @@ int main(int argc, char* argv[])
     //        ----------------------------------------------------
     //         Kernel       Argument Nb   Description
     //        ----------------------------------------------------
-    //         K_bwa              0       GlobMem_BUF_res_sa_itv
-    //         K_bwa              1       GlobMem_BUF_buf
-    //         K_bwa              2       GlobMem_BUF_occ
-    //         K_bwa              3       GlobMem_BUF_cum
-    //         K_bwa              4       CONST_refn
-    //         K_bwa              5       GlobMem_BUF_read
-    //         K_bwa              6       CONST_readn
-    //         K_bwa              7       GlobMem_BUF_res_sa_len
-    //         K_bwa              8       GlobMem_BUF_read_len
+    //         K_bwa              0       GlobMem_BUF_res_sa_len
+    //         K_bwa              1       GlobMem_BUF_res_sa_itv
+    //         K_bwa              2       GlobMem_BUF_buf
+    //         K_bwa              3       GlobMem_BUF_occ
+    //         K_bwa              4       GlobMem_BUF_cum
+    //         K_bwa              5       CONST_refn
+    //         K_bwa              6       GlobMem_BUF_read
+    //         K_bwa              7       CONST_read_len
     //        ----------------------------------------------------
     //         o) Copy Input Data from Host to Global Memory
     //         o) Submit Kernels for Execution
@@ -565,13 +564,13 @@ int main(int argc, char* argv[])
     #endif
     errCode  = false;
 
-    errCode |= clSetKernelArg(K_bwa,  0, sizeof(cl_mem),  &GlobMem_BUF_res_sa_len);
-    errCode |= clSetKernelArg(K_bwa,  1, sizeof(cl_mem),  &GlobMem_BUF_res_sa_itv);
-    errCode |= clSetKernelArg(K_bwa,  2, sizeof(cl_mem),  &GlobMem_BUF_buf);
-    errCode |= clSetKernelArg(K_bwa,  3, sizeof(cl_mem),  &GlobMem_BUF_occ);
-    errCode |= clSetKernelArg(K_bwa,  4, sizeof(cl_mem),  &GlobMem_BUF_cum);
+    errCode |= clSetKernelArg(K_bwa,  0, sizeof(cl_mem),  &GlobMem_BUF_res_sa_len[flag]);
+    errCode |= clSetKernelArg(K_bwa,  1, sizeof(cl_mem),  &GlobMem_BUF_res_sa_itv[flag]);
+    errCode |= clSetKernelArg(K_bwa,  2, sizeof(cl_mem),  &GlobMem_BUF_buf[flag]);
+    errCode |= clSetKernelArg(K_bwa,  3, sizeof(cl_mem),  &GlobMem_BUF_occ[flag]);
+    errCode |= clSetKernelArg(K_bwa,  4, sizeof(cl_mem),  &GlobMem_BUF_cum[flag]);
     errCode |= clSetKernelArg(K_bwa,  5, sizeof(cl_uint), &CONST_refn);
-    errCode |= clSetKernelArg(K_bwa,  6, sizeof(cl_mem),  &GlobMem_BUF_read);
+    errCode |= clSetKernelArg(K_bwa,  6, sizeof(cl_mem),  &GlobMem_BUF_read[flag]);
     errCode |= clSetKernelArg(K_bwa,  7, sizeof(cl_uint), &CONST_read_len[read_id]);
 
     if (errCode != CL_SUCCESS) {
@@ -590,8 +589,8 @@ int main(int argc, char* argv[])
     int index = 0;
 
 #define MY_MEM(BUF_F) \
-  BUF_F(GlobMem_BUF_res_sa_len[flag], 0                                      ); \
-  BUF_F(GlobMem_BUF_res_sa_itv[flag], 0                                      ); \
+  BUF_F(GlobMem_BUF_res_sa_len[flag], CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED); \
+  BUF_F(GlobMem_BUF_res_sa_itv[flag], CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED); \
   BUF_F(GlobMem_BUF_buf       [flag], CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED); \
   BUF_F(GlobMem_BUF_occ       [flag], 0                                      ); \
   BUF_F(GlobMem_BUF_cum       [flag], 0                                      ); \
