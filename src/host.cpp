@@ -410,7 +410,7 @@ int main(int argc, char* argv[])
   // TODO: all reads
   // char reads[MAX_NUM_READ][READ_MAX_LEN];
   // FOR (i, 0, bwa.reads.size()) {
-  //   memcpy(reads[i],  bwa.reads.at(i).c_str(), bwa.reads.at(i).size());
+  //   memcpy(reads[i],  bwa.reads.at(i).c_str(), bwa.reads.at(i).size()+1);
   //   debug("reads[%d]=%s len=%d", i, reads[i], bwa.reads.at(i).size());
   // }
 
@@ -493,13 +493,12 @@ int main(int argc, char* argv[])
 
     // ------------------------------------------------------------------
     // Step 4.2: Create Buffers in Global Memory to store data
+    //             o) GlobMem_BUF_res_sa_len (W)
     //             o) GlobMem_BUF_res_sa_itv (W)
     //             o) GlobMem_BUF_buf      - (R/W)
     //             o) GlobMem_BUF_occ      - (R)
     //             o) GlobMem_BUF_cum      - (R)
     //             o) GlobMem_BUF_read     - (R)
-    //             o) GlobMem_BUF_res_sa_len (W)
-    //             o) GlobMem_BUF_read_len - (R)
     // ------------------------------------------------------------------
     #ifdef ALL_MESSAGES
     cout << "HOST-Info: Allocating buffers in Global Memory to store Input and Output Data ..." << endl;
@@ -518,6 +517,7 @@ int main(int argc, char* argv[])
     // Allocate Global Memory for GlobMem_BUF
     // .......................................................
 #define ALLOCATE_BUF(NAME, FLAG, SIZE, PTR) \
+  cout << endl << "Host-Info: Allocate Global Memory for " #NAME ", size=" << SIZE << endl; \
   NAME = clCreateBuffer(Context, FLAG, SIZE, PTR, &errCode); \
   if (errCode != CL_SUCCESS) { \
     cout << endl << "Host-Error: Failed to allocate Global Memory for " #NAME << endl << endl; \
@@ -533,15 +533,14 @@ int main(int argc, char* argv[])
     //        ----------------------------------------------------
     //         Kernel       Argument Nb   Description
     //        ----------------------------------------------------
-    //         K_bwa              0       GlobMem_BUF_res_sa_itv
-    //         K_bwa              1       GlobMem_BUF_buf
-    //         K_bwa              2       GlobMem_BUF_occ
-    //         K_bwa              3       GlobMem_BUF_cum
-    //         K_bwa              4       CONST_refn
-    //         K_bwa              5       GlobMem_BUF_read
-    //         K_bwa              6       CONST_readn
-    //         K_bwa              7       GlobMem_BUF_res_sa_len
-    //         K_bwa              8       GlobMem_BUF_read_len
+    //         K_bwa              0       GlobMem_BUF_res_sa_len
+    //         K_bwa              1       GlobMem_BUF_res_sa_itv
+    //         K_bwa              2       GlobMem_BUF_buf
+    //         K_bwa              3       GlobMem_BUF_occ
+    //         K_bwa              4       GlobMem_BUF_cum
+    //         K_bwa              5       CONST_refn
+    //         K_bwa              6       GlobMem_BUF_read
+    //         K_bwa              7       CONST_read_len
     //        ----------------------------------------------------
     //         o) Copy Input Data from Host to Global Memory
     //         o) Submit Kernels for Execution
@@ -590,8 +589,8 @@ int main(int argc, char* argv[])
     int index = 0;
 
 #define MY_MEM(BUF_F) \
-  BUF_F(GlobMem_BUF_res_sa_len[flag], 0                                      ); \
-  BUF_F(GlobMem_BUF_res_sa_itv[flag], 0                                      ); \
+  BUF_F(GlobMem_BUF_res_sa_len[flag], CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED); \
+  BUF_F(GlobMem_BUF_res_sa_itv[flag], CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED); \
   BUF_F(GlobMem_BUF_buf       [flag], CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED); \
   BUF_F(GlobMem_BUF_occ       [flag], 0                                      ); \
   BUF_F(GlobMem_BUF_cum       [flag], 0                                      ); \
@@ -687,7 +686,7 @@ int main(int argc, char* argv[])
 
   FOR(j, 0, bwa.reads.size()) {
     printf("read %d\n", j);
-    printf("sa_len(%x) = %d\n", &res_sa_len, res_sa_len[j]);
+    printf("sa_len(%x) = %d\n", &res_sa_len[j], res_sa_len[j]);
     printf("sa_itv(%x)\n", &res_sa_itv[j]);
     FOR (i, 0, res_sa_len[j]) {
       printf("found SA interval [%d, %d]\n", res_sa_itv[j][i][0], res_sa_itv[j][i][1]);
