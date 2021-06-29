@@ -12,3 +12,7 @@
 - https://www.xilinx.com/html_docs/xilinx2020_2/vitis_doc/devckernels.html#nfr1524175006416
 - https://www.xilinx.com/html_docs/xilinx2020_2/vitis_doc/buildingdevicebinary.html?hl=map%2Ckernel%2Cport#ejl1524519365386
 - https://xilinx.github.io/Vitis_Accel_Examples/2020.2/html/plram_access.html
+# Reference genome
+- https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.39/
+# Reads
+- https://www.ncbi.nlm.nih.gov/sra/SRX020470
