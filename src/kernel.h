@@ -2,9 +2,9 @@
 #define _KERNEL_H_ 1
 
 // READ_QUEUE_LEN should be larger than NUM_PE
-#define READ_MAX_LEN 128
-#define BUF_SIZE 2048
-#define LOCAL_BUF_SIZE 1024
+#define READ_MAX_LEN 64
+#define BUF_SIZE 256
+#define LOCAL_BUF_SIZE 128
 #define MAX_MISMATCH 1
 
 extern "C" {
