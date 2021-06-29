@@ -7,7 +7,6 @@ sa bwt occ[0:3]
 5 A 0 1 2 0 
 3 T 1 1 2 0 
 2 C 1 1 2 1 
-read(3) = CGA
 head=0 tail=1 i=2 z=1 k=0 l=6
 tail=1 i=1 z=0 k=0 l=6
 tail=2 i=2 z=0 k=1 l=1
@@ -191,3 +190,165 @@ found SA interval 7 [6, 6]
 found SA interval 8 [3, 3]
 found SA interval 9 [5, 5]
 found SA interval 10 [6, 6]
+head=0 tail=1 i=7 z=1 k=0 l=6
+tail=1 i=6 z=0 k=0 l=6
+tail=2 i=7 z=0 k=1 l=1
+tail=3 i=6 z=1 k=1 l=1
+tail=4 i=7 z=0 k=2 l=3
+tail=5 i=6 z=0 k=2 l=3
+tail=6 i=7 z=0 k=4 l=5
+tail=7 i=6 z=0 k=4 l=5
+tail=8 i=7 z=0 k=6 l=6
+tail=9 i=6 z=0 k=6 l=6
+head=1 tail=10 i=6 z=0 k=0 l=6
+tail=10 i=5 z=-1 k=0 l=6
+tail=11 i=6 z=-1 k=1 l=1
+tail=12 i=5 z=0 k=1 l=1
+tail=13 i=6 z=-1 k=2 l=3
+tail=14 i=5 z=-1 k=2 l=3
+tail=15 i=6 z=-1 k=4 l=5
+tail=16 i=5 z=-1 k=4 l=5
+tail=17 i=6 z=-1 k=6 l=6
+tail=18 i=5 z=-1 k=6 l=6
+head=2 tail=19 i=7 z=0 k=1 l=1
+tail=19 i=6 z=-1 k=1 l=1
+tail=20 i=0 z=-1 k=0 l=0
+tail=21 i=0 z=-1 k=0 l=0
+tail=22 i=0 z=-1 k=0 l=0
+tail=23 i=0 z=-1 k=0 l=0
+tail=24 i=7 z=-1 k=5 l=5
+tail=25 i=6 z=-1 k=5 l=5
+tail=26 i=0 z=-1 k=0 l=0
+tail=27 i=0 z=-1 k=0 l=0
+head=3 tail=28 i=6 z=1 k=1 l=1
+tail=28 i=5 z=0 k=1 l=1
+tail=29 i=0 z=-1 k=0 l=0
+tail=30 i=0 z=-1 k=0 l=0
+tail=31 i=0 z=-1 k=0 l=0
+tail=32 i=0 z=-1 k=0 l=0
+tail=33 i=6 z=0 k=5 l=5
+tail=34 i=5 z=0 k=5 l=5
+tail=35 i=0 z=-1 k=0 l=0
+tail=36 i=0 z=-1 k=0 l=0
+head=4 tail=37 i=7 z=0 k=2 l=3
+tail=37 i=6 z=-1 k=2 l=3
+tail=38 i=0 z=-1 k=0 l=0
+tail=39 i=0 z=-1 k=0 l=0
+tail=40 i=7 z=-1 k=2 l=2
+tail=41 i=6 z=-1 k=2 l=2
+tail=42 i=0 z=-1 k=0 l=0
+tail=43 i=0 z=-1 k=0 l=0
+tail=44 i=0 z=-1 k=0 l=0
+tail=45 i=0 z=-1 k=0 l=0
+head=5 tail=46 i=6 z=0 k=2 l=3
+tail=46 i=5 z=-1 k=2 l=3
+tail=47 i=0 z=-1 k=0 l=0
+tail=48 i=0 z=-1 k=0 l=0
+tail=49 i=6 z=-1 k=2 l=2
+tail=50 i=5 z=-1 k=2 l=2
+tail=51 i=0 z=-1 k=0 l=0
+tail=52 i=0 z=-1 k=0 l=0
+tail=53 i=0 z=-1 k=0 l=0
+tail=54 i=0 z=-1 k=0 l=0
+head=6 tail=55 i=7 z=0 k=4 l=5
+tail=55 i=6 z=-1 k=4 l=5
+tail=56 i=7 z=-1 k=1 l=1
+tail=57 i=6 z=0 k=1 l=1
+tail=58 i=0 z=-1 k=0 l=0
+tail=59 i=0 z=-1 k=0 l=0
+tail=60 i=0 z=-1 k=0 l=0
+tail=61 i=0 z=-1 k=0 l=0
+tail=62 i=7 z=-1 k=6 l=6
+tail=63 i=6 z=-1 k=6 l=6
+head=7 tail=64 i=6 z=0 k=4 l=5
+tail=64 i=5 z=-1 k=4 l=5
+tail=65 i=6 z=-1 k=1 l=1
+tail=66 i=5 z=0 k=1 l=1
+tail=67 i=0 z=-1 k=0 l=0
+tail=68 i=0 z=-1 k=0 l=0
+tail=69 i=0 z=-1 k=0 l=0
+tail=70 i=0 z=-1 k=0 l=0
+tail=71 i=6 z=-1 k=6 l=6
+tail=72 i=5 z=-1 k=6 l=6
+head=8 tail=73 i=7 z=0 k=6 l=6
+tail=73 i=6 z=-1 k=6 l=6
+tail=74 i=0 z=-1 k=0 l=0
+tail=75 i=0 z=-1 k=0 l=0
+tail=76 i=7 z=-1 k=3 l=3
+tail=77 i=6 z=-1 k=3 l=3
+tail=78 i=0 z=-1 k=0 l=0
+tail=79 i=0 z=-1 k=0 l=0
+tail=80 i=0 z=-1 k=0 l=0
+tail=81 i=0 z=-1 k=0 l=0
+head=9 tail=82 i=6 z=0 k=6 l=6
+tail=82 i=5 z=-1 k=6 l=6
+tail=83 i=0 z=-1 k=0 l=0
+tail=84 i=0 z=-1 k=0 l=0
+tail=85 i=6 z=-1 k=3 l=3
+tail=86 i=5 z=-1 k=3 l=3
+tail=87 i=0 z=-1 k=0 l=0
+tail=88 i=0 z=-1 k=0 l=0
+tail=89 i=0 z=-1 k=0 l=0
+tail=90 i=0 z=-1 k=0 l=0
+head=12 tail=91 i=5 z=0 k=1 l=1
+tail=91 i=4 z=-1 k=1 l=1
+tail=92 i=0 z=-1 k=0 l=0
+tail=93 i=0 z=-1 k=0 l=0
+tail=94 i=0 z=-1 k=0 l=0
+tail=95 i=0 z=-1 k=0 l=0
+tail=96 i=5 z=-1 k=5 l=5
+tail=97 i=4 z=-1 k=5 l=5
+tail=98 i=0 z=-1 k=0 l=0
+tail=99 i=0 z=-1 k=0 l=0
+head=28 tail=100 i=5 z=0 k=1 l=1
+tail=100 i=4 z=-1 k=1 l=1
+tail=101 i=0 z=-1 k=0 l=0
+tail=102 i=0 z=-1 k=0 l=0
+tail=103 i=0 z=-1 k=0 l=0
+tail=104 i=0 z=-1 k=0 l=0
+tail=105 i=5 z=-1 k=5 l=5
+tail=106 i=4 z=-1 k=5 l=5
+tail=107 i=0 z=-1 k=0 l=0
+tail=108 i=0 z=-1 k=0 l=0
+head=33 tail=109 i=6 z=0 k=5 l=5
+tail=109 i=5 z=-1 k=5 l=5
+tail=110 i=0 z=-1 k=0 l=0
+tail=111 i=0 z=-1 k=0 l=0
+tail=112 i=0 z=-1 k=0 l=0
+tail=113 i=0 z=-1 k=0 l=0
+tail=114 i=0 z=-1 k=0 l=0
+tail=115 i=0 z=-1 k=0 l=0
+tail=116 i=6 z=-1 k=6 l=6
+tail=117 i=5 z=-1 k=6 l=6
+head=34 tail=118 i=5 z=0 k=5 l=5
+tail=118 i=4 z=-1 k=5 l=5
+tail=119 i=0 z=-1 k=0 l=0
+tail=120 i=0 z=-1 k=0 l=0
+tail=121 i=0 z=-1 k=0 l=0
+tail=122 i=0 z=-1 k=0 l=0
+tail=123 i=0 z=-1 k=0 l=0
+tail=124 i=0 z=-1 k=0 l=0
+tail=125 i=5 z=-1 k=6 l=6
+tail=126 i=4 z=-1 k=6 l=6
+head=57 tail=127 i=6 z=0 k=1 l=1
+tail=127 i=5 z=-1 k=1 l=1
+tail=128 i=0 z=-1 k=0 l=0
+tail=129 i=0 z=-1 k=0 l=0
+tail=130 i=0 z=-1 k=0 l=0
+tail=131 i=0 z=-1 k=0 l=0
+tail=132 i=6 z=-1 k=5 l=5
+tail=133 i=5 z=-1 k=5 l=5
+tail=134 i=0 z=-1 k=0 l=0
+tail=135 i=0 z=-1 k=0 l=0
+head=66 tail=136 i=5 z=0 k=1 l=1
+tail=136 i=4 z=-1 k=1 l=1
+tail=137 i=0 z=-1 k=0 l=0
+tail=138 i=0 z=-1 k=0 l=0
+tail=139 i=0 z=-1 k=0 l=0
+tail=140 i=0 z=-1 k=0 l=0
+tail=141 i=5 z=-1 k=5 l=5
+tail=142 i=4 z=-1 k=5 l=5
+tail=143 i=0 z=-1 k=0 l=0
+tail=144 i=0 z=-1 k=0 l=0
+read 1
+sa_len = 0
