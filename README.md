@@ -3,6 +3,26 @@
 ## Highlight area of optimization
 ## Result as compare with the original
 # Folder structure
+```
+.
+├── build                   # Makefile and Compiled files
+│   ├── Emulation-HW/       # Hardware Emulation makefiles
+│   ├── Emulation-SW/       # Software Emulation makefiles
+│   └── Hardware/           # Hardware makefiles
+├── data                    # Genome and Reads files
+├── docs                    # Documentation files
+├── scripts                 # Helper scripts
+├── src                     # Source files
+├── test                    # Automated tests
+├── vivado_hls              # Vivado HLS project files (experimental)
+├── LICENSE
+└── README.md
+```
+
+# Documentation
+
+- [Reference Resources](docs/References.md)
+
 # Build Setup
 
 ## Prepare
