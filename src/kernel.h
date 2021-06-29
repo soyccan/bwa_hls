@@ -3,8 +3,9 @@
 
 // READ_QUEUE_LEN should be larger than NUM_PE
 #define READ_MAX_LEN 128
-#define BUF_SIZE 2048
-#define LOCAL_BUF_SIZE 1024
+#define BUF_SIZE 512
+#define LOCAL_BUF_SIZE 256
+#define LOCAL_BUF_SIZE_MASK 8
 #define MAX_MISMATCH 1
 
 extern "C" {

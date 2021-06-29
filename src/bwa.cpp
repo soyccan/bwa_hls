@@ -122,31 +122,22 @@ void BWA::read_align()
 
   // result of alignment
   // TODO: initilize with sufficient size
-  static int sa_itv[2][BUF_SIZE * 2];
+  static int sa_itv[BUF_SIZE * 2];
 
   // TODO: initilize with sufficient size
-  static int buf[2][BUF_SIZE * 4];
+  static int buf[BUF_SIZE * 4];
 
-  int sa_len[2];
+  int sa_len;
 
-  char reads_buf[2][READ_MAX_LEN];
-  memcpy(reads_buf[0], reads[0].c_str(), reads[0].size());
-  memcpy(reads_buf[1], reads[1].c_str(), reads[1].size());
+  FOR (j, 0, reads.size()) {
+    bwa_align(&sa_len, sa_itv, buf, reinterpret_cast<const int*>(&occ[0][0]),
+              cum, ref_size, reads[j].c_str(), reads[j].size());
 
-  int read_len[2];
-  read_len[0] = reads[0].size();
-  read_len[1] = reads[1].size();
-
-  bwa_align(&sa_len[0], sa_itv[0], buf[0],
-            reinterpret_cast<const int*>(&occ[0][0]), cum, ref_size,
-            reads_buf[0], read_len[0]);
-
-  FOR (j, 0, 1) {
-    debug("read %d", j);
-    debug("sa_len = %d", sa_len[j]);
-    FOR (i, 0, sa_len[j]) {
-      debug("found SA interval %d [%d, %d]", i, sa_itv[j][i * 2],
-            sa_itv[j][i * 2 + 1]);
+    printf("read %d\n", j);
+    printf("sa_len = %d\n", sa_len);
+    FOR (i, 0, sa_len) {
+      printf("found SA interval %d [%d, %d]\n", i, sa_itv[i * 2],
+             sa_itv[i * 2 + 1]);
     }
   }
 }

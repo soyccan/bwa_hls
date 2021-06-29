@@ -565,13 +565,13 @@ int main(int argc, char* argv[])
     #endif
     errCode  = false;
 
-    errCode |= clSetKernelArg(K_bwa,  0, sizeof(cl_mem),  &GlobMem_BUF_res_sa_len);
-    errCode |= clSetKernelArg(K_bwa,  1, sizeof(cl_mem),  &GlobMem_BUF_res_sa_itv);
-    errCode |= clSetKernelArg(K_bwa,  2, sizeof(cl_mem),  &GlobMem_BUF_buf);
-    errCode |= clSetKernelArg(K_bwa,  3, sizeof(cl_mem),  &GlobMem_BUF_occ);
-    errCode |= clSetKernelArg(K_bwa,  4, sizeof(cl_mem),  &GlobMem_BUF_cum);
+    errCode |= clSetKernelArg(K_bwa,  0, sizeof(cl_mem),  &GlobMem_BUF_res_sa_len[flag]);
+    errCode |= clSetKernelArg(K_bwa,  1, sizeof(cl_mem),  &GlobMem_BUF_res_sa_itv[flag]);
+    errCode |= clSetKernelArg(K_bwa,  2, sizeof(cl_mem),  &GlobMem_BUF_buf[flag]);
+    errCode |= clSetKernelArg(K_bwa,  3, sizeof(cl_mem),  &GlobMem_BUF_occ[flag]);
+    errCode |= clSetKernelArg(K_bwa,  4, sizeof(cl_mem),  &GlobMem_BUF_cum[flag]);
     errCode |= clSetKernelArg(K_bwa,  5, sizeof(cl_uint), &CONST_refn);
-    errCode |= clSetKernelArg(K_bwa,  6, sizeof(cl_mem),  &GlobMem_BUF_read);
+    errCode |= clSetKernelArg(K_bwa,  6, sizeof(cl_mem),  &GlobMem_BUF_read[flag]);
     errCode |= clSetKernelArg(K_bwa,  7, sizeof(cl_uint), &CONST_read_len[read_id]);
 
     if (errCode != CL_SUCCESS) {
@@ -619,7 +619,7 @@ int main(int argc, char* argv[])
 
     cout << "HOST-Info: Submitting Kernel K_bwa..." << endl;
 
-    errCode = clEnqueueTask(Command_Queue, K_bwa, 0, NULL, &K_exe_event[flag][0]);
+    errCode = clEnqueueTask(Command_Queue, K_bwa, Nb_Of_Mem_w_Events, Mem_w_event, &K_exe_event[flag][0]);
     if (errCode != CL_SUCCESS) {
       cout << endl << "HOST-Error: Failed to submit K_bwa" << endl << endl;
       return EXIT_FAILURE;

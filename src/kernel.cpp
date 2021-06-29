@@ -4,6 +4,8 @@
 #include <ap_int.h>
 #endif
 
+#include <string.h>
+
 #include "utils.h"
 
 static inline bool match_symbol(int i, char c)
@@ -39,18 +41,12 @@ void bwa_align(
 #pragma HLS INTERFACE s_axilite port=read_len bundle=control
 #pragma HLS INTERFACE s_axilite port=return bundle=control
 
-#pragma HLS INTERFACE m_axi port=res_sa_len offset=slave bundle=gmem0
-#pragma HLS INTERFACE m_axi port=res_sa_itv offset=slave bundle=gmem0
-#pragma HLS INTERFACE m_axi port=buf offset=slave bundle=gmem1
-#pragma HLS INTERFACE m_axi port=occ offset=slave bundle=gmem2
-#pragma HLS INTERFACE m_axi port=cum offset=slave bundle=gmem3
-#pragma HLS INTERFACE m_axi port=read offset=slave bundle=gmem3
-
-#pragma HLS ARRAY_RESHAPE variable=res_sa_itv cyclic factor=2
-#pragma HLS ARRAY_RESHAPE variable=buf cyclic factor=4
-#pragma HLS ARRAY_RESHAPE variable=occ cyclic factor=4
-#pragma HLS ARRAY_RESHAPE variable=cum complete
-#pragma HLS ARRAY_RESHAPE variable=read complete
+#pragma HLS INTERFACE m_axi port=res_sa_len offset=slave bundle=gmem0 max_write_burst_length=256
+#pragma HLS INTERFACE m_axi port=res_sa_itv offset=slave bundle=gmem0 max_write_burst_length=256
+#pragma HLS INTERFACE m_axi port=buf offset=slave bundle=gmem1 max_read_burst_length=256 max_write_burst_length=256
+#pragma HLS INTERFACE m_axi port=occ offset=slave bundle=gmem2 max_read_burst_length=256
+#pragma HLS INTERFACE m_axi port=cum offset=slave bundle=gmem3 max_read_burst_length=256
+#pragma HLS INTERFACE m_axi port=read offset=slave bundle=gmem3 max_read_burst_length=256
   // clang-format on
 
 #ifdef __SYNTHESIS__
@@ -66,31 +62,20 @@ void bwa_align(
   static int res_sa_itv_w[LOCAL_BUF_SIZE][2];
   static int buf_w[9][4];
 
-  static int buf_r[4];
+  static int buf_r[LOCAL_BUF_SIZE][4];
   static int occ_r[LOCAL_BUF_SIZE][4];
   static int cum_r[4];
   static char read_r[READ_MAX_LEN];
 
   int occ_off = 0;
+  int buf_r_off = 0;
+  int buf_w_off = 0;
 
   //// read input ////
 
-  FOR (i, 0, LOCAL_BUF_SIZE) {
-#pragma HLS UNROLL
-    FOR (j, 0, 4) {
-      occ_r[i][j] = occ[i * 4 + j];
-    }
-  }
-
-  FOR (i, 0, array_size(cum_r)) {
-#pragma HLS UNROLL
-    cum_r[i] = cum[i];
-  }
-
-  FOR (i, 0, array_size(read_r)) {
-#pragma HLS UNROLL
-    read_r[i] = read[i];
-  }
+  memcpy(occ_r, occ, sizeof(occ_r));
+  memcpy(cum_r, cum, sizeof(cum_r));
+  memcpy(read_r, read, sizeof(read_r));
 
   debug("read(%d) = %s", read_len, read);
 
@@ -100,10 +85,10 @@ void bwa_align(
   // buf[i][1]: z (#allowed mismatches left)
   // buf[i][2]: k (left bound of SA interval)
   // buf[i][3]: l (right bound of SA interval)
-  buf[0] = read_len - 1;
-  buf[1] = MAX_MISMATCH;
-  buf[2] = 0;
-  buf[3] = ref_len;
+  buf_r[0][0] = read_len - 1;
+  buf_r[0][1] = MAX_MISMATCH;
+  buf_r[0][2] = 0;
+  buf_r[0][3] = ref_len;
 
   int i, z, k, l;
   res_sz = 0;
@@ -115,15 +100,15 @@ LOOP_OUTER:
 #pragma HLS DEPENDENCE variable=buf inter WAW false
     // clang-format on
 
-    FOR (j, 0, 4) {
-#pragma HLS UNROLL
-      buf_r[j] = buf[head * 4 + j];
+    if (head >= (buf_r_off + 1) * LOCAL_BUF_SIZE) {
+      buf_r_off++;
+      memcpy(buf_r, buf + buf_r_off * LOCAL_BUF_SIZE, sizeof(buf_r));
     }
 
-    i = buf_r[0];
-    z = buf_r[1];
-    k = buf_r[2];
-    l = buf_r[3];
+    i = buf_r[head & LOCAL_BUF_SIZE_MASK][0];
+    z = buf_r[head & LOCAL_BUF_SIZE_MASK][1];
+    k = buf_r[head & LOCAL_BUF_SIZE_MASK][2];
+    l = buf_r[head & LOCAL_BUF_SIZE_MASK][3];
 
     if (i < 0) {
       res_sa_itv_w[res_sz][0] = k;
@@ -157,12 +142,7 @@ LOOP_OUTER:
 
       if (k_nxt >= (occ_off + 1) * LOCAL_BUF_SIZE) {
         occ_off++;
-        FOR (i, 0, LOCAL_BUF_SIZE) {
-#pragma HLS UNROLL
-          FOR (j, 0, 4) {
-            occ_r[i][j] = occ[(occ_off * LOCAL_BUF_SIZE + i) * 4 + j];
-          }
-        }
+        memcpy(occ_r, occ + occ_off * LOCAL_BUF_SIZE * 4, sizeof(occ_r));
       }
 
       if (k_nxt <= l_nxt) {
@@ -207,24 +187,13 @@ LOOP_OUTER:
             buf_w[2 * s + 2][3]);
     }
 
-    for (int s = 0; s < 9; s++) {
-      for (int t = 0; t < 4; t++) {
-#pragma HLS UNROLL
-        buf[(tail + s) * 4 + t] = buf_w[s][t];
-      }
-    }
+    memcpy(buf + tail * 4, buf_w, sizeof(buf_w));
 
     tail += 9;
   }
 
   // write result
-  FOR (j, 0, LOCAL_BUF_SIZE) {
-#pragma HLS UNROLL
-    if (j < tail * 4) {
-      res_sa_itv[j * 2] = res_sa_itv_w[j][0];
-      res_sa_itv[j * 2 + 1] = res_sa_itv_w[j][1];
-    }
-  }
+  memcpy(res_sa_itv, res_sa_itv_w, res_sz * 2 * sizeof(int));
 
   *res_sa_len = res_sz;
 }
