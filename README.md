@@ -108,5 +108,38 @@ Just use `make run` can load the bitstream to FPGA and run.
 
 ## Unit test
 
+Go to the unit test dir: `cd test/unit/`
+
+There two scripts:
+- bwt.sh  
+  Test BWT implementation
+- bwa.sh  
+  Test BWA implementation
+
+Just run the script, such as:
+```
+$ ./bwt.sh
+Test ../data/1.fasta pass!
+Test ../data/100.fasta pass!
+Test ../data/1000.fasta pass!
+```
+
 ## Integration test
 
+Go to the unit test dir: `cd test/integration/`
+
+- emulation-sw.sh  
+  Test Software Emulation
+- emulation-hw.sh  
+  Test Hardware Emulation
+- hardware.sh  
+  Test on FPGA
+
+Just run the script, such as:
+```
+$ ./emulation-sw.sh
+// ...
+// ... some execution logs ...
+// ...
+Test ../../data/1 pass!
+```
