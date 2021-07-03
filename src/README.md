@@ -1,11 +1,20 @@
-# Source Files
+# Burrows-Wheller Aligner
 
-## Build Software Implementation
+FM-index of the reference genome should be generated before
+the alignment process
+
+## Build
 ```
 make
 ```
 
-## Run
+## FM-index generator
 ```
-./align ../data/1.fasta.fmi ../data/1.fastq
+./index 1.fasta
+```
+Then `1.fasta.fmi` will be generated
+
+## Aligner
+```
+./align 1.fasta.fmi 1.fastq
 ```
