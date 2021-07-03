@@ -653,16 +653,39 @@ int main(int argc, char* argv[])
   cout << "HOST-Info: ============================================================= " << endl;
   #endif
 
-  FOR(j, 0, 2) {
-    debug("&sa_len = %x", &res_sa_len[j]);
-    debug("&sa_itv = %x", &res_sa_itv[j]);
+  {
+    // check result
+    int error_count = 0;
+    int sa_itv[BUF_SIZE * 2];
+    int buf[BUF_SIZE * 4];
+    int sa_len;
 
-    debug("sa_len = %d", res_sa_len[j]);
-    int len = res_sa_len[j];
-    if (len < 0) len = 0;
-    if (len > 30) len = 30;
-    FOR (i, 0, len) {
-      debug("found SA interval %d [%d, %d]", i, res_sa_itv[j][i][0], res_sa_itv[j][i][1]);
+    FOR(j, 0, bwa.reads.size()) {
+      // sw result
+      printf("SW result\n");
+      bwa_align(&sa_len, sa_itv, buf,
+                reinterpret_cast<const int*>(&bwa.occ[0][0]), cum, bwa.ref_size,
+                bwa.reads[j].c_str(), bwa.reads[j].size());
+
+      // hw result
+      printf("HW result\n");
+      printf("sa_len = %d\n", res_sa_len[j]);
+      int len = res_sa_len[j];
+      if (len < 0) len = 0;
+      if (len > 30) len = 30;
+      FOR (i, 0, len) {
+        printf("found SA interval %d [%d, %d]\n", i, res_sa_itv[j][i][0], res_sa_itv[j][i][1]);
+
+        if (res_sa_itv[j][i][0] != sa_itv[2*i]
+            || res_sa_itv[j][i][1] != sa_itv[2*i+1]) {
+          printf("Result not match: i=%d j=%d sw_result=%d,%d hw_result=%d,%d\n",
+                 i, j, sa_itv[2*i], sa_itv[2*i+1], res_sa_itv[j][i][0], res_sa_itv[j][i][1]);
+          error_count++;
+        }
+      }
+    }
+    if (error_count == 0) {
+      printf("Congratulations! HW result fully matches SW result\n");
     }
   }
 

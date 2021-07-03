@@ -88,8 +88,23 @@ make run
 
 ### Hardware Emulation
 
+In order to successfully reproduce our result, please use our bitstream file
+from GitHub release ([v0.1](https://github.com/soyccan/hls_project/releases/tag/v0.1))
+while also saving 20+ minutes of synthesis process
+
+Two files should be downloaded:
+- Kernel intermediate file:
+[bwa_align.xo](https://github.com/soyccan/hls_project/releases/download/v0.1/bwa_align.xo):
+- Bitstream file:
+[binary_container_1.xclbin](https://github.com/soyccan/hls_project/releases/download/v0.1/binary_container_1.xclbin): 
+
 ```
 cd build/Emulation-HW/
+mkdir binary_container_1.build
+wget https://github.com/soyccan/hls_project/releases/download/v0.1/bwa_align.xo -P binary_container_1.build
+wget https://github.com/soyccan/hls_project/releases/download/v0.1/binary_container_1.xclbin
+touch binary_container_1.build/bwa_align.xo
+touch binary_container_1.xclbin
 make run
 ```
 
@@ -105,6 +120,14 @@ The bitstream will generated as `binary_container_1.xclbin`.
 Just use `make run` can load the bitstream to FPGA and run.
 
 # Run test
+
+## Test by host code
+
+At the end of host code, result check is performed by comparing software result and hardward result
+of the same kernel (kernel.cpp)
+
+Just use `make run` and incorrect result would be showed if there exists, or a successful message would 
+be printed.
 
 ## Unit test
 
