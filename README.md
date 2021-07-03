@@ -1,8 +1,36 @@
 # Introduction
+
+This is HLS (High-Level Synthesis) Final Project for NTU CSIE 2021 ACA course
+
+Our topic is "DNA Sequence Analysis Acceleration".
+We implement BWA (Burrows-Wheeler Aligner) algorithm using HLS, and try to optimize this kernel on U50 FPGA.
+
+We use OpenBWT doing BWT (Burrow-Wheeler’s Transform) to offline generate reference genome FM-index and load the FM-index at runtime.
+
+The BWA algorithm use recursion. But since the HLS is not support recursive function, we modify the algorithm from DFS search to BFS search. We use a buffer for queuing the recording states, and successfully synthesis our kernel code to hardware.
+
 # Major Optimizations
+
 ## Highlight area of optimization
+
+### Multiple Kernel Instances
+
+### Optimize Data Transfer
+
 ## Result as compare with the original
+
+## Other Optimizations
+
+### PLRAM may provide lower latency: PLRAM_USAGE
+
+![](https://i.imgur.com/Qvro2Yi.png)
+
+Since PLRAM is not supported on u50, we have not doing this optimization:
+
+![](https://i.imgur.com/JlrWxVm.png)
+
 # Folder structure
+
 ```
 .
 ├── build                   # Makefile and Compiled files
@@ -11,16 +39,18 @@
 │   └── Hardware/           # Hardware makefiles
 ├── data                    # Genome and Reads files
 ├── docs                    # Documentation files
-├── scripts                 # Helper scripts
+├── impl_result             # Collection of implementation result files
 ├── src                     # Source files
 ├── test                    # Automated tests
-├── vivado_hls              # Vivado HLS project files (experimental)
 ├── LICENSE
 └── README.md
 ```
 
 # Documentation
 
+- Slides
+  - [Proposal](https://docs.google.com/presentation/d/1PVWVsknsaioNPbYWh62bN30pQL_089gKeKPHn81Inqg/edit?usp=sharing)
+  - [Final Report](https://docs.google.com/presentation/d/1CI_IRIDlEs1lFRY2dtP2rDVo_mjuy3RFSBR_ktLUV2k/edit?usp=sharing)
 - [Reference Resources](docs/References.md)
 
 # Build Setup
@@ -75,5 +105,41 @@ The bitstream will generated as `binary_container_1.xclbin`.
 Just use `make run` can load the bitstream to FPGA and run.
 
 # Run test
+
 ## Unit test
+
+Go to the unit test dir: `cd test/unit/`
+
+There two scripts:
+- bwt.sh  
+  Test BWT implementation
+- bwa.sh  
+  Test BWA implementation
+
+Just run the script, such as:
+```
+$ ./bwt.sh
+Test ../data/1.fasta pass!
+Test ../data/100.fasta pass!
+Test ../data/1000.fasta pass!
+```
+
 ## Integration test
+
+Go to the unit test dir: `cd test/integration/`
+
+- emulation-sw.sh  
+  Test Software Emulation
+- emulation-hw.sh  
+  Test Hardware Emulation
+- hardware.sh  
+  Test on FPGA
+
+Just run the script, such as:
+```
+$ ./emulation-sw.sh
+// ...
+// ... some execution logs ...
+// ...
+Test ../../data/1 pass!
+```

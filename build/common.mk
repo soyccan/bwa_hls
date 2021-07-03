@@ -4,7 +4,7 @@
 
 SRC_DIR = $(abspath ../../src)
 DATA_DIR = $(abspath ../../data)
-INDEX_AND_READS = $(DATA_DIR)/ref/1.fasta.fmi $(DATA_DIR)/reads/1.fastq
+INDEX_AND_READS = $(DATA_DIR)/1.fasta.fmi $(DATA_DIR)/1.fastq
 
 # compiler tools
 XILINX_VITIS ?= /home/xilinx/tools/Xilinx/Vitis/2019.2

@@ -654,10 +654,15 @@ int main(int argc, char* argv[])
   #endif
 
   FOR(j, 0, 2) {
-    debug("sa_len(%x) = %d", &res_sa_len[j], res_sa_len[j]);
-    debug("sa_itv(%x)", &res_sa_itv[j]);
-    FOR (i, 0, 10) {
-      debug("found SA interval [%d, %d]", res_sa_itv[j][i][0], res_sa_itv[j][i][1]);
+    debug("&sa_len = %x", &res_sa_len[j]);
+    debug("&sa_itv = %x", &res_sa_itv[j]);
+
+    debug("sa_len = %d", res_sa_len[j]);
+    int len = res_sa_len[j];
+    if (len < 0) len = 0;
+    if (len > 30) len = 30;
+    FOR (i, 0, len) {
+      debug("found SA interval %d [%d, %d]", i, res_sa_itv[j][i][0], res_sa_itv[j][i][1]);
     }
   }
 
