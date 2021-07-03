@@ -94,9 +94,9 @@ while also saving 20+ minutes of synthesis process
 
 Two files should be downloaded:
 - Kernel intermediate file:
-[bwa_align.xo](https://github.com/soyccan/hls_project/releases/download/v0.1/bwa_align.xo):
+[bwa_align.xo](https://github.com/soyccan/hls_project/releases/download/v0.1/bwa_align.xo)
 - Bitstream file:
-[binary_container_1.xclbin](https://github.com/soyccan/hls_project/releases/download/v0.1/binary_container_1.xclbin): 
+[binary_container_1.xclbin](https://github.com/soyccan/hls_project/releases/download/v0.1/binary_container_1.xclbin):
 
 ```
 cd build/Emulation-HW/
@@ -105,8 +105,11 @@ wget https://github.com/soyccan/hls_project/releases/download/v0.1/bwa_align.xo 
 wget https://github.com/soyccan/hls_project/releases/download/v0.1/binary_container_1.xclbin
 touch binary_container_1.build/bwa_align.xo
 touch binary_container_1.xclbin
-make run
+make run TESTCASE=1 2>/dev/null
 ```
+
+The above will run with input `data/1.fasta.fmi` and `data/1.fastq`
+To run different testcase, modify the word after `TESTCASE`
 
 ### Build FPGA bitstream generation
 
