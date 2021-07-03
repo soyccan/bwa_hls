@@ -396,7 +396,7 @@ int main(int argc, char* argv[])
   //   o) Allocate Memory to store the results: RES array
   //   o) Create Buffers in Global Memory to store data
   // ================================================================
-#define MAX_NUM_READ 2
+#define MAX_NUM_READ 20
 
   const size_t res_sa_itv_size = MAX_NUM_READ*BUF_SIZE*2;
   const size_t buf_size = BUF_SIZE*4;
@@ -474,11 +474,11 @@ int main(int argc, char* argv[])
     int flag = read_id % 2;
 
     if (read_id >= 2) {
-      errCode = clWaitForEvents(1, Mem_r_event[flag]);
-      if (errCode != CL_SUCCESS) {
-        cout << endl << "Host-Error: Failed to wait for read events" << endl << endl;
-        return EXIT_FAILURE;
-      }
+      // errCode = clWaitForEvents(1, Mem_r_event[flag]);
+      // if (errCode != CL_SUCCESS) {
+      //   cout << endl << "Host-Error: Failed to wait for read events" << endl << endl;
+      //   return EXIT_FAILURE;
+      // }
     }
 
     // ------------------------------------------------------------------
@@ -557,13 +557,13 @@ int main(int argc, char* argv[])
     #endif
     errCode  = false;
 
-    errCode |= clSetKernelArg(K_bwa,  0, sizeof(cl_mem),  &GlobMem_BUF_res_sa_len);
-    errCode |= clSetKernelArg(K_bwa,  1, sizeof(cl_mem),  &GlobMem_BUF_res_sa_itv);
-    errCode |= clSetKernelArg(K_bwa,  2, sizeof(cl_mem),  &GlobMem_BUF_buf);
-    errCode |= clSetKernelArg(K_bwa,  3, sizeof(cl_mem),  &GlobMem_BUF_occ);
-    errCode |= clSetKernelArg(K_bwa,  4, sizeof(cl_mem),  &GlobMem_BUF_cum);
+    errCode |= clSetKernelArg(K_bwa,  0, sizeof(cl_mem),  &GlobMem_BUF_res_sa_len[flag]);
+    errCode |= clSetKernelArg(K_bwa,  1, sizeof(cl_mem),  &GlobMem_BUF_res_sa_itv[flag]);
+    errCode |= clSetKernelArg(K_bwa,  2, sizeof(cl_mem),  &GlobMem_BUF_buf[flag]);
+    errCode |= clSetKernelArg(K_bwa,  3, sizeof(cl_mem),  &GlobMem_BUF_occ[flag]);
+    errCode |= clSetKernelArg(K_bwa,  4, sizeof(cl_mem),  &GlobMem_BUF_cum[flag]);
     errCode |= clSetKernelArg(K_bwa,  5, sizeof(cl_uint), &CONST_refn);
-    errCode |= clSetKernelArg(K_bwa,  6, sizeof(cl_mem),  &GlobMem_BUF_read);
+    errCode |= clSetKernelArg(K_bwa,  6, sizeof(cl_mem),  &GlobMem_BUF_read[flag]);
     errCode |= clSetKernelArg(K_bwa,  7, sizeof(cl_uint), &CONST_read_len[read_id]);
 
     if (errCode != CL_SUCCESS) {
