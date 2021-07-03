@@ -1,6 +1,6 @@
 # Introduction
 
-This is HLS (High-Level Synthesis) final project for course Advanced Computer Architecture (CSIE5059), Spring 2021, Natianal Taiwan University
+This is HLS (High-Level Synthesis) final project for course Advanced Computer Architecture (CSIE5059), Spring 2021, National Taiwan University
 
 Our topic is "DNA Sequence Analysis Acceleration".
 We implement BWA (Burrows-Wheeler Aligner) algorithm using HLS, and try to optimize this kernel on U50 FPGA.
